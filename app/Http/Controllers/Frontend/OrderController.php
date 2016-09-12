@@ -24,12 +24,17 @@ class OrderController extends FrontendController
 	}
 
 	public function postNewCojp() {
-		$clsOrder 		= new OrderModel();
-		$inputs   		= Input::all(); 
-		$validator      = Validator::make($inputs, $clsOrder->Rules(), $clsOrder->Messages());
+		$clsOrder 				= new OrderModel();
+		$inputs   				= Input::all(); 
+		$validator      		= Validator::make($inputs, $clsOrder->Rules(), $clsOrder->Messages());
 		if ($validator->fails()) {
             return redirect()->route('frontend.order.new_cojp_regist')->withErrors($validator)->withInput();
         }
+
+        $dataInput['plan'] 		= Input::get('plan');
+        $dataInput['domain'] 		= Input::get('domain');
+        $dataInput['service'] 	= Input::get('service');
+
 
 	}
 

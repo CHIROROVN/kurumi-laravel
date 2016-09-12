@@ -9,16 +9,20 @@ class OrderModel
     public function Rules()
     {
     	return array(
-    		'plan'                              => 'required',
-            'domain'                            => 'required',
+    		'plan'                                    => 'required',
+            'domain'                                  => 'required',
 		);
     }
 
     public function Messages()
     {
     	return array(
-            'plan.required'                     => trans('validation.error_plan_required'),
-            'domain.required'                   => trans('validation.error_domain_required'),
+            'plan.required'                         => trans('validation.error_plan_required'),
+            'domain.required'                       => trans('validation.error_domain_required'),
+            'paymonth.required'                     => trans('validation.error_paymonth_required'),
+            'payinvoice.required'                   => trans('validation.error_payinvoice_required'),
+            
+
 		);
     }
 }
