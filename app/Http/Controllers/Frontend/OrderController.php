@@ -140,7 +140,7 @@ class OrderController extends FrontendController
 
 	//order/new-jp
 	public function getNewJp() {
-		//return view('frontend.order.new_cojp_regist');
+		return view('frontend.order.new_jp_regist');
 	}
 
 	public function postNewJp() {
@@ -148,11 +148,11 @@ class OrderController extends FrontendController
 	}
 
 	public function getNewJpCnf() {
-		//return view('frontend.order.move_cojp.confirm');
+		return view('frontend.order.new_jp_confirm');
 	}
 
 	public function getNewJpSent() {
-		//return view('frontend.order.new_cojp_sent');
+		return view('frontend.order.new_jp_sent');
 	}
 
 	//order/new-com

@@ -24,13 +24,18 @@ Route::group(['prefix' => '', 'namespace' => 'Frontend'], function () {
     Route::get('/contact/send', ['as' => 'frontend.contact.send', 'uses' => 'ContactController@getSend']);
     Route::get('/contact/back', ['as' => 'frontend.contact.back', 'uses' => 'ContactController@getBack']);
 
-    	//Order
+    //Order
 	Route::get('order', ['as' => 'frontend.order.index', 'uses' => 'OrderController@index']);
 
 	Route::get('order/new-cojp', ['as' => 'frontend.order.new_cojp_regist', 'uses' => 'OrderController@getNewCojp']);
 	Route::post('order/new-cojp', ['as' => 'frontend.order.new_cojp_regist', 'uses' => 'OrderController@postNewCojp']);
 	Route::get('order/new-cojp_confirm', ['as' => 'frontend.order.new_cojp_confirm', 'uses' => 'OrderController@getNewCojpCnf']);
 	Route::get('order/new-cojp_sent', ['as' => 'frontend.order.new_cojp_sent', 'uses' => 'OrderController@getNewCojpSent']);
+    //New JP
+    Route::get('order/new-jp', ['as' => 'frontend.order.new_jp_regist', 'uses' => 'OrderController@getNewJp']);
+    Route::post('order/new-jp', ['as' => 'frontend.order.new_jp_regist', 'uses' => 'OrderController@postNewJp']);
+    Route::get('order/new-jp_confirm', ['as' => 'frontend.order.new_jp_confirm', 'uses' => 'OrderController@getNewJpCnf']);
+    Route::get('order/new-jp_sent', ['as' => 'frontend.order.new_jp_sent', 'uses' => 'OrderController@getNewJpSent']);
 
     // move cojp
     Route::get('/order/move-cojp', ['as' => 'frontend.order.move_cojp.index', 'uses' => 'OrderController@getMoveCoJp']);

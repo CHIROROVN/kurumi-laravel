@@ -5,7 +5,7 @@
 <!--Content -->
 <section class="order-child clear" id="contact">
   <div class="container">
-  	<h1 class="title-content"><img src="../image/order/title-new-jp.png" alt="" /></h1>
+  	<h1 class="title-content"><img src="{{ asset('') }}public/frontend/image/order/title-new-jp.png" alt="" /></h1>
     <div class="content">
       <div class="text-message">※ は必須項目です。</div>
       <h3>お申込みサーバー情報</h3>
