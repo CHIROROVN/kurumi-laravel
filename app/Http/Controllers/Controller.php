@@ -16,10 +16,6 @@ class Controller extends BaseController
 
     public function __construct()
     {
-        $configs = Config::get('constants.DEFINE');
-        foreach($configs as $key => $value)
-        {
-            define($key, $value);
-        }
+        
     }
 }

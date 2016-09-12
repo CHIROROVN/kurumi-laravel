@@ -3,12 +3,8 @@
 
 return [
 	'DEFINE' => array(
-		'INSERT' 				=> 0,
-		'UPDATE' 				=> 1,
-		'DELETE' 				=> 9,
-
-		'PAGINATION' 			=> 3, // number item in per page backend
+		'TEST' 				=> 0,
 	),
 ];
 
-include('function.php');
+// include('function.php');
