@@ -1,36 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="widtd=device-widtd, initial-scale=1">
-    <title>キッズ業務管理システム</title>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<title></title>
+<meta name="viewport" content="width=device-width">
+<meta name="format-detection" content="telephone=no">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+<link href="{{ asset('') }}frontend/public/common/css/import.css" rel="stylesheet" type="text/css" media="all">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="common/js/function.js"></script>
+</head>
 
-    <!-- Bootstrap -->
-    <link href="{{asset('public/backend/common/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{asset('public/backend/common/css/page.css') }}" rel="stylesheet">
+<body>
 
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-  </head>
-  <body>
-    <!-- Header -->
-    <header>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-6">
-            <h1 class="fl-left">進学ナビ資料請求管理システム</h1>
-          </div>
-          <div class="col-md-6">
-            <div class="fl-right mar-left40">
-              <input type="button" class="btn btn-sm btn-info" name="button" value="ログアウト" onclick='location.href=""'/>
-            </div>
-            <div class="fl-right mar-top5">ようこそ、岡山理科大学・山田花子さん（<a href="" class="text-orange">登録内容の参照</a> / <a href="" class="text-orange">パスワード変更</a>）</div>
-          </div>
-        </div>
+<!-- Header -->
+<header>
+  <div class="frame01">
+    <div class="container">
+      <a href="" title="" class="logo">
+        <img src="common/image/logo.png" alt="" />
+      </a>
+      <div class="info-contact">
+        <img class="fl-left" src="common/image/img-call-header.png" alt="" />
+        <a href="contact/index.html" title="" class="fl-right"><img src="common/image/img-mail-header.png" alt="" /></a>
       </div>
-    </header>
-    <!-- End Header -->
+      <div class="text">
+        <p><img src="common/image/text1-header.png" alt="" /></p>
+        <p><img src="common/image/text2-header.png" alt="" /></p>
+      </div>
+      <div class="photo">
+        <img src="common/image/img-person-header.png" alt="" />
+      </div>
+    </div>
+  </div>
+  <div class="frame02">
+    <div class="container">
+      <h1><img src="common/image/text3-header.png" alt="" /></h1>
+      <p>※SSLは本サービス利用開始後のご提供となります。</p>
+      <ul>
+        <li class="btn btn-pink">
+          <a href="order/index.html" title="">お申し込みはこちら</a>
+        </li>
+        <li class="btn btn-orange">
+          <a href="contact/index.html" title="">お問い合わせはこちら</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+<!-- End Header --> 
+
+<!-- Menu -->
+<nav class="clear">
+  <div class="container">
+    <ul>
+      <li id="nav01"><a href="index.html" title="ホーム">ホーム</a></li>
+      <li id="nav02"><a href="feature/index.html" title="強み">強み</a></li>
+      <li id="nav03"><a href="plan/index.html" title="プラン">プラン</a></li>
+      <li id="nav04"><a href="support/index.html" title="サポート">サポート</a></li>
+      <li id="nav05"><a href="faq/index.html" title="FAQ">FAQ</a></li>
+      <li id="nav06"><a href="company/index.html" title="会社案内">会社案内</a></li>
+      <li id="nav07"><a href="order/index.html" title="お申し込み">お申し込み</a></li>
+    </ul>
+  </div>
+</nav>
+<!--End Menu -->
