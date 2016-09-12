@@ -18,7 +18,11 @@ Route::group(['prefix' => '', 'namespace' => 'Frontend'], function () {
     Route::get('/company', ['as' => 'frontend.company.index', 'uses' => 'CompanyController@index']);
 
     // contact
-    Route::get('/contact', ['as' => 'frontend.contact.index', 'uses' => 'ContactController@index']);
+    Route::get('/contact', ['as' => 'frontend.contact.index', 'uses' => 'ContactController@getIndex']);
+    Route::post('/contact', ['as' => 'frontend.contact.index', 'uses' => 'ContactController@postIndex']);
+    Route::get('/contact/confirm', ['as' => 'frontend.contact.confirm', 'uses' => 'ContactController@getConfirm']);
+    Route::get('/contact/send', ['as' => 'frontend.contact.send', 'uses' => 'ContactController@getSend']);
+    Route::get('/contact/back', ['as' => 'frontend.contact.back', 'uses' => 'ContactController@getBack']);
 
     	//Order
 	Route::get('order', ['as' => 'frontend.order.index', 'uses' => 'OrderController@index']);

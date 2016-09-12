@@ -3,7 +3,10 @@
 
 return [
 	'DEFINE' => array(
-		'TEST' 				=> 0,
+		'MAIL_FROM_ADDRESS' 				=> 'kurumi@soci.ous.ac.jp',
+		'MAIL_FROM_NAME' 					=> 'Chiroro',
+
+		'SUBJECT_CONTACT'					=> 'contact email',
 	),
 ];
 
