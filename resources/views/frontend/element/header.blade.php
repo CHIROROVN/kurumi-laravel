@@ -65,7 +65,7 @@
       <li id="nav04"><a href="support/index.html" title="サポート">サポート</a></li>
       <li id="nav05"><a href="faq/index.html" title="FAQ">FAQ</a></li>
       <li id="nav06"><a href="{{ route('frontend.company.index') }}" title="会社案内">会社案内</a></li>
-      <li id="nav07"><a href="order/index.html" title="お申し込み">お申し込み</a></li>
+      <li id="nav07"><a href="{{route('frontend.order.index')}}" title="お申し込み">お申し込み</a></li>
     </ul>
   </div>
 </nav>
