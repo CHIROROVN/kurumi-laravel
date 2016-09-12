@@ -2,17 +2,17 @@
 <footer>
   <div class="top">
     <div class="container">
-      <h1><img src="common/image/h1-top-footer.png" alt="" /></h1>
+      <h1><img src="{{ asset('') }}public/frontend/common/image/h1-top-footer.png" alt="" /></h1>
       <div class="btn btn-pink">
         お申し込みはこちら
       </div>
       <div class="info-contact">
-        <p><img src="common/image/title-info-contact-footer.png" alt="" /></p>
+        <p><img src="{{ asset('') }}public/frontend/common/image/title-info-contact-footer.png" alt="" /></p>
         <div class="fl-left">
-          <img src="common/image/img-call-footer.png" alt="" />
+          <img src="{{ asset('') }}public/frontend/common/image/img-call-footer.png" alt="" />
         </div>
         <div class="fl-left" style="margin-left:15px;">
-          <a href="contact/index.html" title=""><img src="common/image/img-mail-footer.png" alt="" /></a>
+          <a href="contact/index.html" title=""><img src="{{ asset('') }}public/frontend/common/image/img-mail-footer.png" alt="" /></a>
         </div>
       </div>
     </div>
@@ -21,7 +21,7 @@
     <div class="container">
       <div class="clear">
         <div class="fl-left">
-          <img src="common/image/logo-footer.png" alt="" />
+          <img src="{{ asset('') }}public/frontend/common/image/logo-footer.png" alt="" />
           <span>岡山本社</span>
           <address>
             〒710-0844　岡山県倉敷市福井125-7<br />

@@ -11,9 +11,9 @@
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 <![endif]-->
-<link href="{{ asset('') }}frontend/public/common/css/import.css" rel="stylesheet" type="text/css" media="all">
+<link href="{{ asset('') }}public/frontend/common/css/import.css" rel="stylesheet" type="text/css" media="all">
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script type="text/javascript" src="common/js/function.js"></script>
+<script type="text/javascript" src="{{ asset('') }}public/frontend/common/js/function.js"></script>
 </head>
 
 <body>
@@ -23,24 +23,24 @@
   <div class="frame01">
     <div class="container">
       <a href="" title="" class="logo">
-        <img src="common/image/logo.png" alt="" />
+        <img src="{{ asset('') }}public/frontend/common/image/logo.png" alt="" />
       </a>
       <div class="info-contact">
-        <img class="fl-left" src="common/image/img-call-header.png" alt="" />
-        <a href="contact/index.html" title="" class="fl-right"><img src="common/image/img-mail-header.png" alt="" /></a>
+        <img class="fl-left" src="{{ asset('') }}public/frontend/common/image/img-call-header.png" alt="" />
+        <a href="contact/index.html" title="" class="fl-right"><img src="{{ asset('') }}public/frontend/common/image/img-mail-header.png" alt="" /></a>
       </div>
       <div class="text">
-        <p><img src="common/image/text1-header.png" alt="" /></p>
-        <p><img src="common/image/text2-header.png" alt="" /></p>
+        <p><img src="{{ asset('') }}public/frontend/common/image/text1-header.png" alt="" /></p>
+        <p><img src="{{ asset('') }}public/frontend/common/image/text2-header.png" alt="" /></p>
       </div>
       <div class="photo">
-        <img src="common/image/img-person-header.png" alt="" />
+        <img src="{{ asset('') }}public/frontend/common/image/img-person-header.png" alt="" />
       </div>
     </div>
   </div>
   <div class="frame02">
     <div class="container">
-      <h1><img src="common/image/text3-header.png" alt="" /></h1>
+      <h1><img src="{{ asset('') }}public/frontend/common/image/text3-header.png" alt="" /></h1>
       <p>※SSLは本サービス利用開始後のご提供となります。</p>
       <ul>
         <li class="btn btn-pink">
