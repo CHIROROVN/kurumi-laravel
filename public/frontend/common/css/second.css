@@ -1,0 +1,308 @@
+@charset "utf-8";
+
+/*--------------------------------------------------------------------------------------------------
+
+   second
+          - top
+
+--------------------------------------------------------------------------------------------------*/
+.menu,
+.menusp {
+  display:none;
+}
+
+.acrd-pl1,
+.acrd-pl2 {
+  display:block;
+}
+
+@media all and (max-width: 768px) {
+  
+  /*------------------------------------------------------------------------------------------------
+  common 
+--------------------------------------------------------------------------------------------------*/
+  header .contR,
+  nav,
+  .banner .text-2,
+  #index .frame02 li .icon-next {
+    display:none!important;
+  }
+  
+  .acrd-pl1,.acrd-pl2 {
+    display:none;
+  }
+  
+  .menusp {
+    display:block;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    padding:0px 10px;
+  }
+  
+  header {
+    height:45px;
+  }
+  
+  header h1 {
+    padding-left:10px;
+    padding-top:5px;
+  }
+  
+  header h1 img {
+    height:45px;
+  }
+  
+  header .menusp {
+    float:right;
+    background:#A7E027;
+  }
+  
+  header .container {
+    position:relative;
+  }
+  
+  header .menu {
+    width:100%;
+    padding-left:10px;
+    background:#A7E027;
+    padding-bottom:10px;
+    z-index:2;
+    position:absolute;
+    top:58px;
+    right:10px;
+  }
+  
+  header .menu li {
+    float: none;
+    margin: 9px 9px 0px 9px;
+    border-radius: 5px;
+    height: 53px;
+    text-indent: 0px;
+    background: #fff;
+    padding-right: 6px;
+    line-height: 53px;
+  }
+  
+  header .menu li a {
+    display:block;
+    padding-left: 20px;
+    background: url(../image/icon-next-menu.png) no-repeat right center;
+    background-size: 8px 12.5px;  
+    width:100%;
+    color:#664C00;
+  }
+  
+  footer .footer-menu {
+    padding: 30px 0 25px 0;
+    margin:0px;
+    background: #F7F7F7;
+  }
+  
+  footer .footer-menu .container {
+    max-width:100%;
+  }
+  
+  footer .footer-menu .main-menu {
+    width:100%;
+  }
+  
+  footer .footer-menu .main-menu .col-menu {
+    float: none;
+    margin-right: 0px;
+    width: 100%;
+    background: #fff;
+    margin-bottom: 5px;
+  }
+  
+  footer .footer-menu .main-menu .col-menu img {
+    padding-right: 7px;
+    padding-top: 10px;
+  }
+  
+  footer .footer-menu .main-menu .col-menu span {
+    font-size:14px;
+  }
+  
+  footer .footer-menu .main-menu .col-menu .font-grown {
+    color: #525252;
+  }
+  
+  footer .footer-menu .acrd-ctrl,
+  footer .footer-menu .now {
+    cursor:pointer;
+    float:right;
+    width:20px;
+  }
+  
+  footer .footer-menu .acrd-ctrl {
+    background:url(../image/icon-open.png) no-repeat right center;
+    background-size:12px 12px;
+  }
+  
+  footer .footer-menu .now {
+    background:url(../image/icon-close.png) no-repeat right center;
+    background-size:12px 12px;
+  }
+  
+  footer .footer-menu .main-menu .col-menu .text-link {
+    height:40px;
+    line-height:40px;
+    padding:0 10px;
+  }
+  
+  footer .footer-menu .main-menu .col-menu ul {
+    margin-left:0px;
+  }
+  
+  footer .footer-menu .main-menu .col-menu li {
+    background: #f1f2ed;
+    margin-bottom: 1px;
+    height: 35px;
+    line-height: 35px;
+    padding-left:0px;
+  }
+  
+  footer .footer-menu .main-menu .col-menu li a {
+    color: #5CAE02;
+    background: url(../image/icon-next-footer.png) no-repeat left center;
+    padding-left:20px;
+  }
+  
+  /*------------------------------------------------------------------------------------------------
+  index
+--------------------------------------------------------------------------------------------------*/
+  .banner .text-1 {
+    width:80%;
+  }
+  
+  #index .frame01 {
+    background:none;
+    padding: 40px 0px 80px 0px;
+  }
+  
+  #index .frame01 ul {
+    height:auto;
+  }
+  
+  #index .frame01 li {
+    float: none;
+    width: 100%;
+    height: auto;
+    box-shadow: none;
+    border:1px solid #EEE;
+    margin:0px 0px 30px 0px;
+  }
+  
+  #index .frame01 li .photo {
+    width:100%;
+  }
+  
+  #index .frame01 li .btn {
+    width:100%;
+  }
+  
+  #index .frame01 li .img-btn {
+    right:0px;
+  }
+  
+  #index .frame01 .title {
+    margin-bottom:40px;
+  }
+  
+  #index .frame01 .p-bottom {
+    margin-top:0px;
+  }
+  
+  #index .frame02 ul {
+    max-width: 480px;
+    margin: 0 auto;
+    padding:0 10px;
+  }
+  
+  #index .frame01 .title {
+    width:150px;
+    margin-bottom: 25px;
+  }
+  
+  #index .frame02 li {
+    height:auto;
+    border: 1px solid #E0E0E0;
+    margin-bottom:30px;
+  }
+  
+  #index .frame02 li .container {
+    padding: 30px 0px 20px 10px;
+  }
+  
+  #index .frame02 li .container p {
+    width:auto;
+    padding-right:5px;
+  }
+  
+  #index .frame02 li .photo {
+    position: relative;
+    height: auto;
+    width: 100%;
+  }
+  
+  #index .frame02 li .container h2,
+  #index .frame02 li .container span {
+    width:auto;
+    text-align:center;
+  }
+  
+  #index .frame03 li {
+    float: none;
+    width: 100%;
+    height: auto;
+    margin-bottom:20px;
+    background: url(../image/bg-box-frame03-index.png) repeat-x;
+    padding-right:10px;
+    position:relative;
+  }
+  
+  #index .frame03 li img {
+    width:100%;
+  }
+  
+  #index .frame03 li .btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  
+  #index .frame04 {
+    padding: 30px 0px;
+  }
+  
+  #index .frame04 .contL,
+  #index .frame04 .contR  {
+    float:none;
+    width:100%;
+  }
+  
+  #index .frame04 .contR  {
+    margin-right:0px;
+    margin-top:30px;
+  }
+  
+  #index .gmap {
+    width: 100%;
+    height: 270px;
+  }
+  
+}
+
+@media all and (max-width: 380px) {
+  #index .frame04 .contR table th {
+    padding:5px;
+  }
+}
+
+
+
+
