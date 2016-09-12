@@ -13,6 +13,12 @@
 
 Route::group(['prefix' => '', 'namespace' => 'Frontend'], function () {
 	Route::get('/', ['as' => 'frontend.index', 'uses' => 'HomeController@index']);
+
+    // company
+    Route::get('/company', ['as' => 'frontend.company.index', 'uses' => 'CompanyController@index']);
+
+    // contact
+    Route::get('/contact', ['as' => 'frontend.contact.index', 'uses' => 'ContactController@index']);
 });
 
 
