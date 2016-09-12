@@ -19,6 +19,17 @@ Route::group(['prefix' => '', 'namespace' => 'Frontend'], function () {
 
     // contact
     Route::get('/contact', ['as' => 'frontend.contact.index', 'uses' => 'ContactController@index']);
+
+    	//Order
+	Route::get('order', ['as' => 'frontend.order.index', 'uses' => 'OrderController@index']);
+
+	Route::get('order/new-cojp', ['as' => 'frontend.order.new_cojp_regist', 'uses' => 'OrderController@getNewCojp']);
+	Route::post('order/new-cojp', ['as' => 'frontend.order.new_cojp_regist', 'uses' => 'OrderController@postNewCojp']);
+	Route::get('order/new-cojp_confirm', ['as' => 'frontend.order.new_cojp_confirm', 'uses' => 'OrderController@getNewCojpCnf']);
+	Route::get('order/new-cojp_sent', ['as' => 'frontend.order.new_cojp_sent', 'uses' => 'OrderController@getNewCojpSent']);
+
+	//Plan
+	Route::get('plan', ['as' => 'frontend.plan.index', 'uses' => 'PlanController@index']);
 });
 
 
