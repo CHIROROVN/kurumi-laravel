@@ -32,6 +32,13 @@ Route::group(['prefix' => '', 'namespace' => 'Frontend'], function () {
 	Route::get('order/new-cojp_confirm', ['as' => 'frontend.order.new_cojp_confirm', 'uses' => 'OrderController@getNewCojpCnf']);
 	Route::get('order/new-cojp_sent', ['as' => 'frontend.order.new_cojp_sent', 'uses' => 'OrderController@getNewCojpSent']);
 
+    // move cojp
+    Route::get('/order/move-cojp', ['as' => 'frontend.order.move_cojp.index', 'uses' => 'OrderController@getMoveCoJp']);
+    Route::post('/order/move-cojp', ['as' => 'frontend.order.move_cojp.index', 'uses' => 'OrderController@postMoveCoJp']);
+    Route::get('/order/move-cojp/confirm', ['as' => 'frontend.order.move_cojp.confirm', 'uses' => 'OrderController@getMoveCoJpCnf']);
+    Route::get('/order/move-cojp/send', ['as' => 'frontend.order.move_cojp.send', 'uses' => 'OrderController@getMoveCoJpSent']);
+    Route::get('/order/move-cojp/back', ['as' => 'frontend.order.move_cojp.back', 'uses' => 'OrderController@getMoveCoJpBack']);
+
 	//Plan
 	Route::get('plan', ['as' => 'frontend.plan.index', 'uses' => 'PlanController@index']);
 });

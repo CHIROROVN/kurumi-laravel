@@ -82,7 +82,16 @@ class OrderController extends FrontendController
 
 	//order/move-cojp
 	public function getMoveCoJp() {
-		//return view('frontend.order.new_cojp_regist');
+		$data = array();
+
+		if ( !Session::has('back') ) {
+			Session::forget('confirmData');
+		} else {
+			$data['back'] = Session::get('confirmData');
+		}
+		Session::forget('back');
+
+		return view('frontend.order.move-cojp', $data);
 	}
 
 	public function postMoveCoJp() {
@@ -96,6 +105,11 @@ class OrderController extends FrontendController
 	public function getMoveCoJpSent() {
 		//return view('frontend.order.new_cojp_sent');
 	}
+
+	public function getMoveCoJpBack() {
+		//return view('frontend.order.new_cojp_sent');
+	}
+	//end order/move-cojp
 
 	//order/move-jp
 	public function getMoveJp() {
