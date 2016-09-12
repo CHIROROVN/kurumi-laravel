@@ -39,8 +39,8 @@
         <!-- form -->
         <div class="content">
           <ul>
-            <li><a href="" title=""><img src="{{ asset('') }}public/frontend/image/contact/text1-frame02.png" alt="" /></a></li>
-            <li><a href="" title=""><img src="{{ asset('') }}public/frontend/image/contact/text2-frame02.png" alt="" /></a></li>
+            <li><a href="" title=""><img src="{{ asset('') }}public/frontend/image/contact/text1-normal-frame02.png" alt="" /></a></li>
+            <li><a href="" title=""><img src="{{ asset('') }}public/frontend/image/contact/text2-active-frame02.png" alt="" /></a></li>
             <li><a href="" title=""><img src="{{ asset('') }}public/frontend/image/contact/text3-frame02.png" alt="" /></a></li>
           </ul>
           <!-- <div class="text-message">※ は必須項目です。</div> -->
@@ -95,10 +95,12 @@
             </tr>
           </table>
           
-          <div class="box-submit">
-            <a href="{{ route('frontend.contact.back') }}" class="btn-submit">Back</a>
-            <a href="{{ route('frontend.contact.send') }}" class="btn-submit">Send</a>
-          <div>
+          <div style="float: left; width: 100%;">
+            <div class="box-submit">
+              <a href="{{ route('frontend.contact.back') }}" class="bt-submit">Back</a>
+              <a href="{{ route('frontend.contact.send') }}" class="bt-submit">Send</a>
+            <div>
+          </div>
         </div>
         <!-- end form -->
 

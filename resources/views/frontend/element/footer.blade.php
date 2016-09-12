@@ -12,7 +12,7 @@
           <img src="{{ asset('') }}public/frontend/common/image/img-call-footer.png" alt="" />
         </div>
         <div class="fl-left" style="margin-left:15px;">
-          <a href="contact/index.html" title=""><img src="{{ asset('') }}public/frontend/common/image/img-mail-footer.png" alt="" /></a>
+          <a href="{{ route('frontend.contact.index') }}" title=""><img src="{{ asset('') }}public/frontend/common/image/img-mail-footer.png" alt="" /></a>
         </div>
       </div>
     </div>

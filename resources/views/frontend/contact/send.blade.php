@@ -39,11 +39,11 @@
         <!-- form -->
         <div class="content">
           <ul>
-            <li><a href="" title=""><img src="{{ asset('') }}public/frontend/image/contact/text1-frame02.png" alt="" /></a></li>
+            <li><a href="" title=""><img src="{{ asset('') }}public/frontend/image/contact/text1-normal-frame02.png" alt="" /></a></li>
             <li><a href="" title=""><img src="{{ asset('') }}public/frontend/image/contact/text2-frame02.png" alt="" /></a></li>
-            <li><a href="" title=""><img src="{{ asset('') }}public/frontend/image/contact/text3-frame02.png" alt="" /></a></li>
+            <li><a href="" title=""><img src="{{ asset('') }}public/frontend/image/contact/text3-active-frame02.png" alt="" /></a></li>
           </ul>
-          <p>Thank you for send email!</p>
+          <p class="text-message-sent">Thank you for send email!</p>
         </div>
         <!-- end form -->
 

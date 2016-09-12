@@ -449,6 +449,10 @@
   cursor:pointer;
 }
 
+#contact .frame02 .bt-submit {
+  margin:0px;
+}
+
 .text-message {
   margin-left:15px;
 }
@@ -568,7 +572,7 @@
   text-align:center;
 }
 
-.order-child .bt-submit {
+.bt-submit {
   width:auto;
   height:auto;
   padding:25px 70px;
@@ -581,6 +585,15 @@
   cursor:pointer;
 }
 
+.bt-marright {
+  margin-right:10px!important;
+}
+.text-message-sent {
+  font-size:18px;
+  margin:60px 0px!important;
+  text-align:center;
+}
+
 .row-radio {
   margin:15px 0px;
 }
@@ -589,6 +602,13 @@
   width:30px;
   float:left;
   padding-top:5px;
+}
+
+.order-child h1 {
+  font-size:40px;
+  color:#1353a2;
+  font-weight:bold;
+  letter-spacing:3px;
 }
 
 #order .content .box-info2 li {
@@ -738,6 +758,10 @@
   color:#434343;
 }
 
+/*------------------------------------------------------------------------------------------------
+  feature
+--------------------------------------------------------------------------------------------------*/
+#feature 
 
 
 

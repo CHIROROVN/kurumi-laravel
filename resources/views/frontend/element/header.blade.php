@@ -27,7 +27,7 @@
       </a>
       <div class="info-contact">
         <img class="fl-left" src="{{ asset('') }}public/frontend/common/image/img-call-header.png" alt="" />
-        <a href="contact/index.html" title="" class="fl-right"><img src="{{ asset('') }}public/frontend/common/image/img-mail-header.png" alt="" /></a>
+        <a href="{{ route('frontend.contact.index') }}" title="" class="fl-right"><img src="{{ asset('') }}public/frontend/common/image/img-mail-header.png" alt="" /></a>
       </div>
       <div class="text">
         <p><img src="{{ asset('') }}public/frontend/common/image/text1-header.png" alt="" /></p>
@@ -47,7 +47,7 @@
           <a href="order/index.html" title="">お申し込みはこちら</a>
         </li>
         <li class="btn btn-orange">
-          <a href="contact/index.html" title="">お問い合わせはこちら</a>
+          <a href="{{ route('frontend.contact.index') }}" title="">お問い合わせはこちら</a>
         </li>
       </ul>
     </div>
@@ -59,12 +59,12 @@
 <nav class="clear">
   <div class="container">
     <ul>
-      <li id="nav01"><a href="index.html" title="ホーム">ホーム</a></li>
+      <li id="nav01"><a href="{{ route('frontend.index') }}" title="ホーム">ホーム</a></li>
       <li id="nav02"><a href="feature/index.html" title="強み">強み</a></li>
       <li id="nav03"><a href="plan/index.html" title="プラン">プラン</a></li>
       <li id="nav04"><a href="support/index.html" title="サポート">サポート</a></li>
       <li id="nav05"><a href="faq/index.html" title="FAQ">FAQ</a></li>
-      <li id="nav06"><a href="company/index.html" title="会社案内">会社案内</a></li>
+      <li id="nav06"><a href="{{ route('frontend.company.index') }}" title="会社案内">会社案内</a></li>
       <li id="nav07"><a href="order/index.html" title="お申し込み">お申し込み</a></li>
     </ul>
   </div>

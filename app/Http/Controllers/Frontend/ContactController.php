@@ -93,10 +93,16 @@ class ContactController extends FrontendController
 		}
 
 		$data = Session::get('confirmData');
-		
-		Mail::send('frontend.contact.mail', array('data' => $data), function($message) use ($data){
+
+		// for user
+		Mail::send('frontend.contact.mail_user', array('data' => $data), function($message) use ($data){
             $message->from(MAIL_FROM_ADDRESS, MAIL_FROM_NAME);
-            $message->to($data['email'])->subject(SUBJECT_CONTACT);
+            $message->to($data['email'])->subject(SUBJECT_CONTACT_USER);
+        });
+        // for manager
+        Mail::send('frontend.contact.mail_manager', array('data' => $data), function($message) use ($data){
+            $message->from(MAIL_FROM_ADDRESS, MAIL_FROM_NAME);
+            $message->to(MAIL_TO_ADDRESS_MANAGER)->subject(SUBJECT_CONTACT_MANAGER);
         });
 
 		Session::forget('confirmData');
