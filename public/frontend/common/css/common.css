@@ -421,7 +421,14 @@ footer .bottom .coppy {
   margin-top:15px;
 }
 
-
+/*phu add*/
+.error-input {
+  color: red;
+  margin-top: 5px;
+  display: block;
+  width: 100% !important;
+  font-weight: bold;
+}
 
 
 

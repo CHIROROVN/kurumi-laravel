@@ -1,17 +1,6 @@
 @extends('frontend.frontend')
 
 @section('content')
-
-<style type="text/css">
-  .error-input {
-    color: red;
-    margin-top: 5px;
-    display: block;
-    width: 100% !important;
-    font-weight: bold;
-  }
-
-</style>
 <!--Content -->
 
 <section class="clear" id="contact">
