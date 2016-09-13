@@ -401,6 +401,7 @@
       <div class="box-submit">
         <input value="送信" type="submit" class="bt-submit"/>
       <div>
+	  {!! Form::close() !!}
     </div>
   </div>
 </section>

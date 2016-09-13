@@ -7,6 +7,7 @@
   <div class="container">
   	<h1 class="title-content"><img src="{{ asset('') }}public/frontend/image/order/title-new-jp.png" alt="" /></h1>
     <div class="content">
+    {!! Form::open(array('route' => ['frontend.order.new-jp_regist', 'method' => 'post', 'enctype'=>'multipart/form-data', 'accept-charset'=>'utf-8'])) !!}
       <div class="text-message">※ は必須項目です。</div>
       <h3>お申込みサーバー情報</h3>
       <table class="form-input">
@@ -106,51 +107,60 @@
        <table class="form-input">
         <tr>
           <td class="title"><span>※ </span>組織名（日本語）</td>
-          <td><input type="text" name="textbox" /></td>
+          <td><input type="text" name="dns_organization_jp" value="{{old('dns_organization_jp')}}" />
+          <div class="text-message">@if ($errors->first('dns_organization_jp')) ※{!! $errors->first('dns_organization_jp') !!} @endif</div></td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>組織名（英語）</td>
-          <td><input type="text" name="textbox" /></td>
+          <td><input type="text" name="dns_organization_en" value="{{old('dns_organization_en')}}" />
+          <div class="text-message">@if ($errors->first('dns_organization_en')) ※{!! $errors->first('dns_organization_en') !!} @endif</div></td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>登録担当者名</td>
-          <td><input type="text" name="textbox" /></td>
+          <td><input type="text" name="dns_owner_name" value="{{old('dns_owner_name')}}" />
+          <div class="text-message">@if ($errors->first('dns_owner_name')) ※{!! $errors->first('dns_owner_name') !!} @endif</div></td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>部署名</td>
-          <td><input type="text" name="textbox" /></td>
+          <td><input type="text" name="dns_dept_name" value="{{old('dns_dept_name')}}" />
+          <div class="text-message">@if ($errors->first('dns_dept_name')) ※{!! $errors->first('dns_dept_name') !!} @endif</div></td>
         </tr>
         <tr>
           <td class="title">役職名</td>
-          <td><input type="text" name="textbox" /></td>
+          <td><input type="text" name="dns_title" value="{{old('dns_titles')}}" />
+          <div class="text-message">@if ($errors->first('dns_title')) ※{!! $errors->first('dns_title') !!} @endif</div></td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>ご住所（日本語）</td>
-          <td><input type="text" name="textbox" /></td>
+          <td><input type="text" name="dns_addrs_jp" value="{{old('dns_addrs_jp')}}" />
+          <div class="text-message">@if ($errors->first('dns_addrs_jp')) ※{!! $errors->first('dns_addrs_jp') !!} @endif</div></td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>ご住所（英語）</td>
-          <td><input type="text" name="textbox" /></td>
+          <td><input type="text" name="dns_addrs_en" value="{{old('dns_addrs_en')}}" />
+          <div class="text-message">@if ($errors->first('dns_addrs_en')) ※{!! $errors->first('dns_addrs_en') !!} @endif</div></td>
         </tr>
         <tr>
           <td class="title">FAX</td>
-          <td><input type="text" name="textbox" /></td>
+          <td><input type="text" name="dns_fax" value="{{old('dns_fax')}}" />
+          <div class="text-message">@if ($errors->first('dns_fax')) ※{!! $errors->first('dns_fax') !!} @endif</div></td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>メールアドレス</td>
-          <td><input type="text" name="textbox" /></td>
+          <td><input type="text" name="dns_email_addrs" value="{{old('dns_email_addrs')}}" />
+          <div class="text-message">@if ($errors->first('dns_email_addrs')) ※{!! $errors->first('dns_email_addrs') !!} @endif</div></td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>公開連絡先</td>
           <td>
             <div>
-              <input type="radio" name="radio" /> チロロネットを窓口として公開する 
+              <input type="radio" name="public_contact" value="チロロネットを窓口として公開する" @if(old('dns_server') == 'チロロネットを窓口として公開する') checked="" @endif /> チロロネットを窓口として公開する 
             </div>
             <div>
-              <input type="radio" name="radio" /> 上記ドメイン登録者を窓口として公開する
+              <input type="radio" name="public_contact" value="上記ドメイン登録者を窓口として公開する" @if(old('dns_server') == '上記ドメイン登録者を窓口として公開する') checked="" @endif /> 上記ドメイン登録者を窓口として公開する
             </div>
             <div>
-              <input type="radio" name="radio" /> ご契約ご担当者を窓口として公開する
+              <input type="radio" name="public_contact" value="ご契約ご担当者を窓口として公開する"  @if(old('dns_server') == 'ご契約ご担当者を窓口として公開する') checked="" @endif /> ご契約ご担当者を窓口として公開する
             </div>
           </td>
         </tr>
@@ -158,11 +168,12 @@
           <td class="title"><span>※ </span>DNSサーバー</td>
           <td>
             <div>
-              <input type="radio" name="radio" /> チロロネットのDNSを利用する
+              <input type="radio" name="dns_server" value="チロロネットのDNSを利用する" @if(old('dns_server') == 'チロロネットのDNSを利用する') checked="" @endif  /> チロロネットのDNSを利用する
             </div>
             <div>
-              <input type="radio" name="radio" /> 以下のDNSサーバーを利用する。
+              <input type="radio" name="dns_server" value="以下のDNSサーバーを利用する" @if(old('dns_server') == '以下のDNSサーバーを利用する') checked="" @endif /> 以下のDNSサーバーを利用する
             </div>
+            <div class="text-message">@if ($errors->first('dns_server')) ※{!! $errors->first('dns_server') !!} @endif</div>
           </td>
         </tr>
       </table>
@@ -400,6 +411,7 @@
       <div class="box-submit">
         <input value="送信" type="submit" class="bt-submit"/>
       <div>
+    {!! Form::close() !!}
     </div>
   </div>
 </section>
