@@ -115,16 +115,11 @@ text.<br />
 		<td>公開連絡先</td>
 		<td>:{{ $data['domain_public_contact'] }}</td>
 	</tr>
+	@if ( $data['domain_registered_name'] == 2 )
 	<tr>
 		<td>登録担当者名</td>
 		<td>
-			@if ( $data['domain_registered_name'] == 1 )
-			:チロロネットを窓口として公開する
-			@elseif ( $data['domain_registered_name'] == 2 )
 			:以下情報を窓口として公開する
-			@elseif ( $data['domain_registered_name'] == 3 )
-			:ご契約ご担当者を窓口として公開する
-			@endif
 		</td>
 	</tr>
 	<tr>
@@ -135,6 +130,11 @@ text.<br />
 		<td>電話番号</td>
 		<td>:{{ $data['domain_phone'] }}</td>
 	</tr>
+	<tr>
+		<td>メールアドレス</td>
+		<td>:{{ $data['domain_email'] }}</td>
+	</tr>
+	@endif
 </table>
 <br />
 ------------------------------------------------------------<br />
