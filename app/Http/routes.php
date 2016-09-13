@@ -68,6 +68,9 @@ Route::group(['prefix' => '', 'namespace' => 'Frontend'], function () {
 
     //Feature
     Route::get('feature', ['as' => 'frontend.feature.index', 'uses' => 'FeatureController@index']);
+    //FAQ
+    Route::get('faq', ['as' => 'frontend.faq.index', 'uses' => 'FaqController@index']);
+
 });
 
 
