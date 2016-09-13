@@ -68,9 +68,9 @@
             </div>
             <div>
               @if ( isset($back['app_service_start_date']) && $back['app_service_start_date'] == 2 )
-              <input type="radio" name="app_service_start_date" value="2" checked="" /> 希望あり希望なし（お申込みの翌営業日より2～3営業日目にサービス開始） 
+              <input type="radio" name="app_service_start_date" value="2" checked="" /> 希望あり 
               @elseif ( old('app_service_start_date') == 2 )
-              <input type="radio" name="app_service_start_date" value="2" checked="" /> 希望あり希望なし（お申込みの翌営業日より2～3営業日目にサービス開始） 
+              <input type="radio" name="app_service_start_date" value="2" checked="" /> 希望あり 
               @else
               <input type="radio" name="app_service_start_date" value="2" /> 希望あり
               @endif
@@ -312,16 +312,16 @@
             $yearNext = $yearNow + 1;
             ?>
             <select name="domain_transfer_work_year" id="year" class="input-xs">
-              @if ( isset($back['domain_transfer_work_year']) && $back['domain_transfer_work_year'] == 1 )
+              @if ( isset($back['domain_transfer_work_year']) && $back['domain_transfer_work_year'] == $yearNow )
               <option value="{{ $yearNow }}" selected="">{{ $yearNow }}</option>
-              @elseif ( old('domain_transfer_work_year') == 1 )
+              @elseif ( old('domain_transfer_work_year') == $yearNow )
               <option value="{{ $yearNow }}" selected="">{{ $yearNow }}</option>
               @else
               <option value="{{ $yearNow }}" >{{ $yearNow }}</option>
               @endif
-              @if ( isset($back['domain_transfer_work_year']) && $back['domain_transfer_work_year'] == 1 )
+              @if ( isset($back['domain_transfer_work_year']) && $back['domain_transfer_work_year'] == $yearNow )
               <option value="{{ $yearNext }}" selected="">{{ $yearNext }}</option>
-              @elseif ( old('domain_transfer_work_year') == 1 )
+              @elseif ( old('domain_transfer_work_year') == $yearNow )
               <option value="{{ $yearNext }}" selected="">{{ $yearNext }}</option>
               @else
               <option value="{{ $yearNext }}">{{ $yearNext }}</option>
@@ -330,10 +330,10 @@
             <!-- domain_transfer_work_month -->
             <select name="domain_transfer_work_month" id="month" class="input-xs">
               @for ( $i = 1; $i <= 12; $i++ )
-                @if ( isset($back['domain_transfer_work_month']) && $back['domain_transfer_work_month'] == 1 )
-                <option value="{{ $i }}">{{ $i }}</option>
-                @elseif ( old('domain_transfer_work_month') == 1 )
-                <option value="{{ $i }}">{{ $i }}</option>
+                @if ( isset($back['domain_transfer_work_month']) && $back['domain_transfer_work_month'] == $i )
+                <option value="{{ $i }}" selected="">{{ $i }}</option>
+                @elseif ( old('domain_transfer_work_month') == $i )
+                <option value="{{ $i }}" selected="">{{ $i }}</option>
                 @else
                 <option value="{{ $i }}">{{ $i }}</option>
                 @endif
@@ -342,10 +342,10 @@
             <!-- domain_transfer_work_day -->
             <select name="domain_transfer_work_day" class="input-xs">
               @for ( $i = 1; $i <= 31; $i++ )
-                @if ( isset($back['domain_transfer_work_day']) && $back['domain_transfer_work_day'] == 1 )
-                <option value="{{ $i }}">{{ $i }}</option>
-                @elseif ( old('domain_transfer_work_day') == 1 )
-                <option value="{{ $i }}">{{ $i }}</option>
+                @if ( isset($back['domain_transfer_work_day']) && $back['domain_transfer_work_day'] == $i )
+                <option value="{{ $i }}" selected="">{{ $i }}</option>
+                @elseif ( old('domain_transfer_work_day') == $i )
+                <option value="{{ $i }}" selected="">{{ $i }}</option>
                 @else
                 <option value="{{ $i }}">{{ $i }}</option>
                 @endif
@@ -470,7 +470,7 @@
               <div class="input-radio">
                 @if ( isset($back['ssl_email_address']) && $back['ssl_email_address'] == 1 )
                 <input name="ssl_email_address" type="radio" value="1" checked="">
-                @elseif ( old('type_message') == 1 )
+                @elseif ( old('ssl_email_address') == 1 )
                 <input name="ssl_email_address" type="radio" value="1" checked="">
                 @else
                 <input name="ssl_email_address" type="radio" value="1">
@@ -684,9 +684,9 @@
           <td>
              〒 
             @if ( isset($back['person_your_address_1']) )
-            <input type="text" name="person_your_address_1" value="{{ $back['person_your_address_1'] }}" />
+            <input type="text" name="person_your_address_1" value="{{ $back['person_your_address_1'] }}" class="input-xs" />
             @else
-            <input type="text" name="person_your_address_1" value="{{ old('person_your_address_1') }}" />
+            <input type="text" name="person_your_address_1" value="{{ old('person_your_address_1') }}" class="input-xs" />
             @endif
              住所 
             @if ( isset($back['person_your_address_2']) )
@@ -721,7 +721,6 @@
             @else
             <input type="text" name="person_fax" value="{{ old('person_fax') }}" />
             @endif
-            @if ($errors->first('person_fax'))<span class="error-input">{!! $errors->first('person_fax') !!}</span>@endif
           </td>
         </tr>
 
@@ -750,7 +749,6 @@
             @else
             <input type="text" name="remarks" value="{{ old('remarks') }}" />
             @endif
-            @if ($errors->first('remarks'))<span class="error-input">{!! $errors->first('remarks') !!}</span>@endif
           </td>
         </tr>
       </table>

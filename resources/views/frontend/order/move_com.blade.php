@@ -68,9 +68,9 @@
             </div>
             <div>
               @if ( isset($back['app_service_start_date']) && $back['app_service_start_date'] == 2 )
-              <input type="radio" name="app_service_start_date" value="2" checked="" /> 希望あり希望なし（お申込みの翌営業日より2～3営業日目にサービス開始） 
+              <input type="radio" name="app_service_start_date" value="2" checked="" /> 希望あり 
               @elseif ( old('app_service_start_date') == 2 )
-              <input type="radio" name="app_service_start_date" value="2" checked="" /> 希望あり希望なし（お申込みの翌営業日より2～3営業日目にサービス開始） 
+              <input type="radio" name="app_service_start_date" value="2" checked="" /> 希望あり 
               @else
               <input type="radio" name="app_service_start_date" value="2" /> 希望あり
               @endif

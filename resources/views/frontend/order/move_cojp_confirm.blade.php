@@ -26,18 +26,18 @@
 
         <!-- app_domain_name -->
         <tr>
-          <td class="title"><span>※ </span>ドメイン名</td>
+          <td class="title">ドメイン名</td>
           <td>{{ $confirmData['app_domain_name'] }}</td>
         </tr>
 
         <!-- app_service_start_date -->
         <tr>
-          <td class="title"><span>※ </span>サービス開始希望日</td>
+          <td class="title">サービス開始希望日</td>
           <td>
           	@if ( $confirmData['app_service_start_date'] == 1 )
           	希望なし（お申込みの翌営業日より2～3営業日目にサービス開始）
           	@else
-          	希望あり希望なし（お申込みの翌営業日より2～3営業日目にサービス開始）
+          	希望あり
           	@endif
             <div>
           </td>
@@ -45,7 +45,7 @@
         
         <!-- app_payment_method -->
         <tr>
-          <td class="title"><span>※ </span>お支払い方法</td>
+          <td class="title">お支払い方法</td>
           <td>
           	@if ( $confirmData['app_payment_method_1'] == 1 )
           	月払い
@@ -68,7 +68,7 @@
 
         <!-- app_generation -->
         <tr>
-          <td class="title"><span>※ </span>外部バックアップ世代数追加<br />（1世代あたり）</td>
+          <td class="title">外部バックアップ世代数追加<br />（1世代あたり）</td>
           <td>
           	@if ( $confirmData['app_generation'] == 1 )
           	1
@@ -136,19 +136,19 @@
        <table class="form-input">
         <!-- domain_transfe -->
         <tr>
-          <td class="title"><span>※ </span>移管元事業者名）</td>
+          <td class="title">移管元事業者名）</td>
           <td>{{ $confirmData['domain_transfe'] }}</td>
         </tr>
 
         <!-- domain_owner -->
         <tr>
-          <td class="title"><span>※ </span>ドメイン所有者</td>
+          <td class="title">ドメイン所有者</td>
           <td>{{ $confirmData['domain_owner'] }}</td>
         </tr>
 
         <!-- domain_transfer_work -->
         <tr>
-          <td class="title"><span>※ </span>移管作業日</td>
+          <td class="title">移管作業日</td>
           <td>{{ $confirmData['domain_transfer_work_year'] }}/{{ $confirmData['domain_transfer_work_month'] }}/{{ $confirmData['domain_transfer_work_day'] }}</td>
         </tr>
       </table>
@@ -158,43 +158,43 @@
        <table class="form-input">
         <!-- ssl_common_name -->
         <tr>
-          <td class="title"><span>※ </span>コモンネーム</td>
+          <td class="title">コモンネーム</td>
           <td>{{ $confirmData['ssl_common_name'] }}</td>
         </tr>
 
         <!-- ssl_organization_name_japan  -->
         <tr>
-          <td class="title"><span>※ </span>組織名（日本語）</td>
+          <td class="title">組織名（日本語）</td>
           <td>{{ $confirmData['ssl_organization_name_japan'] }}</td>
         </tr>
 
         <!-- ssl_organization_name_english -->
         <tr>
-          <td class="title"><span>※ </span>組織名（英語）</td>
+          <td class="title">組織名（英語）</td>
           <td>{{ $confirmData['ssl_organization_name_english'] }}</td>
         </tr>
 
         <!-- ssl_county_name_japan -->
         <tr>
-          <td class="title"><span>※ </span>都道府県・市区郡名（日本語）</td>
+          <td class="title">都道府県・市区郡名（日本語）</td>
           <td>{{ $confirmData['ssl_county_name_japan'] }}</td>
         </tr>
 
         <!-- ssl_county_name_english -->
         <tr>
-          <td class="title"><span>※ </span>都道府県・市区郡名（英語）</td>
+          <td class="title">都道府県・市区郡名（英語）</td>
           <td>{{ $confirmData['ssl_county_name_english'] }}</td>
         </tr>
 
         <!-- ssl_name_person -->
         <tr>
-          <td class="title"><span>※ </span>担当者名</td>
+          <td class="title">担当者名</td>
           <td>{{ $confirmData['ssl_name_person'] }}</td>
         </tr>
 
         <!-- ssl_phone_number -->
         <tr>
-          <td class="title"><span>※ </span>電話番号</td>
+          <td class="title">電話番号</td>
           <td>{{ $confirmData['ssl_phone_number'] }}</td>
         </tr>
 
@@ -230,13 +230,13 @@
        <table class="form-input">
         <!-- policyholders_organization_name -->
         <tr>
-          <td class="title"><span>※ </span>組織名</td>
+          <td class="title">組織名</td>
           <td>{{ $confirmData['policyholders_organization_name'] }}</td>
         </tr>
 
         <!-- policyholders_representative_name -->
         <tr>
-          <td class="title"><span>※ </span>代表者名</td>
+          <td class="title">代表者名</td>
           <td>{{ $confirmData['policyholders_representative_name'] }}</td>
         </tr>
 
@@ -248,7 +248,7 @@
 
         <!-- policyholders_name -->
         <tr>
-          <td class="title"><span>※ </span>氏名</td>
+          <td class="title">氏名</td>
           <td>{{ $confirmData['policyholders_name'] }}</td>
         </tr>
 
@@ -264,19 +264,19 @@
        <table class="form-input">
         <!-- person_organization_name -->
         <tr>
-          <td class="title"><span>※ </span>組織名</td>
+          <td class="title">組織名</td>
           <td>{{ $confirmData['person_organization_name'] }}</td>
         </tr>
 
         <!-- person_name -->
         <tr>
-          <td class="title"><span>※ </span>氏名</td>
+          <td class="title">氏名</td>
           <td>{{ $confirmData['person_name'] }}</td>
         </tr>
 
         <!-- person_department_name -->
         <tr>
-          <td class="title"><span>※ </span>部署名</td>
+          <td class="title">部署名</td>
           <td>{{ $confirmData['person_department_name'] }}</td>
         </tr>
 
@@ -288,7 +288,7 @@
 
         <!-- person_your_address -->
         <tr>
-          <td class="title"><span>※ </span>ご住所</td>
+          <td class="title">ご住所</td>
           <td>
              〒 
             {{ $confirmData['person_your_address_1'] }}
@@ -299,7 +299,7 @@
 
         <!-- person_tel -->
         <tr>
-          <td class="title"><span>※ </span>連絡先TEL</td>
+          <td class="title">連絡先TEL</td>
           <td>{{ $confirmData['person_tel'] }}</td>
         </tr>
 
@@ -311,7 +311,7 @@
 
         <!-- person_email -->
         <tr>
-          <td class="title"><span>※ </span>連絡先メールアドレス</td>
+          <td class="title">連絡先メールアドレス</td>
           <td>{{ $confirmData['person_email'] }}</td>
         </tr>
       </table>
