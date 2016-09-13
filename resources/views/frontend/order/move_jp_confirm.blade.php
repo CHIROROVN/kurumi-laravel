@@ -36,7 +36,7 @@
             @if ( $confirmData['app_service_start_date'] == 1 )
             希望なし（お申込みの翌営業日より2～3営業日目にサービス開始）
             @else
-            希望あり希望なし（お申込みの翌営業日より2～3営業日目にサービス開始）
+            希望あり
             @endif
             <div>
           </td>
@@ -111,8 +111,6 @@
           <td>
             @if ( $confirmData['app_plesk'] == 1 )
             Plesk Web Pro Editionへグレードアップ
-            @else
-            不要
             @endif
           </td>
         </tr>
@@ -123,8 +121,6 @@
           <td>
             @if ( $confirmData['app_waf'] == 1 )
             WAF追加
-            @else
-            不要
             @endif
           </td>
         </tr>
