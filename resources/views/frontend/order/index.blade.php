@@ -18,22 +18,22 @@
           <tr>
             <td class="title"><img src="{{ asset('') }}public/frontend/image/order/title1-table-index.png" alt="" /></td>
             <td>
-              <a class="fl-left" href="" title=""><img src="{{ asset('') }}public/frontend/image/order/img-pdf.png" alt="" /></a>
-              <a class="fl-right" href="" title=""><img src="{{ asset('') }}public/frontend/image/order/img-internet.png" alt="" /></a>
+              <a class="fl-left" href="{{ asset('') }}public/frontend/files/order/new/order_new-cojp.pdf" title=""><img src="{{ asset('') }}public/frontend/image/order/img-pdf.png" alt="" /></a>
+              <a class="fl-right" href="{{route('frontend.order.new_cojp_regist')}}" title=""><img src="{{ asset('') }}public/frontend/image/order/img-internet.png" alt="" /></a>
             </td>
           </tr>
           <tr>
             <td class="title"><img src="{{ asset('') }}public/frontend/image/order/title2-table-index.png" alt="" /></td>
             <td>
-              <a class="fl-left" href="" title=""><img src="{{ asset('') }}public/frontend/image/order/img-pdf.png" alt="" /></a>
-              <a class="fl-right" href="" title=""><img src="{{ asset('') }}public/frontend/image/order/img-internet.png" alt="" /></a>
+              <a class="fl-left" href="{{ asset('') }}public/frontend/files/order/new/order_new-cojp.pdf" title=""><img src="{{ asset('') }}public/frontend/image/order/img-pdf.png" alt="" /></a>
+              <a class="fl-right" href="{{route('frontend.order.new_jp_regist')}}" title=""><img src="{{ asset('') }}public/frontend/image/order/img-internet.png" alt="" /></a>
             </td>
           </tr>
           <tr>
             <td class="title"><img src="{{ asset('') }}public/frontend/image/order/title3-table-index.png" alt="" /></td>
             <td>
-              <a class="fl-left" href="" title=""><img src="{{ asset('') }}public/frontend/image/order/img-pdf.png" alt="" /></a>
-              <a class="fl-right" href="" title=""><img src="{{ asset('') }}public/frontend/image/order/img-internet.png" alt="" /></a>
+              <a class="fl-left" href="{{ asset('') }}public/frontend/files/order/new/order_new-cojp.pdf" title=""><img src="{{ asset('') }}public/frontend/image/order/img-pdf.png" alt="" /></a>
+              <a class="fl-right" href="{{route('frontend.order.new-com_regist')}}" title=""><img src="{{ asset('') }}public/frontend/image/order/img-internet.png" alt="" /></a>
             </td>
           </tr>
         </table>
@@ -54,22 +54,22 @@
           <tr>
             <td class="title"><img src="{{ asset('') }}public/frontend/image/order/title1-table-index.png" alt="" /></td>
             <td>
-              <a class="fl-left" href="" title=""><img src="{{ asset('') }}public/frontend/image/order/img-pdf.png" alt="" /></a>
-              <a class="fl-right" href="" title=""><img src="{{ asset('') }}public/frontend/image/order/img-internet.png" alt="" /></a>
+              <a class="fl-left" href="{{ asset('') }}public/frontend/files/order/move/order_move-cojp.pdf" title=""><img src="{{ asset('') }}public/frontend/image/order/img-pdf.png" alt="" /></a>
+              <a class="fl-right" href="{{route('frontend.order.move_cojp.index')}}" title=""><img src="{{ asset('') }}public/frontend/image/order/img-internet.png" alt="" /></a>
             </td>
           </tr>
           <tr>
             <td class="title"><img src="{{ asset('') }}public/frontend/image/order/title2-table-index.png" alt="" /></td>
             <td>
-              <a class="fl-left" href="" title=""><img src="{{ asset('') }}public/frontend/image/order/img-pdf.png" alt="" /></a>
-              <a class="fl-right" href="" title=""><img src="{{ asset('') }}public/frontend/image/order/img-internet.png" alt="" /></a>
+              <a class="fl-left" href="{{ asset('') }}public/frontend/files/order/move/order_move-cojp.pdf" title=""><img src="{{ asset('') }}public/frontend/image/order/img-pdf.png" alt="" /></a>
+              <a class="fl-right" href="{{route('frontend.order.move_jp.index')}}" title=""><img src="{{ asset('') }}public/frontend/image/order/img-internet.png" alt="" /></a>
             </td>
           </tr>
           <tr>
             <td class="title"><img src="{{ asset('') }}public/frontend/image/order/title3-table-index.png" alt="" /></td>
             <td>
-              <a class="fl-left" href="" title=""><img src="{{ asset('') }}public/frontend/image/order/img-pdf.png" alt="" /></a>
-              <a class="fl-right" href="" title=""><img src="{{ asset('') }}public/frontend/image/order/img-internet.png" alt="" /></a>
+              <a class="fl-left" href="{{ asset('') }}public/frontend/files/order/move/order_move-cojp.pdf" title=""><img src="{{ asset('') }}public/frontend/image/order/img-pdf.png" alt="" /></a>
+              <a class="fl-right" href="{{route('frontend.order.move_com.index')}}" title=""><img src="{{ asset('') }}public/frontend/image/order/img-internet.png" alt="" /></a>
             </td>
           </tr>
         </table>

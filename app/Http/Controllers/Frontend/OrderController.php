@@ -25,9 +25,9 @@ class OrderController extends FrontendController
 	}
 
 	public function postNewCojp() {
+        echo "<pre>";print_r(Input::all());die;
 		$clsOrder 				= new OrderModel();
-		$inputs   				= Input::all(); 
-		$validator      		= Validator::make($inputs, $clsOrder->Rules(), $clsOrder->Messages());
+		$validator      		= Validator::make(Input::all(), $clsOrder->Rules(), $clsOrder->Messages());
 		if ($validator->fails()) {
             return redirect()->route('frontend.order.new_cojp_regist')->withErrors($validator)->withInput();
         }
@@ -50,6 +50,11 @@ class OrderController extends FrontendController
         $dataInput['organization_en'] 					= Input::get('organization_en');
         $dataInput['postal_code'] 						= Input::get('postal_code');
         $dataInput['address_jp'] 						= Input::get('address_jp');
+
+        $dataInput['year']                              = Input::get('year');
+        $dataInput['month']                             = Input::get('month');
+        $dataInput['day']                               = Input::get('day');
+
         $dataInput['address_en'] 						= Input::get('address_en');
         $dataInput['regist_date'] 						= Input::get('regist_date');
         $dataInput['regist_land_address'] 				= Input::get('regist_land_address');
@@ -66,6 +71,10 @@ class OrderController extends FrontendController
         $dataInput['domain_fax'] 						= Input::get('domain_fax');
         $dataInput['domain_email'] 						= Input::get('domain_email');
         $dataInput['dns_server'] 						= Input::get('dns_server');
+
+        if(!empty(Input::get('dns_server')) == 1)  $dataInput['dns_server_text1'] = Input::get('dns_server_text1');
+        if(!empty(Input::get('dns_server')) == 2)  $dataInput['dns_server_text2'] = Input::get('dns_server_text2');
+
         $dataInput['policy_organization_name'] 			= Input::get('policy_organization_name');
         $dataInput['receive_mail_addrs'] 				= Input::get('receive_mail_addrs');
         $dataInput['policy_contract_info'] 				= Input::get('policy_contract_info');
@@ -139,14 +148,47 @@ class OrderController extends FrontendController
 	}
 
 	public function postNewJp() {
-		
+
+		$clsOrder                 = new OrderModel();
+        $validator              = Validator::make(Input::all(), $clsOrder->RuleNewJp(), $clsOrder->MsgNewJp());
+        if ($validator->fails()) {
+            return redirect()->route('frontend.order.new_cojp_regist')->withErrors($validator)->withInput();
+        }
+
+        Session::put('new_jp', Input::all());
+        return redirect()->route('frontend.order.new_jp_confirm');
 	}
 
 	public function getNewJpCnf() {
-		return view('frontend.order.new_jp_confirm');
+        $data['new_jp'] = (Object) Session::get('new_jp');
+		return view('frontend.order.new_jp_confirm', $data);
 	}
 
 	public function getNewJpSent() {
+        if(!Session::has('new_jp')) return redirect()->route('frontend.order.new_jp_regist');
+        $data                   = array();
+        $new_jp                 = Session::get('new_jp');
+
+        Mail::send('frontend.order.email.new_jp_mail_manage_side', ['new_jp'=>$new_jp], function($message) use ($new_jp) {
+            $email_to   = MAIL_TO_ADDRESS_MANAGER;
+            $email_from = MAIL_FROM_ADDRESS;
+            $email_subject = SUBJECT_NEW_JP_MANAGER;
+            $message->to($email_to, 'Kurumi');
+            $message->subject($email_subject);
+            $message->from($email_from);
+        });
+
+        Mail::send('frontend.order.email.new_jp_mail_user_side', ['new_jp'=>$new_jp], function($message) use ($new_jp) {
+            // $email_to   = $new_jp['dns_email_addrs'];
+            $email_to   = MAIL_TO_ADDRESS_MANAGER;
+            $email_from = MAIL_FROM_ADDRESS;
+            $email_subject = SUBJECT_NEW_JP_USER;
+            $message->to($email_to, 'Kurumi');
+            $message->subject($email_subject);
+            $message->from($email_from);
+        });
+
+        if(Session::has('new_jp')) Session::forget('new_jp');
 		return view('frontend.order.new_jp_sent');
 	}
 

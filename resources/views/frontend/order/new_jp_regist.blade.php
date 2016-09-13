@@ -7,7 +7,7 @@
   <div class="container">
   	<h1 class="title-content"><img src="{{ asset('') }}public/frontend/image/order/title-new-jp.png" alt="" /></h1>
     <div class="content">
-    {!! Form::open(array('route' => ['frontend.order.new-jp_regist', 'method' => 'post', 'enctype'=>'multipart/form-data', 'accept-charset'=>'utf-8'])) !!}
+    {!! Form::open(array('route' => ['frontend.order.new_jp_regist', 'method' => 'post', 'enctype'=>'multipart/form-data', 'accept-charset'=>'utf-8'])) !!}
       <div class="text-message">※ は必須項目です。</div>
       <h3>お申込みサーバー情報</h3>
       <table class="form-input">
