@@ -187,19 +187,59 @@ class OrderController extends FrontendController
 	}
 
 	public function postMoveCoJp() {
-		
+		$clsOrder 				= new OrderModel();
+
+		$input = Input::all();
+
+		$validator  = Validator::make($input, $clsOrder->rMoveCoJp(), $clsOrder->mMoveCoJp());
+        if ($validator->fails()) {
+            return redirect()->route('frontend.order.move_cojp.index')->withErrors($validator)->withInput();
+        }
+
+        Session::put('confirmData', Input::all());
+
+        return redirect()->route('frontend.order.move_cojp.confirm');
 	}
 
 	public function getMoveCoJpCnf() {
-		//return view('frontend.order.move_cojp.confirm');
+		if ( !Session::has('confirmData') ) {
+			return redirect()->route('frontend.order.move_cojp.index');
+		}
+
+		$confirmData = Session::get('confirmData');
+		$data['confirmData'] 	= $confirmData;
+
+		return view('frontend.order.move-cojp_confirm', $data);
 	}
 
 	public function getMoveCoJpSent() {
-		//return view('frontend.order.new_cojp_sent');
+		if ( !Session::has('confirmData') ) {
+			return redirect()->route('frontend.order.move_cojp.index');
+		}
+
+		$data = Session::get('confirmData');
+
+		// for user
+		Mail::send('frontend.order.email.move_cojp_user', array('data' => $data), function($message) use ($data){
+            $message->from(MAIL_FROM_ADDRESS, MAIL_FROM_NAME);
+            $message->to($data['person_email'])->subject(SUBJECT_MOVE_COJP_USER);
+        });
+        // for manager
+        Mail::send('frontend.order.email.move_cojp_manage', array('data' => $data), function($message) use ($data){
+            $message->from(MAIL_FROM_ADDRESS, MAIL_FROM_NAME);
+            $message->to(MAIL_TO_ADDRESS_MANAGER)->subject(SUBJECT_MOVE_COJP_MANAGER);
+        });
+
+		Session::forget('confirmData');
+		Session::forget('back');
+
+		return view('frontend.order.move_cojp_sent');
 	}
 
 	public function getMoveCoJpBack() {
-		//return view('frontend.order.new_cojp_sent');
+		Session::put('back', 1);
+
+		return redirect()->route('frontend.order.move_cojp.index');
 	}
 	//end order/move-cojp
 

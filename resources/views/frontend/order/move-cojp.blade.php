@@ -67,7 +67,6 @@
               @endif
             </div>
             <div>
-              <input type="radio" name="app_service_start_date" value="2" /> 希望あり
               @if ( isset($back['app_service_start_date']) && $back['app_service_start_date'] == 2 )
               <input type="radio" name="app_service_start_date" value="2" checked="" /> 希望あり希望なし（お申込みの翌営業日より2～3営業日目にサービス開始） 
               @elseif ( old('app_service_start_date') == 2 )
@@ -76,6 +75,7 @@
               <input type="radio" name="app_service_start_date" value="2" /> 希望あり
               @endif
             </div>
+            @if ($errors->first('app_service_start_date'))<span class="error-input">{!! $errors->first('app_service_start_date') !!}</span>@endif
           </td>
         </tr>
         
@@ -210,6 +210,7 @@
               <option value="10">10</option>
               @endif
             </select> 世代
+            @if ($errors->first('app_generation'))<span class="error-input">{!! $errors->first('app_generation') !!}</span>@endif
           </td>
         </tr>
 
@@ -248,7 +249,7 @@
               @elseif ( old('app_plesk') == 1 )
               <option value="1" selected="">Plesk Web Pro Editionへグレードアップ</option>
               @else
-              <option value="1">1</option>
+              <option value="1">Plesk Web Pro Editionへグレードアップ</option>
               @endif
             </select>
           </td>
@@ -265,7 +266,7 @@
               @elseif ( old('app_waf') == 1 )
               <option value="1" selected="">WAF追加</option>
               @else
-              <option value="1">1</option>
+              <option value="1">WAF追加</option>
               @endif
             </select>
           </td>
@@ -483,7 +484,7 @@
               <div class="input-radio">
                 @if ( isset($back['ssl_email_address']) && $back['ssl_email_address'] == 2 )
                 <input name="ssl_email_address" type="radio" value="2" checked="">
-                @elseif ( old('type_message') == 2 )
+                @elseif ( old('ssl_email_address') == 2 )
                 <input name="ssl_email_address" type="radio" value="2" checked="">
                 @else
                 <input name="ssl_email_address" type="radio" value="2">
@@ -497,7 +498,7 @@
               <div class="input-radio">
                 @if ( isset($back['ssl_email_address']) && $back['ssl_email_address'] == 3 )
                 <input name="ssl_email_address" type="radio" value="3" checked="">
-                @elseif ( old('type_message') == 3 )
+                @elseif ( old('ssl_email_address') == 3 )
                 <input name="ssl_email_address" type="radio" value="3" checked="">
                 @else
                 <input name="ssl_email_address" type="radio" value="3">
@@ -511,7 +512,7 @@
               <div class="input-radio">
                 @if ( isset($back['ssl_email_address']) && $back['ssl_email_address'] == 4 )
                 <input name="ssl_email_address" type="radio" value="4" checked="">
-                @elseif ( old('type_message') == 4 )
+                @elseif ( old('ssl_email_address') == 4 )
                 <input name="ssl_email_address" type="radio" value="4" checked="">
                 @else
                 <input name="ssl_email_address" type="radio" value="4">
@@ -525,7 +526,7 @@
               <div class="input-radio">
                 @if ( isset($back['ssl_email_address']) && $back['ssl_email_address'] == 5 )
                 <input name="ssl_email_address" type="radio" value="5" checked="">
-                @elseif ( old('type_message') == 5 )
+                @elseif ( old('ssl_email_address') == 5 )
                 <input name="ssl_email_address" type="radio" value="5" checked="">
                 @else
                 <input name="ssl_email_address" type="radio" value="5">
@@ -539,7 +540,7 @@
               <div class="input-radio">
                 @if ( isset($back['ssl_email_address']) && $back['ssl_email_address'] == 6 )
                 <input name="ssl_email_address" type="radio" value="6" checked="">
-                @elseif ( old('type_message') == 6 )
+                @elseif ( old('ssl_email_address') == 6 )
                 <input name="ssl_email_address" type="radio" value="6" checked="">
                 @else
                 <input name="ssl_email_address" type="radio" value="6">
