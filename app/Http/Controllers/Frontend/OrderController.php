@@ -229,6 +229,7 @@ $dataInput 										= array();
 		return view('frontend.order.new-com_sent');
 	}
 
+
 	//order/move-cojp
 	public function getMoveCoJp() {
 		$data = array();
@@ -300,6 +301,79 @@ $dataInput 										= array();
 	}
 	//end order/move-cojp
 
+
+	//order/move-com
+	public function getMoveCom() {
+		$data = array();
+
+		if ( !Session::has('back') ) {
+			Session::forget('confirmData');
+		} else {
+			$data['back'] = Session::get('confirmData');
+		}
+		Session::forget('back');
+
+		return view('frontend.order.move_com', $data);
+	}
+
+	public function postMoveCom() {
+		$clsOrder 				= new OrderModel();
+
+		$input = Input::all();
+
+		$validator  = Validator::make($input, $clsOrder->rMoveCom(), $clsOrder->mMoveCom());
+        if ($validator->fails()) {
+            return redirect()->route('frontend.order.move_com.index')->withErrors($validator)->withInput();
+        }
+
+        Session::put('confirmData', Input::all());
+
+        return redirect()->route('frontend.order.move_com.confirm');
+	}
+
+	public function getMoveComCnf() {
+		if ( !Session::has('confirmData') ) {
+			return redirect()->route('frontend.order.move_com.index');
+		}
+
+		$confirmData = Session::get('confirmData');
+		$data['confirmData'] 	= $confirmData;
+
+		return view('frontend.order.move_com_confirm', $data);
+	}
+
+	public function getMoveComSent() {
+		if ( !Session::has('confirmData') ) {
+			return redirect()->route('frontend.order.move_com.index');
+		}
+
+		$data = Session::get('confirmData');
+
+		// for user
+		Mail::send('frontend.order.email.move_cojp_user', array('data' => $data), function($message) use ($data){
+            $message->from(MAIL_FROM_ADDRESS, MAIL_FROM_NAME);
+            $message->to($data['person_email'])->subject(SUBJECT_MOVE_COM_USER);
+        });
+        // for manager
+        Mail::send('frontend.order.email.move_cojp_manage', array('data' => $data), function($message) use ($data){
+            $message->from(MAIL_FROM_ADDRESS, MAIL_FROM_NAME);
+            $message->to(MAIL_TO_ADDRESS_MANAGER)->subject(SUBJECT_MOVE_COM_MANAGER);
+        });
+
+		Session::forget('confirmData');
+		Session::forget('back');
+
+		return view('frontend.order.move_com_sent');
+	}
+
+	public function getMoveComBack() {
+		Session::put('back', 1);
+
+		return redirect()->route('frontend.order.move_com.index');
+	}
+	// end move com
+
+
 	//order/move-jp
 	public function getMoveJp() {
 		//return view('frontend.order.new_cojp_regist');
@@ -316,22 +390,6 @@ $dataInput 										= array();
 	public function getMoveJpSent() {
 		//return view('frontend.order.new_cojp_sent');
 	}
-
-	//order/move-com
-	public function getMoveCom() {
-		//return view('frontend.order.new_cojp_regist');
-	}
-
-	public function postMoveCom() {
-		
-	}
-
-	public function getMoveComCnf() {
-		//return view('frontend.order.move_cojp.confirm');
-	}
-
-	public function getMoveComSent() {
-		//return view('frontend.order.new_cojp_sent');
-	}	
+	// end move-jp	
 
 }

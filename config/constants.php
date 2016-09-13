@@ -10,6 +10,8 @@ return [
 		'SUBJECT_CONTACT_MANAGER'				=> 'contact email',
 		'SUBJECT_MOVE_COJP_USER'				=> 'Subject move co.jp user email',
 		'SUBJECT_MOVE_COJP_MANAGER'				=> 'Subject move co.jp manage email',
+		'SUBJECT_MOVE_COM_USER'					=> 'Subject move com user email',
+		'SUBJECT_MOVE_COM_MANAGER'				=> 'Subject move com manage email',
 	),
 ];
 

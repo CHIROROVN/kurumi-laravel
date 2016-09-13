@@ -49,6 +49,13 @@ Route::group(['prefix' => '', 'namespace' => 'Frontend'], function () {
     Route::get('/order/move-cojp/send', ['as' => 'frontend.order.move_cojp.send', 'uses' => 'OrderController@getMoveCoJpSent']);
     Route::get('/order/move-cojp/back', ['as' => 'frontend.order.move_cojp.back', 'uses' => 'OrderController@getMoveCoJpBack']);
 
+    // move com
+    Route::get('/order/move-com', ['as' => 'frontend.order.move_com.index', 'uses' => 'OrderController@getMoveCom']);
+    Route::post('/order/move-com', ['as' => 'frontend.order.move_com.index', 'uses' => 'OrderController@postMoveCom']);
+    Route::get('/order/move-com/confirm', ['as' => 'frontend.order.move_com.confirm', 'uses' => 'OrderController@getMoveComCnf']);
+    Route::get('/order/move-com/send', ['as' => 'frontend.order.move_com.send', 'uses' => 'OrderController@getMoveComSent']);
+    Route::get('/order/move-com/back', ['as' => 'frontend.order.move_com.back', 'uses' => 'OrderController@getMoveComBack']);
+
 	//Plan
 	Route::get('plan', ['as' => 'frontend.plan.index', 'uses' => 'PlanController@index']);
 
