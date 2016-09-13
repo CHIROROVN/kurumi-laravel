@@ -157,7 +157,7 @@ class OrderController extends FrontendController
 
 	//order/new-com
 	public function getNewCom() {
-		//return view('frontend.order.new_cojp_regist');
+		return view('frontend.order.new-com_regist');
 	}
 
 	public function postNewCom() {
@@ -165,11 +165,11 @@ class OrderController extends FrontendController
 	}
 
 	public function getNewComCnf() {
-		//return view('frontend.order.move_cojp.confirm');
+		return view('frontend.order.new-com_confirm');
 	}
 
 	public function getNewComSent() {
-		//return view('frontend.order.new_cojp_sent');
+		return view('frontend.order.new-com_sent');
 	}
 
 	//order/move-cojp

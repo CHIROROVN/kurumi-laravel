@@ -36,6 +36,11 @@ Route::group(['prefix' => '', 'namespace' => 'Frontend'], function () {
     Route::post('order/new-jp', ['as' => 'frontend.order.new_jp_regist', 'uses' => 'OrderController@postNewJp']);
     Route::get('order/new-jp_confirm', ['as' => 'frontend.order.new_jp_confirm', 'uses' => 'OrderController@getNewJpCnf']);
     Route::get('order/new-jp_sent', ['as' => 'frontend.order.new_jp_sent', 'uses' => 'OrderController@getNewJpSent']);
+    //New COM
+    Route::get('order/new-com', ['as' => 'frontend.order.new-com_regist', 'uses' => 'OrderController@getNewCom']);
+    Route::post('order/new-com', ['as' => 'frontend.order.new-com_regist', 'uses' => 'OrderController@postNewCom']);
+    Route::get('order/new-jp_confirm', ['as' => 'frontend.order.new-com_confirm', 'uses' => 'OrderController@getNewComCnf']);
+    Route::get('order/new-jp_sent', ['as' => 'frontend.order.new-com_sent', 'uses' => 'OrderController@getNewComSent']);
 
     // move cojp
     Route::get('/order/move-cojp', ['as' => 'frontend.order.move_cojp.index', 'uses' => 'OrderController@getMoveCoJp']);

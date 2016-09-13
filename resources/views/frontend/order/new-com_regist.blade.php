@@ -1,11 +1,10 @@
-
 @extends('frontend.frontend')
 
 @section('content')
 <!--Content -->
 <section class="order-child clear" id="contact">
   <div class="container">
-  	<h1 class="title-content"><img src="../image/order/title-new-jp.png" alt="" /></h1>
+  	<h1 class="title-content"><img src="{{ asset('') }}public/frontend/image/order/title-new-com.png" alt="" /></h1>
     <div class="content">
       <div class="text-message">※ は必須項目です。</div>
       <h3>お申込みサーバー情報</h3>
@@ -27,7 +26,7 @@
           <td class="title"><span>※ </span>サービス開始希望日</td>
           <td>
             <div>
-              <input type="radio" name="radio" checked/> 希望なし（お申込みの翌営業日より2～3営業日目にサービス開始） 
+              <input type="radio" name="radio" checked /> 希望なし（お申込みの翌営業日より2～3営業日目にサービス開始） 
             </div>
             <div>
               <input type="radio" name="radio" /> 希望あり
@@ -112,7 +111,7 @@
           <td><input type="text" name="textbox" /></td>
         </tr>
         <tr>
-          <td class="title"><span>※ </span>登録担当者名</td>
+          <td class="title"><span>※ </span>所有者名</td>
           <td><input type="text" name="textbox" /></td>
         </tr>
         <tr>
@@ -132,6 +131,10 @@
           <td><input type="text" name="textbox" /></td>
         </tr>
         <tr>
+          <td class="title"><span>※ </span>電話番号</td>
+          <td><input type="text" name="textbox" /></td>
+        </tr>
+        <tr>
           <td class="title">FAX</td>
           <td><input type="text" name="textbox" /></td>
         </tr>
@@ -140,27 +143,13 @@
           <td><input type="text" name="textbox" /></td>
         </tr>
         <tr>
-          <td class="title"><span>※ </span>公開連絡先</td>
-          <td>
-            <div>
-              <input type="radio" name="radio" /> チロロネットを窓口として公開する 
-            </div>
-            <div>
-              <input type="radio" name="radio" /> 上記ドメイン登録者を窓口として公開する
-            </div>
-            <div>
-              <input type="radio" name="radio" /> ご契約ご担当者を窓口として公開する
-            </div>
-          </td>
-        </tr>
-        <tr>
           <td class="title"><span>※ </span>DNSサーバー</td>
           <td>
             <div>
-              <input type="radio" name="radio" /> チロロネットのDNSを利用する
+              <input type="radio" name="radio" /> チロロネットのDNSを利用する 
             </div>
             <div>
-              <input type="radio" name="radio" /> 以下のDNSサーバーを利用する。
+              <input type="radio" name="radio" /> 以下のDNSサーバーを利用する。 
             </div>
           </td>
         </tr>
