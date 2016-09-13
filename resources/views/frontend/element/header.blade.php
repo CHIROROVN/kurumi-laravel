@@ -44,7 +44,7 @@
       <p>※SSLは本サービス利用開始後のご提供となります。</p>
       <ul>
         <li class="btn btn-pink">
-          <a href="order/index.html" title="">お申し込みはこちら</a>
+          <a href="{{route('frontend.order.index')}}" title="">お申し込みはこちら</a>
         </li>
         <li class="btn btn-orange">
           <a href="{{ route('frontend.contact.index') }}" title="">お問い合わせはこちら</a>
