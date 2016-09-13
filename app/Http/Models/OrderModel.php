@@ -46,7 +46,7 @@ class OrderModel
         );
     }
 
-    public function RuleNuewCom()
+    public function RuleNewCom()
     {
         return array(
             'plan'                                    => 'required',

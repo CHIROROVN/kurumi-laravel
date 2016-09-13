@@ -32,8 +32,7 @@ class OrderController extends FrontendController
             return redirect()->route('frontend.order.new_cojp_regist')->withErrors($validator)->withInput();
         }
 
-$dataInput 										= array();
-
+		$dataInput 										= array();
         $dataInput['plan'] 								= Input::get('plan');
         $dataInput['domain'] 							= Input::get('domain');
         $dataInput['service'] 							= Input::get('service');
@@ -159,7 +158,7 @@ $dataInput 										= array();
 	public function postNewCom() {
 		$clsOrder 				= new OrderModel();
 		$inputs   				= Input::all(); 
-		$validator      		= Validator::make($inputs, $clsOrder->RuleNuewCom(), $clsOrder->MsgNewCom());
+		$validator      		= Validator::make($inputs, $clsOrder->RuleNewCom(), $clsOrder->MsgNewCom());
 		if ($validator->fails()) {
             return redirect()->route('frontend.order.new_cojp_regist')->withErrors($validator)->withInput();
         }
@@ -187,8 +186,9 @@ $dataInput 										= array();
         $dataInput['dns_addrs_en']						= Input::get('dns_addrs_en');
         $dataInput['dns_phone']							= Input::get('dns_phone');
         $dataInput['dns_fax']							= Input::get('dns_fax');
+		$dataInput['dns_server']						= Input::get('dns_server');
         $dataInput['dns_email_addrs']					= Input::get('dns_email_addrs');
-
+		$dataInput['option']							= Input::get('option');
         $dataInput['common_name'] 						= Input::get('common_name');
         $dataInput['organization_name_jp'] 				= Input::get('organization_name_jp');
         $dataInput['organization_name_en'] 				= Input::get('organization_name_en');
@@ -196,6 +196,11 @@ $dataInput 										= array();
         $dataInput['prefectures_en'] 					= Input::get('prefectures_en');
         $dataInput['name_person_charge'] 				= Input::get('name_person_charge');
         $dataInput['phone_number'] 						= Input::get('phone_number');
+        $dataInput['receive_mail_addrs'] 				= Input::get('receive_mail_addrs');
+        $dataInput['policy_contract_info'] 				= Input::get('policy_contract_info');
+        $dataInput['policy_organization_name'] 			= Input::get('policy_organization_name');
+
+
         $dataInput['ssl_fax'] 							= Input::get('ssl_fax');
         $dataInput['policy_organization__name'] 		= Input::get('policy_organization__name');
         $dataInput['policy_representative_name'] 		= Input::get('policy_representative_name');
@@ -220,12 +225,36 @@ $dataInput 										= array();
 	}
 
 	public function getNewComCnf() {
+		if(!Session::has('new_com')) return redirect()->route('frontend.order.new-com_regist');
 		$data 					= array();
 		$data['new_com'] 		= (Object) Session::get('new_com');
 		return view('frontend.order.new-com_confirm', $data);
 	}
 
 	public function getNewComSent() {
+		if(!Session::has('new_com')) return redirect()->route('frontend.order.new_com_regist');
+        $data 					= array();
+		$new_com				= Session::get('new_com');
+
+        Mail::send('frontend.order.email.new-com_mail_manage_side', ['new_com'=>$new_com], function($message) use ($new_com) {
+        $email_to   		= env('ADMIN_EMAIL_TO', null);
+        $email_from 		= env('ADMIN_EMAIL_FROM', null);
+        $email_subject 		= '【くるみサーバー】ドメイン新規（属性JPドメイン）お申込みがありました。';
+        $message->to($email_to, null);
+        $message->subject($email_subject);
+        $message->from($email_from, null);
+        });
+
+        Mail::send('frontend.order.email.new-com_mail_user_side', ['new_com'=>$new_com], function($message) use ($new_com) {
+        $email_to   		= env('ADMIN_EMAIL_TO', null);
+        $email_from 		= env('ADMIN_EMAIL_FROM', null);
+        $email_subject 		= '【くるみサーバー】ドメイン新規（属性JPドメイン）お申込みがありました。';
+        $message->to($email_to, null);
+        $message->subject($email_subject);
+        $message->from($email_from, null);
+        });
+
+		if(Session::has('new_com')) Session::forget('new_com');
 		return view('frontend.order.new-com_sent');
 	}
 
