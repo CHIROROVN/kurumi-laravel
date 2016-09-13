@@ -51,6 +51,9 @@ Route::group(['prefix' => '', 'namespace' => 'Frontend'], function () {
 
 	//Plan
 	Route::get('plan', ['as' => 'frontend.plan.index', 'uses' => 'PlanController@index']);
+
+    //Feature
+    Route::get('feature', ['as' => 'frontend.feature.index', 'uses' => 'FeatureController@index']);
 });
 
 

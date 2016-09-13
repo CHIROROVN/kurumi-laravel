@@ -45,6 +45,7 @@ class ContactController extends FrontendController
 			'content' 		=> 'required',
 			'agree' 		=> 'required',
 		);
+		
 		$messages = array(
 			'name.required' 			=> trans('validation.error_contact_name_required'),
 			'name_kana.regex' 			=> trans('validation.error_contact_name_kana_regex'),

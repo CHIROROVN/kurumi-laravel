@@ -32,76 +32,72 @@ class OrderController extends FrontendController
             return redirect()->route('frontend.order.new_cojp_regist')->withErrors($validator)->withInput();
         }
 
-         $dataInput = array();
+$dataInput 										= array();
 
-        $dataInput['plan'] 			= Input::get('plan');
-        $dataInput['domain'] 		= Input::get('domain');
-        $dataInput['service'] 		= Input::get('service');
+        $dataInput['plan'] 								= Input::get('plan');
+        $dataInput['domain'] 							= Input::get('domain');
+        $dataInput['service'] 							= Input::get('service');
 
-        $dataInput['paymonth'] 		= Input::get('paymonth');
-        $dataInput['payinvoice'] 	= Input::get('payinvoice');
-        $dataInput['generation'] 	= Input::get('generation');
-        $dataInput['individual'] 	= Input::get('individual');
-        $dataInput['plesk'] 		= Input::get('plesk');
-        $dataInput['waf'] 			= Input::get('waf');
-        $dataInput['domain_person_regist'] 			= Input::get('domain_person_regist');        
-        $dataInput['option'] 			= Input::get('option');
-        $dataInput['organization_jp'] 	= Input::get('organization_jp');
-        $dataInput['furigana'] 		= Input::get('furigana');
-        $dataInput['organization_en'] 		= Input::get('organization_en');
-        $dataInput['postal_code'] 		= Input::get('postal_code');
-        $dataInput['address_jp'] 		= Input::get('address_jp');
-        $dataInput['address_en'] 		= Input::get('address_en');
-        $dataInput['regist_date'] 		= Input::get('regist_date');
-        $dataInput['regist_land_address'] 		= Input::get('regist_land_address');
-        $dataInput['representative_jp'] 		= Input::get('representative_jp');
-        $dataInput['representative_en'] 		= Input::get('representative_en');
-        $dataInput['representative_title'] 		= Input::get('representative_title');
-        $dataInput['domain_person_jp'] 		= Input::get('domain_person_jp');
-        $dataInput['domain_person_en'] 		= Input::get('domain_person_en');
-        $dataInput['company_name'] 		= Input::get('company_name');
-        $dataInput['your_address'] 		= Input::get('your_address');
-        $dataInput['department'] 		= Input::get('department');
-        $dataInput['domain_title'] 		= Input::get('domain_title');
-        $dataInput['domain_phone'] 		= Input::get('domain_phone');
-        $dataInput['domain_fax'] 		= Input::get('domain_fax');
-        $dataInput['domain_email'] 		= Input::get('domain_email');
-        $dataInput['dns_server'] 		= Input::get('dns_server');
-        $dataInput['policy_organization_name'] 		= Input::get('policy_organization_name');
-
-        $dataInput['receive_mail_addrs'] 		= Input::get('receive_mail_addrs');
-
-        $dataInput['policy_contract_info'] 		= Input::get('policy_contract_info');
-
-        $dataInput['common_name'] 		= Input::get('common_name');
-        $dataInput['organization_name_jp'] 		= Input::get('organization_name_jp');
-        $dataInput['organization_name_en'] 		= Input::get('organization_name_en');
-        $dataInput['prefectures_jp'] 		= Input::get('prefectures_jp');
-        $dataInput['prefectures_en'] 		= Input::get('prefectures_en');
-        $dataInput['name_person_charge'] 		= Input::get('name_person_charge');
-        $dataInput['phone_number'] 		= Input::get('phone_number');
-        $dataInput['ssl_fax'] 		= Input::get('ssl_fax');
+        $dataInput['paymonth'] 							= Input::get('paymonth');
+        $dataInput['payinvoice'] 						= Input::get('payinvoice');
+        $dataInput['generation'] 						= Input::get('generation');
+        $dataInput['individual'] 						= Input::get('individual');
+        $dataInput['plesk'] 							= Input::get('plesk');
+        $dataInput['waf'] 								= Input::get('waf');
+        $dataInput['domain_person_regist'] 				= Input::get('domain_person_regist');        
+        $dataInput['option'] 							= Input::get('option');
+        $dataInput['organization_jp'] 					= Input::get('organization_jp');
+        $dataInput['furigana'] 							= Input::get('furigana');
+        $dataInput['organization_en'] 					= Input::get('organization_en');
+        $dataInput['postal_code'] 						= Input::get('postal_code');
+        $dataInput['address_jp'] 						= Input::get('address_jp');
+        $dataInput['address_en'] 						= Input::get('address_en');
+        $dataInput['regist_date'] 						= Input::get('regist_date');
+        $dataInput['regist_land_address'] 				= Input::get('regist_land_address');
+        $dataInput['representative_jp'] 				= Input::get('representative_jp');
+        $dataInput['representative_en'] 				= Input::get('representative_en');
+        $dataInput['representative_title'] 				= Input::get('representative_title');
+        $dataInput['domain_person_jp'] 					= Input::get('domain_person_jp');
+        $dataInput['domain_person_en'] 					= Input::get('domain_person_en');
+        $dataInput['company_name'] 						= Input::get('company_name');
+        $dataInput['your_address'] 						= Input::get('your_address');
+        $dataInput['department'] 						= Input::get('department');
+        $dataInput['domain_title'] 						= Input::get('domain_title');
+        $dataInput['domain_phone'] 						= Input::get('domain_phone');
+        $dataInput['domain_fax'] 						= Input::get('domain_fax');
+        $dataInput['domain_email'] 						= Input::get('domain_email');
+        $dataInput['dns_server'] 						= Input::get('dns_server');
+        $dataInput['policy_organization_name'] 			= Input::get('policy_organization_name');
+        $dataInput['receive_mail_addrs'] 				= Input::get('receive_mail_addrs');
+        $dataInput['policy_contract_info'] 				= Input::get('policy_contract_info');
+        $dataInput['common_name'] 						= Input::get('common_name');
+        $dataInput['organization_name_jp'] 				= Input::get('organization_name_jp');
+        $dataInput['organization_name_en'] 				= Input::get('organization_name_en');
+        $dataInput['prefectures_jp'] 					= Input::get('prefectures_jp');
+        $dataInput['prefectures_en'] 					= Input::get('prefectures_en');
+        $dataInput['name_person_charge'] 				= Input::get('name_person_charge');
+        $dataInput['phone_number'] 						= Input::get('phone_number');
+        $dataInput['ssl_fax'] 							= Input::get('ssl_fax');
         $dataInput['policy_organization__name'] 		= Input::get('policy_organization__name');
         $dataInput['policy_representative_name'] 		= Input::get('policy_representative_name');
-        $dataInput['policy_title'] 		= Input::get('policy_title');
-        $dataInput['policy_name'] 		= Input::get('policy_name');
-        $dataInput['location'] 		= Input::get('location');
-        $dataInput['person_charge_info'] 		= Input::get('person_charge_info');
+        $dataInput['policy_title'] 						= Input::get('policy_title');
+        $dataInput['policy_name'] 						= Input::get('policy_name');
+        $dataInput['location'] 							= Input::get('location');
+        $dataInput['person_charge_info'] 				= Input::get('person_charge_info');
 
-        $dataInput['person_charge_organization_name'] 		= Input::get('person_charge_organization_name');
-        $dataInput['person_charge_name'] 		= Input::get('person_charge_name');
-        $dataInput['person_charge_dept_name'] 		= Input::get('person_charge_dept_name');
-        $dataInput['person_charge_title'] 		= Input::get('person_charge_title');
-        $dataInput['person_charge_zipcode'] 		= Input::get('person_charge_zipcode');
-        $dataInput['person_charge_your_addrs'] 		= Input::get('person_charge_your_addrs');
-        $dataInput['person_charge_tel'] 		= Input::get('person_charge_tel');
-        $dataInput['person_charge_fax'] 		= Input::get('person_charge_fax');
+        $dataInput['person_charge_organization_name'] 	= Input::get('person_charge_organization_name');
+        $dataInput['person_charge_name'] 				= Input::get('person_charge_name');
+        $dataInput['person_charge_dept_name'] 			= Input::get('person_charge_dept_name');
+        $dataInput['person_charge_title'] 				= Input::get('person_charge_title');
+        $dataInput['person_charge_zipcode'] 			= Input::get('person_charge_zipcode');
+        $dataInput['person_charge_your_addrs'] 			= Input::get('person_charge_your_addrs');
+        $dataInput['person_charge_tel'] 				= Input::get('person_charge_tel');
+        $dataInput['person_charge_fax'] 				= Input::get('person_charge_fax');
         $dataInput['person_charge_email_addrs'] 		= Input::get('person_charge_email_addrs');
-        $dataInput['remark'] 		= Input::get('remark');
+        $dataInput['remark'] 							= Input::get('remark');
 
         Session::put('new_cojp', $dataInput);
         return redirect()->route('frontend.order.new_cojp_confirm');
-
 
 	}
 
@@ -161,11 +157,72 @@ class OrderController extends FrontendController
 	}
 
 	public function postNewCom() {
+		$clsOrder 				= new OrderModel();
+		$inputs   				= Input::all(); 
+		$validator      		= Validator::make($inputs, $clsOrder->RuleNuewCom(), $clsOrder->MsgNewCom());
+		if ($validator->fails()) {
+            return redirect()->route('frontend.order.new_cojp_regist')->withErrors($validator)->withInput();
+        }
+
+        $dataInput 										= array();
+
+        $dataInput['plan'] 								= Input::get('plan');
+        $dataInput['domain'] 							= Input::get('domain');
+        $dataInput['service'] 							= Input::get('service');
+
+        $dataInput['paymonth'] 							= Input::get('paymonth');
+        $dataInput['payinvoice'] 						= Input::get('payinvoice');
+        $dataInput['generation'] 						= Input::get('generation');
+        $dataInput['individual'] 						= Input::get('individual');
+        $dataInput['plesk'] 							= Input::get('plesk');
+        $dataInput['waf'] 								= Input::get('waf');
+
+        //DNS
+        $dataInput['dns_organization_jp']				= Input::get('dns_organization_jp');
+        $dataInput['dns_organization_en']				= Input::get('dns_organization_en');
+        $dataInput['dns_owner_name']					= Input::get('dns_owner_name');
+        $dataInput['dns_dept_name']						= Input::get('dns_dept_name');
+        $dataInput['dns_title']							= Input::get('dns_title');
+        $dataInput['dns_addrs_jp']						= Input::get('dns_addrs_jp');
+        $dataInput['dns_addrs_en']						= Input::get('dns_addrs_en');
+        $dataInput['dns_phone']							= Input::get('dns_phone');
+        $dataInput['dns_fax']							= Input::get('dns_fax');
+        $dataInput['dns_email_addrs']					= Input::get('dns_email_addrs');
+
+        $dataInput['common_name'] 						= Input::get('common_name');
+        $dataInput['organization_name_jp'] 				= Input::get('organization_name_jp');
+        $dataInput['organization_name_en'] 				= Input::get('organization_name_en');
+        $dataInput['prefectures_jp'] 					= Input::get('prefectures_jp');
+        $dataInput['prefectures_en'] 					= Input::get('prefectures_en');
+        $dataInput['name_person_charge'] 				= Input::get('name_person_charge');
+        $dataInput['phone_number'] 						= Input::get('phone_number');
+        $dataInput['ssl_fax'] 							= Input::get('ssl_fax');
+        $dataInput['policy_organization__name'] 		= Input::get('policy_organization__name');
+        $dataInput['policy_representative_name'] 		= Input::get('policy_representative_name');
+        $dataInput['policy_title'] 						= Input::get('policy_title');
+        $dataInput['policy_name'] 						= Input::get('policy_name');
+        $dataInput['location'] 							= Input::get('location');
+        $dataInput['person_charge_info'] 				= Input::get('person_charge_info');
+        $dataInput['person_charge_organization_name'] 	= Input::get('person_charge_organization_name');
+        $dataInput['person_charge_name'] 				= Input::get('person_charge_name');
+        $dataInput['person_charge_dept_name'] 			= Input::get('person_charge_dept_name');
+        $dataInput['person_charge_title'] 				= Input::get('person_charge_title');
+        $dataInput['person_charge_zipcode'] 			= Input::get('person_charge_zipcode');
+        $dataInput['person_charge_your_addrs'] 			= Input::get('person_charge_your_addrs');
+        $dataInput['person_charge_tel'] 				= Input::get('person_charge_tel');
+        $dataInput['person_charge_fax'] 				= Input::get('person_charge_fax');
+        $dataInput['person_charge_email_addrs'] 		= Input::get('person_charge_email_addrs');
+        $dataInput['remark'] 							= Input::get('remark');
+
+        Session::put('new_com', $dataInput);
+        return redirect()->route('frontend.order.new-com_confirm');
 		
 	}
 
 	public function getNewComCnf() {
-		return view('frontend.order.new-com_confirm');
+		$data 					= array();
+		$data['new_com'] 		= (Object) Session::get('new_com');
+		return view('frontend.order.new-com_confirm', $data);
 	}
 
 	public function getNewComSent() {

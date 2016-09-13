@@ -241,10 +241,6 @@
   padding:20px 0;
 }
 
-#index .frame04 .box .content {
-  padding:0 60px;
-}
-
 #index .frame04 .box .content .part1 {
   margin:23px 0;
   text-align:left;
@@ -295,7 +291,7 @@
 #index .frame04 .box .content .part3 .text1 li {
   width:100%;
   line-height:20px;
-  background:url(../../image/top/icon-part3-frame04.png)no-repeat center left;
+  background:url(../../image/top/icon-part3-frame04.png)no-repeat top 5px left;
   text-align:left;
   padding-left:25px;
   margin-bottom:10px;
@@ -303,7 +299,7 @@
 
 #index .frame04 .box .content .part3 .text2 {
   background:#f5f3f3;
-  border:1px solid #aaa;
+  border:2px solid #aaa;
   width:720px;
   padding:15px 15px 10px 15px;
   margin:10px 0 20px 42px;
@@ -318,8 +314,9 @@
 
 #index .frame05 {
   width:100%;
-  margin:65px 0 65px 0;
+  padding:65px 0 65px 0;
   text-align:center;
+  background:#fdfdfb;
 }
 
 #index .frame05 h1 {
@@ -491,6 +488,12 @@
 
 .form-input .input-xs {
   width:100px!important;
+  margin-right:10px;
+}
+
+.form-input .input-smheight {
+  width:200px!important;
+  height:30px!important;
   margin-right:10px;
 }
 
@@ -727,6 +730,8 @@
 #plan .info2 td.col-title {
   width:377px;
   font-size:16px;
+  text-align:left;
+  padding:0px 15px;
 }
 
 #plan .info2 .col-yellow {
@@ -761,7 +766,182 @@
 /*------------------------------------------------------------------------------------------------
   feature
 --------------------------------------------------------------------------------------------------*/
-#feature 
+#feature .frame01 {
+ margin-bottom:100px;
+}
 
+#feature .frame01 .box {
+  width:100%;
+  background:#dbf8fd;
+  margin-bottom:50px;
+  padding:20px;
+  position:relative;
+  border-radius:20px;
+}
 
+#feature .frame01 .box .top {
+  position:absolute;
+  top:-15px;
+}
 
+#feature .frame01 .box .top li {
+  width:40px;
+  height:40px;
+  border:3px solid #1353a2;
+  border-left:none;
+  font-size:24px;
+  color:#1353a2;
+  font-weight:bold;
+  text-align:center;
+  line-height:36px;
+  float:left;
+  background:#fff;
+}
+
+#feature .frame01 .box .top li:first-child {
+  width:180px;
+  background:#1353a2;
+  color:#fff;
+}
+
+#feature .frame01 .box .text-title {
+  margin-top:20px;
+  margin-left:12px;
+}
+
+#feature .frame01 .box .text-bg-white {
+  background:#fff;
+  width:540px;
+  height:80px;
+  padding:10px;
+  margin:15px 10px;
+  color:#1353a2;
+  font-weight:bold;
+}
+
+#feature .frame01 .box .text-bg-white h4 {
+  font-size:20px;
+  font-weight:bold;
+}
+
+#feature .frame01 .box .text-small {
+  font-size:12px;
+  line-height:18px;
+  margin:10px 0px;
+}
+
+#feature .frame01 .box .text-bottom {
+  color:#434343;
+  line-height:20px;
+  margin-left:12px;
+  margin-bottom:10px;
+}
+
+#feature .frame01 .box .photo {
+  position:absolute;
+  bottom:0;
+  right:32px;
+}
+
+#feature .frame01 .box02 .photo {
+  right:10px;
+  bottom:30px;
+}
+
+#feature .frame01 .box03 .photo {
+  right:35px;
+  bottom:20px;
+}
+
+#feature .frame01 .box04 .photo {
+  right:55px;
+  bottom:0px;
+}
+
+#feature .frame01 .box03 .text-bottom,
+#feature .frame01 .box04 .text-bottom {
+  margin-top:15px;
+}
+
+#feature .frame02 {
+  width:100%;
+  padding:100px 0 80px 0;
+  background:#e4f4fd;
+}
+
+#feature .frame02 ul {
+  margin-top:45px;
+}
+
+#feature .frame02 ul li {
+  width:260px;
+  height:165px;
+  border-radius:10px;
+  margin-right:20px;
+  margin-bottom:25px;
+  padding:10px;
+  background:#fff;
+  float:left;
+}
+
+#feature .frame02 ul li:nth-child(3n+0) {
+  margin-right:0px;
+}
+
+#feature .frame02 ul li:nth-child(2n+0) {
+  background:#fdfecd;
+}
+
+#feature .frame02 h4 {
+  color:#1353a2;
+  font-size:23px;
+  font-weight:bold;
+  text-align:center;
+  line-height:30px;
+  margin-bottom:5px;
+}
+
+#feature .frame02 p {
+  line-height:20px;
+}
+
+#feature .frame02 li .bg-yellow {
+  background:#fdfecd;
+}
+
+#feature .frame02 .box02 {
+  border-radius:10px;
+  background:#fce2da;
+  width:100%;
+  padding:20px;
+}
+
+#feature .frame02 .box02 h3 {
+  margin-bottom:10px;
+}
+/*------------------------------------------------------------------------------------------------
+  faq
+--------------------------------------------------------------------------------------------------*/
+#faq {
+  width:100%;
+  background:#f4f3e1;
+  padding:60px 0px;
+}
+
+#faq h2 {
+  text-align:center;
+}
+
+#faq h3 {
+  margin-bottom:10px;
+}
+
+#faq .box {
+  margin-bottom:60px;
+}
+
+#faq .box p {
+  margin-top:20px;
+  color:#3e3e3e;
+  line-height:20px;
+}

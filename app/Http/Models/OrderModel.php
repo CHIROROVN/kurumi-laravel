@@ -26,7 +26,7 @@ class OrderModel
 		);
     }
 
-    public function rNuewJp()
+    public function RuleNewJp()
     {
         return array(
             'plan'                                    => 'required',
@@ -34,7 +34,27 @@ class OrderModel
         );
     }
 
-    public function mNuewJp()
+    public function MsgNewJp()
+    {
+        return array(
+            'plan.required'                         => trans('validation.error_plan_required'),
+            'domain.required'                       => trans('validation.error_domain_required'),
+            'paymonth.required'                     => trans('validation.error_paymonth_required'),
+            'payinvoice.required'                   => trans('validation.error_payinvoice_required'),
+            
+
+        );
+    }
+
+    public function RuleNuewCom()
+    {
+        return array(
+            'plan'                                    => 'required',
+            'domain'                                  => 'required',
+        );
+    }
+
+    public function MsgNewCom()
     {
         return array(
             'plan.required'                         => trans('validation.error_plan_required'),

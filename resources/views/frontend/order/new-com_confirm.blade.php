@@ -6,28 +6,28 @@
   <div class="container">
   	<h1 class="title-content"><img src="{{ asset('') }}public/frontend/image/order/title-new-com.png" alt="" /></h1>
     <div class="content">
-      <div class="text-message">※ は必須項目です。</div>
+      <div class="text-message">は必須項目です。</div>
       <h3>お申込みサーバー情報</h3>
       <table class="form-input">
         <tr>
-          <td class="title"><span>※ </span>お申込みプラン名</td>
+          <td class="title"><span></span>お申込みプラン名</td>
           <td>
-            test
+            {{$MsgNewJp->new_com}}
           </td>
         </tr>
         <tr>
-          <td class="title"><span>※ </span>ドメイン名</td>
+          <td class="title"><span></span>ドメイン名</td>
           <td>test</td>
         </tr>
         <tr>
-          <td class="title"><span>※ </span>サービス開始希望日</td>
+          <td class="title"><span></span>サービス開始希望日</td>
           <td>
             test
           </td>
         </tr>
         
         <tr>
-          <td class="title"><span>※ </span>お支払い方法</td>
+          <td class="title"><span></span>お支払い方法</td>
           <td>
           	test test
           </td>
@@ -37,7 +37,7 @@
           <td>test</td>
         </tr>
         <tr>
-          <td class="title"><span>※ </span>外部バックアップ世代数追加<br />（1世代あたり）</td>
+          <td class="title"><span></span>外部バックアップ世代数追加<br />（1世代あたり）</td>
           <td>
           	test 世代
           </td>
@@ -66,19 +66,19 @@
       <h3>ドメイン登録情報</h3>
        <table class="form-input">
         <tr>
-          <td class="title"><span>※ </span>組織名（日本語）</td>
+          <td class="title"><span></span>組織名（日本語）</td>
           <td>test</td>
         </tr>
         <tr>
-          <td class="title"><span>※ </span>組織名（英語）</td>
+          <td class="title"><span></span>組織名（英語）</td>
           <td>test</td>
         </tr>
         <tr>
-          <td class="title"><span>※ </span>所有者名</td>
+          <td class="title"><span></span>所有者名</td>
           <td>test</td>
         </tr>
         <tr>
-          <td class="title"><span>※ </span>部署名</td>
+          <td class="title"><span></span>部署名</td>
           <td>test</td>
         </tr>
         <tr>
@@ -86,15 +86,15 @@
           <td>test</td>
         </tr>
         <tr>
-          <td class="title"><span>※ </span>ご住所（日本語）</td>
+          <td class="title"><span></span>ご住所（日本語）</td>
           <td>test</td>
         </tr>
         <tr>
-          <td class="title"><span>※ </span>ご住所（英語）</td>
+          <td class="title"><span></span>ご住所（英語）</td>
           <td>test</td>
         </tr>
         <tr>
-          <td class="title"><span>※ </span>電話番号</td>
+          <td class="title"><span></span>電話番号</td>
           <td>test</td>
         </tr>
         <tr>
@@ -102,11 +102,11 @@
           <td>test</td>
         </tr>
         <tr>
-          <td class="title"><span>※ </span>メールアドレス</td>
+          <td class="title"><span></span>メールアドレス</td>
           <td>test</td>
         </tr>
         <tr>
-          <td class="title"><span>※ </span>DNSサーバー</td>
+          <td class="title"><span></span>DNSサーバー</td>
           <td>
             test
           </td>
@@ -116,41 +116,41 @@
       <h3>SSL登録情報</h3>
        <table class="form-input">
         <tr>
-          <td class="title"><span>※ </span>コモンネーム</td>
+          <td class="title"><span></span>コモンネーム</td>
           <td>test</td>
         </tr>
         <tr>
-          <td class="title"><span>※ </span>組織名（日本語）</td>
+          <td class="title"><span></span>組織名（日本語）</td>
           <td>
           	 test
           </td>
         </tr>
         <tr>
-          <td class="title"><span>※ </span>組織名（英語）</td>
+          <td class="title"><span></span>組織名（英語）</td>
           <td>
           	 test
           </td>
         </tr>
         <tr>
-          <td class="title"><span>※ </span>都道府県・市区郡名（日本語）</td>
+          <td class="title"><span></span>都道府県・市区郡名（日本語）</td>
           <td>
           	 test
           </td>
         </tr>
         <tr>
-          <td class="title"><span>※ </span>都道府県・市区郡名（英語）</td>
+          <td class="title"><span></span>都道府県・市区郡名（英語）</td>
           <td>
           	 test
           </td>
         </tr>
         <tr>
-          <td class="title"><span>※ </span>担当者名</td>
+          <td class="title"><span></span>担当者名</td>
           <td>
           	 test
           </td>
         </tr>
         <tr>
-          <td class="title"><span>※ </span>電話番号</td>
+          <td class="title"><span></span>電話番号</td>
           <td>
           	 test
           </td>
@@ -173,17 +173,17 @@
        <table class="form-input">
       
         <tr>
-          <td class="title"><span>※ </span>ご契約者情報</td>
+          <td class="title"><span></span>ご契約者情報</td>
           <td>
             test
           </td>
         </tr>
         <tr>
-          <td class="title"><span>※ </span>組織名</td>
+          <td class="title"><span></span>組織名</td>
           <td>test</td>
         </tr>
         <tr>
-          <td class="title"><span>※ </span>代表者名</td>
+          <td class="title"><span></span>代表者名</td>
           <td>
           	 test
           </td>
@@ -195,7 +195,7 @@
           </td>
         </tr>
         <tr>
-          <td class="title"><span>※ </span>氏名</td>
+          <td class="title"><span></span>氏名</td>
           <td>
           	 test
           </td>
@@ -211,23 +211,23 @@
       <h3>ご担当者について</h3>
        <table class="form-input">
           <tr>
-          <td class="title"><span>※ </span>ご担当者情報</td>
+          <td class="title"><span></span>ご担当者情報</td>
           <td>
             test
           </td>
         </tr>
         <tr>
-          <td class="title"><span>※ </span>組織名</td>
+          <td class="title"><span></span>組織名</td>
           <td>test</td>
         </tr>
         <tr>
-          <td class="title"><span>※ </span>氏名</td>
+          <td class="title"><span></span>氏名</td>
           <td>
           	 test
           </td>
         </tr>
         <tr>
-          <td class="title"><span>※ </span>部署名</td>
+          <td class="title"><span></span>部署名</td>
           <td>
           	 test
           </td>
@@ -239,14 +239,14 @@
           </td>
         </tr>
         <tr>
-          <td class="title"><span>※ </span>ご住所</td>
+          <td class="title"><span></span>ご住所</td>
           <td>
           	 〒 test <br />
              住所 test
           </td>
         </tr>
         <tr>
-          <td class="title"><span>※ </span>連絡先TEL</td>
+          <td class="title"><span></span>連絡先TEL</td>
           <td>
           	 test
           </td>
@@ -258,7 +258,7 @@
           </td>
         </tr>
         <tr>
-          <td class="title"><span>※ </span>連絡先メールアドレス</td>
+          <td class="title"><span></span>連絡先メールアドレス</td>
           <td>
           	 test
           </td>
