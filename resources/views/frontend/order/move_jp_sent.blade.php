@@ -7,7 +7,7 @@
   <!--Frame01 -->
     <div class="frame01">
       <div class="container">
-        <h1 class="title-content"><img src="{{ asset('') }}public/frontend/image/order/title-move-cojp.png" alt="" /></h1>
+        <h1 class="title-content"><img src="{{ asset('') }}public/frontend/image/order/title-move-jp.png" alt="" /></h1>
         <div class="info">
           <div class="box-text1">
             <img src="{{ asset('') }}public/frontend/image/contact/text1-frame01.png" alt="" />
@@ -23,7 +23,7 @@
   <!--Frame02 -->
     <div class="frame02">
       <div class="container">
-        <h1 class="title-content"><img src="{{ asset('') }}public/frontend/image/order/title-move-cojp.png" alt="" /></h1>
+        <h1 class="title-content"><img src="{{ asset('') }}public/frontend/image/order/title-move-jp.png" alt="" /></h1>
 
         <!-- form -->
         <div class="content">

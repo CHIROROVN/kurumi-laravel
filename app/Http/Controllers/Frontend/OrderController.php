@@ -270,7 +270,7 @@ class OrderController extends FrontendController
 		}
 		Session::forget('back');
 
-		return view('frontend.order.move-cojp', $data);
+		return view('frontend.order.move_cojp', $data);
 	}
 
 	public function postMoveCoJp() {
@@ -296,7 +296,7 @@ class OrderController extends FrontendController
 		$confirmData = Session::get('confirmData');
 		$data['confirmData'] 	= $confirmData;
 
-		return view('frontend.order.move-cojp_confirm', $data);
+		return view('frontend.order.move_cojp_confirm', $data);
 	}
 
 	public function getMoveCoJpSent() {
@@ -405,19 +405,72 @@ class OrderController extends FrontendController
 
 	//order/move-jp
 	public function getMoveJp() {
-		//return view('frontend.order.new_cojp_regist');
+		$data = array();
+
+		if ( !Session::has('back') ) {
+			Session::forget('confirmData');
+		} else {
+			$data['back'] = Session::get('confirmData');
+		}
+		Session::forget('back');
+
+		return view('frontend.order.move_jp', $data);
 	}
 
 	public function postMoveJp() {
-		
+		$clsOrder 				= new OrderModel();
+
+		$input = Input::all();
+
+		$validator  = Validator::make($input, $clsOrder->rMoveJp(), $clsOrder->mMoveJp());
+        if ($validator->fails()) {
+            return redirect()->route('frontend.order.move_jp.index')->withErrors($validator)->withInput();
+        }
+
+        Session::put('confirmData', Input::all());
+
+        return redirect()->route('frontend.order.move_jp.confirm');
 	}
 
 	public function getMoveJpCnf() {
-		//return view('frontend.order.move_cojp.confirm');
+		if ( !Session::has('confirmData') ) {
+			return redirect()->route('frontend.order.move_jp.index');
+		}
+
+		$confirmData = Session::get('confirmData');
+		$data['confirmData'] 	= $confirmData;
+
+		return view('frontend.order.move_jp_confirm', $data);
 	}
 
 	public function getMoveJpSent() {
-		//return view('frontend.order.new_cojp_sent');
+		if ( !Session::has('confirmData') ) {
+			return redirect()->route('frontend.order.move_jp.index');
+		}
+
+		$data = Session::get('confirmData');
+
+		// for user
+		Mail::send('frontend.order.email.move_jp_user', array('data' => $data), function($message) use ($data){
+            $message->from(MAIL_FROM_ADDRESS, MAIL_FROM_NAME);
+            $message->to($data['person_email'])->subject(SUBJECT_MOVE_JP_USER);
+        });
+        // for manager
+        Mail::send('frontend.order.email.move_jp_manage', array('data' => $data), function($message) use ($data){
+            $message->from(MAIL_FROM_ADDRESS, MAIL_FROM_NAME);
+            $message->to(MAIL_TO_ADDRESS_MANAGER)->subject(SUBJECT_MOVE_JP_MANAGER);
+        });
+
+		Session::forget('confirmData');
+		Session::forget('back');
+
+		return view('frontend.order.move_jp_sent');
+	}
+
+	public function getMoveJpBack() {
+		Session::put('back', 1);
+
+		return redirect()->route('frontend.order.move_jp.index');
 	}
 	// end move-jp	
 
