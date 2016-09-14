@@ -18,12 +18,12 @@
                 <option value="おてがるプラン" @if(old('plan') == 'おてがるプラン') selected="" @endif >おてがるプラン</option>
                 <option value="しっかりプラン" @if(old('plan') == 'しっかりプラン') selected="" @endif >しっかりプラン</option>
               </select>
-          <div class="text-message">@if ($errors->first('plan')) ※{!! $errors->first('plan') !!} @endif</div></td>
+              @if ($errors->first('plan'))<span class="error-input">{!! $errors->first('plan') !!}</span>@endif</td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>ドメイン名</td>
-          <td><input type="text" name="domain" />
-          <div class="text-message">@if ($errors->first('domain')) ※{!! $errors->first('domain') !!} @endif</div></td>
+          <td><input type="text" name="domain" value="{{old('domain')}}" />
+          @if ($errors->first('domain'))<span class="error-input">{!! $errors->first('domain') !!}</span>@endif</td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>サービス開始希望日</td>

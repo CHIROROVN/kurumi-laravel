@@ -4,7 +4,7 @@
 <!--Content -->
 <section class="order-child clear" id="contact">
   <div class="container">
-  	<h1 class="title-content"><img src="../image/order/title-new-cojp.png" alt="" /></h1>
+  	<h1 class="title-content"><img src="{{ asset('') }}public/frontend/image/order/title-new-cojp.png" alt="" /></h1>
     <div class="content">
       <h3>お申込みサーバー情報</h3>
       <table class="form-input">
@@ -21,15 +21,14 @@
         <tr>
           <td class="title"><span> </span>サービス開始希望日</td>
           <td>
-            {{$new_cojp->service}}
+            {{$new_cojp->service}} <br >  年{{$new_cojp->year}} 月{{$new_cojp->month}} 日{{$new_cojp->day}}
           </td>
         </tr>
         
         <tr>
           <td class="title"><span> </span>お支払い方法</td>
           <td>
-          	{{$new_cojp->paymonth}} <br />
-           {{$new_cojp->payinvoice}}
+          	{{$new_cojp->paymonth}}  {{$new_cojp->payinvoice}}
           </td>
         </tr>
         <tr>
@@ -60,8 +59,7 @@
             {{$new_cojp->waf}}
           </td>
         </tr>
-      </table>
- 	  
+      </table> 	  
       
       <h3>ドメイン登録情報</h3>
        <table class="form-input">

@@ -33,7 +33,7 @@
             <td class="title"><img src="{{ asset('') }}public/frontend/image/order/title3-table-index.png" alt="" /></td>
             <td>
               <a class="fl-left" href="{{ asset('') }}public/frontend/files/order/new/order_new-cojp.pdf" title=""><img src="{{ asset('') }}public/frontend/image/order/img-pdf.png" alt="" /></a>
-              <a class="fl-right" href="{{route('frontend.order.new-com_regist')}}" title=""><img src="{{ asset('') }}public/frontend/image/order/img-internet.png" alt="" /></a>
+              <a class="fl-right" href="{{route('frontend.order.new_com_regist')}}" title=""><img src="{{ asset('') }}public/frontend/image/order/img-internet.png" alt="" /></a>
             </td>
           </tr>
         </table>

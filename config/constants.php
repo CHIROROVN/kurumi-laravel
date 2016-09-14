@@ -4,7 +4,7 @@
 return [
 	'DEFINE' => array(
 		'MAIL_FROM_ADDRESS' 					=> 'chiroviet@gmail.com',
-		'MAIL_FROM_NAME' 						=> 'Chiroro',
+		'MAIL_FROM_NAME' 						=> 'CHIRORO NET',
 		'MAIL_TO_ADDRESS_MANAGER'				=> 'phuongnd360@gmail.com',
 
 		//MOVE
@@ -20,8 +20,8 @@ return [
 		//New
 		'SUBJECT_NEW_COJP_USER'					=> 'Subject move co.jp user email',
 		'SUBJECT_NEW_COJP_MANAGER'				=> 'Subject move co.jp manage email',
-		'SUBJECT_NEW_COM_USER'					=> 'Subject move com user email',
-		'SUBJECT_NEW_COM_MANAGER'				=> 'Subject move com manage email',
+		'SUBJECT_NEW_COM_USER'					=> '【くるみサーバー】ドメイン新規（属性JPドメイン）お申込みがありました。',
+		'SUBJECT_NEW_COM_MANAGER'				=> '【くるみサーバー】ドメイン新規（属性JPドメイン）お申込みがありました。',
 		'SUBJECT_NEW_JP_USER'					=> '【くるみサーバー】ドメイン新規（属性JPドメイン）お申込みがありました。',
 		'SUBJECT_NEW_JP_MANAGER'				=> '【くるみサーバー】ドメイン新規（属性JPドメイン）お申込みがありました。',
 

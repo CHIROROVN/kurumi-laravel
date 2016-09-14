@@ -6,22 +6,116 @@ class OrderModel
 
     protected $table = false;
 
-    public function Rules()
+    public function RuleNewCoJp()
     {
     	return array(
     		'plan'                                    => 'required',
             'domain'                                  => 'required',
+            'service'                                 => 'required',
+            'paymonth'                                => 'required',
+            'payinvoice'                              => 'required',
+            'generation'                              => 'required',
+            'individual'                              => 'required',
+            'organization_jp'                         => 'required',
+            'furigana'                                => 'required|regex:/^[\x{3041}-\x{3096}]+$/u',
+            'organization_en'                         => 'required',
+            'postal_code'                             => 'required',
+            'address_jp'                              => 'required',
+            'address_en'                              => 'required',
+            'regist_date'                             => 'required',
+            'regist_land_address'                     => 'required',
+            'representative_jp'                       => 'required',
+            'representative_en'                       => 'required',
+            'representative_title'                    => 'required',
+            'domain_person_regist'                    => 'required',
+            'domain_person_jp'                        => 'required',
+            'domain_person_en'                        => 'required',
+            'company_name'                            => 'required',
+            'your_address'                            => 'required',
+            'department'                              => 'required',
+            'domain_title'                            => 'required',
+            'domain_phone'                            => 'required',
+            'domain_email'                            => 'required',
+            'dns_server'                              => 'required',
+            'common_name'                             => 'required',
+            'organization_name_jp'                    => 'required',
+            'organization_name_en'                    => 'required',
+            'prefectures_jp'                          => 'required',
+            'prefectures_en'                          => 'required',
+            'name_person_charge'                      => 'required',
+            'phone_number'                            => 'required',
+            'policy_contract_info'                    => 'required',
+            'policy_organization_name'                => 'required',
+            'policy_representative_name'              => 'required',
+            'policy_name'                             => 'required',
+            'person_charge_info'                      => 'required',
+            'person_charge_organization_name'         => 'required',
+            'person_charge_name'                      => 'required',
+            'person_charge_dept_name'                 => 'required',
+            'person_charge_title'                     => 'required',
+            'person_charge_zipcode'                   => 'required',
+            'person_charge_tel'                       => 'required',
+            'person_charge_email_addrs'               => 'required',
+
 		);
     }
 
-    public function Messages()
+    public function MsgNewCoJp()
     {
     	return array(
-            'plan.required'                         => trans('validation.error_plan_required'),
-            'domain.required'                       => trans('validation.error_domain_required'),
-            'paymonth.required'                     => trans('validation.error_paymonth_required'),
-            'payinvoice.required'                   => trans('validation.error_payinvoice_required'),
-            
+            'plan.required'                                 => trans('validation.error_plan_required'),
+            'domain.required'                               => trans('validation.error_domain_required'),
+            'service.required'                              => trans('validation.error_service_required'),
+            'paymonth.required'                             => trans('validation.error_paymonth_required'),
+            'payinvoice.required'                           => trans('validation.error_payinvoice_required'),
+            'generation.required'                           => trans('validation.error_generation_required'),
+            'individual.required'                           => trans('validation.error_individual_required'),
+            'organization_jp.required'                      => trans('validation.error_organization_jp_required'),
+            'furigana.required'                             => trans('validation.error_furigana_required'),
+            'furigana.regex'                                => trans('validation.error_furigana_regex'),
+            'organization_en.required'                      => trans('validation.error_organization_en_required'),
+            'postal_code.required'                          => trans('validation.error_postal_code_required'),
+
+            'address_jp.required'                           => trans('validation.error_address_jp_required'),
+            'address_en.required'                           => trans('validation.error_address_en_required'),            
+            'regist_date.required'                          => trans('validation.error_regist_date_required'),
+            'regist_land_address.required'                  => trans('validation.error_regist_land_address_required'),
+
+            'representative_jp.required'                    => trans('validation.error_representative_jp_required'),
+            'representative_en.required'                    => trans('validation.error_representative_enpostal_code_required'),
+            'representative_title.required'                 => trans('validation.error_representative_title_required'),
+            'domain_person_regist.required'                 => trans('validation.error_domain_person_regist_required'),
+            'domain_person_jp.required'                     => trans('validation.error_domain_person_jp_required'),
+
+            'domain_person_en.required'                     => trans('validation.error_domain_person_en_required'),
+            'company_name.required'                         => trans('validation.error_company_name_required'),
+            'your_address.required'                         => trans('validation.error_your_address_required'),
+            'department.required'                           => trans('validation.error_department_required'),
+            'domain_title.required'                         => trans('validation.error_domain_title_required'),
+            'domain_phone.required'                         => trans('validation.error_domain_phone_required'),
+            'domain_email.required'                         => trans('validation.error_domain_email_required'),
+            'dns_server.required'                           => trans('validation.error_dns_server_required'),
+            'common_name.required'                          => trans('validation.error_common_name_required'),
+            'organization_name_jp.required'                 => trans('validation.error_organization_name_jp_required'),
+            'organization_name_en.required'                 => trans('validation.error_organization_name_en_required'),
+            'prefectures_jp.required'                       => trans('validation.error_prefectures_jp_required'),
+            'prefectures_en.required'                       => trans('validation.error_prefectures_en_required'),
+            '.phone_number'                                 => trans('validation.error_phone_number_required'),
+            'policy_contract_info.required'                 => trans('validation.error_policy_contract_info_rquired'),
+            'policy_organization_name.required'             => trans('validation.error_policy_organization_name_required'),
+            'policy_representative_name.required'           => trans('validation.error_ppolicy_representative_namerefectures_jp_required'),
+            'policy_name.required'                          => trans('validation.error_policy_name_required'),
+            'person_charge_info.required'                   => trans('validation.error_person_charge_info_required'),
+            'person_charge_organization_name.required'      => trans('validation.error_person_charge_organization_name_required'),
+            'person_charge_name.required'                   => trans('validation.error_person_charge_name_required'),
+            'person_charge_dept_name.required'              => trans('validation.error_person_charge_dept_name_required'),
+            'person_charge_title.required'                  => trans('validation.error_person_charge_title_required'),
+            'person_charge_zipcode.required'                => trans('validation.error_person_charge_zipcode_required'),
+            'person_charge_tel.required'                    => trans('validation.error_person_charge_tel_required'),
+            'person_charge_email_addrs.required'            => trans('validation.error_person_charge_email_addrs_required'),
+
+
+
 
 		);
     }
@@ -31,6 +125,7 @@ class OrderModel
         return array(
             'plan'                                    => 'required',
             'domain'                                  => 'required',
+            'service'                                 => 'required',
         );
     }
 

@@ -8,10 +8,74 @@ return [
     | Model Order
     |--------------------------------------------------------------------------
     */
+    //new-cojp
     'error_plan_required'                                       => 'Please choose plan',
     'error_domain_required'                                     => 'Please enter domain',
-    'error_paymonth_required'                                   => 'Please choose paymonth',
+    'error_service_required'                                    => 'Please choose service',
+    'error_paymonth_required'                                   => 'Please enter paymonth',
     'error_payinvoice_required'                                 => 'Please enter payinvoice',
+    'error_generation_required'                                 => 'Please enter generation',
+    'error_individual_required'                                 => 'Please enter individual',
+    'error_organization_jp_required'                            => 'Please enter organization_jp',
+    'error_furigana_regex'                                      => 'Please enter hiragana charcters',
+    'error_furigana_required'                                   => 'Please enter furigana name',
+
+    'error_organization_en_required'                            => 'Please enter organization_en',
+    'error_postal_code_required'                                => 'Please enter postal_code',
+    'error_address_jp_required'                                 => 'Please enter address_jp',
+    'error_address_en_required'                                 => 'Please enter address_en',
+
+    'error_regist_date_required'                                => 'Please enter regist_date',
+    'error_regist_land_address_required'                        => 'Please enter regist_land_address',
+    'error_representative_jp_required'                          => 'Please enter representative_jp',
+    'error_representative_enpostal_code_required'               => 'Please enter representative_enpostal_code',
+
+    'error_representative_title_required'                       => 'Please enter representative_title',
+    'error_domain_person_regist_required'                       => 'Please enter domain_person_regist',
+    'error_domain_person_jp_required'                           => 'Please enter domain_person_jp',
+    'error_domain_person_en_required'                           => 'Please enter domain_person_en',
+
+    'error_company_name_required'                               => 'Please enter company_name',
+    'error_your_address_required'                               => 'Please enter your_address',
+    'error_department_required'                                 => 'Please enter department',
+
+    'error_domain_title_required'                               => 'Please enter title',
+    'error_domain_phone_required'                               => 'Please enter phone',
+    'error_domain_email_required'                               => 'Please enter email',
+
+    'error_dns_server_required'                                 => 'Please enter dns_server',
+    'error_common_name_required'                                => 'Please enter common_name',
+    'error_organization_name_jp_required'                       => 'Please enter organization_name_jp',
+    'error_organization_name_en_required'                       => 'Please enter organization_name_en',
+
+    'error_prefectures_jp_required'                             => 'Please enter prefectures_jp',
+    'error_prefectures_en_required'                             => 'Please enter prefectures_en',
+    'error_policy_organization_name_required'                   => 'Please enter policy_organization_name',
+    'error_ppolicy_representative_namerefectures_jp_required'   => 'Please enter ppolicy_representative_namerefectures_jp',
+    'error_policy_name_required'                                => 'Please enter policy_name',
+
+    'error_person_charge_info_required'                         => 'Please enter person_charge_info',
+    'error_person_charge_organization_name_required'            => 'Please person_charge_organization_name',
+    'error_person_charge_name_required'                         => 'Please enter person_charge_name_required',
+    'error_person_charge_dept_name_required'                    => 'Please enter person_charge_dept_name',
+    'error_person_charge_title_required'                        => 'Please enter person_charge_title',
+    'error_person_charge_zipcode_required'                      => 'Please enter person_charge_zipcode',
+    'error_person_charge_tel_required'                          => 'Please enter person_charge_tel',
+    'error_person_charge_email_addrs_required'                  => 'Please center person_charge_email_address',
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     // move-cojp
     'error_movecojp_app_plan_name_required'                     => 'お申込みプラン名を入力してください。',

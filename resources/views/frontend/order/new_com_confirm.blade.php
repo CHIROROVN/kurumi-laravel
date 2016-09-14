@@ -271,7 +271,7 @@
         </tr>
       </table>
       <div class="box-submit">
-        <input value="送信" type="button" class="bt-submit" onclick="location.href='{{route('frontend.order.new-com_sent')}}'"/>
+        <input value="送信" type="button" class="bt-submit" onclick="location.href='{{route('frontend.order.new_com_sent')}}'"/>
       <div>
     </div>
   </div>

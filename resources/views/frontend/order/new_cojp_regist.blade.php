@@ -18,24 +18,22 @@
                 <option value="おてがるプラン" @if(old('plan') == 'おてがるプラン') selected="" @endif >おてがるプラン</option>
                 <option value="しっかりプラン" @if(old('plan') == 'しっかりプラン') selected="" @endif >しっかりプラン</option>
               </select>
-          <div class="text-message">@if ($errors->first('plan')) ※{!! $errors->first('plan') !!} @endif</div></td>
+           @if ($errors->first('plan'))<span class="error-input">{!! $errors->first('plan') !!}</span>@endif </td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>ドメイン名</td>
           <td><input type="text" name="domain" />
-          <div class="text-message">@if ($errors->first('domain')) ※{!! $errors->first('domain') !!} @endif</div></td>
+          @if ($errors->first('domain'))<span class="error-input">{!! $errors->first('domain') !!}</span>@endif</td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>サービス開始希望日</td>
           <td>
             <div>
-              <input type="radio" name="service" value="1" @if(old('service') == 1) checked="" @endif /> 希望なし（お申込みの翌営業日より2～3営業日目にサービス開始） 
+              <input type="radio" name="service" value="希望なし" @if(old('service') == '希望なし') checked="" @endif /> 希望なし（お申込みの翌営業日より2～3営業日目にサービス開始） 
             </div>
             <div>
-              <input type="radio" name="service" value="2" @if(old('service') == 2) checked="" @endif /> 希望あり
+              <input type="radio" name="service" value="希望あり" @if(old('service') == '希望あり') checked="" @endif /> 希望あり
             </div>
-            <div class="text-message">@if ($errors->first('service')) ※{!! $errors->first('service') !!} @endif</div>
-
             <div style="margin-top:5px;">
               <select name="year" id="year" class="input-xs">
                 <option value="2015" @if(old('year') == '2015') selected="" @endif >2015</option>
@@ -43,7 +41,6 @@
                 <option value="2017" @if(old('year') == '2017') selected="" @endif >2017</option>
                 <option value="2018" @if(old('year') == '2018') selected="" @endif >2018</option>
                 <option value="2019" @if(old('year') == '2019') selected="" @endif >2019</option>
-
               </select> 年
               <select name="month" id="month" class="input-xs">
                 <option value="1">1</option>
@@ -59,7 +56,7 @@
                 <option value="11">11</option>
                 <option value="12">12</option>
               </select> 月
-              <select name="days" class="input-xs">
+              <select name="day" class="input-xs">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -93,7 +90,7 @@
                 <option value="31">31</option>
               </select> 日
             </div>
-
+            @if ($errors->first('service'))<span class="error-input">{!! $errors->first('service') !!}</span>@endif
           </td>
         </tr>
 
@@ -109,6 +106,8 @@
         	  <option value="請求書払い（振込手数料はお客様負担）" @if(old('payinvoice') == '請求書払い（振込手数料はお客様負担）') selected="" @endif >請求書払い（振込手数料はお客様負担）</option>
               <option value="クレジットカード払い" @if(old('payinvoice') == 'クレジットカード払い') selected="" @endif >クレジットカード払い</option>
             </select>
+            @if ($errors->first('paymonth'))<span class="error-input">{!! $errors->first('paymonth') !!}</span>@endif
+            @if ($errors->first('payinvoice'))<span class="error-input">{!! $errors->first('payinvoice') !!}</span>@endif
           </td>
         </tr>
         <tr>
@@ -131,6 +130,7 @@
                 <option value="9" @if(old('generation') == 9) selected="" @endif>9</option>
                 <option value="10" @if(old('generation') == 10) selected="" @endif>10</option>
             </select> 世代
+            @if ($errors->first('generation'))<span class="error-input">{!! $errors->first('generation') !!}</span>@endif
           </td>
         </tr>
         <tr>
@@ -159,7 +159,7 @@
               <option value="" @if(old('waf') == '') selected="" @endif >不要</option>
               <option value="WAF追加" @if(old('waf') == 'WAF追加') selected="" @endif>WAF追加</option>
           	</select>
-          	<div class="text-message">@if ($errors->first('waf')) ※{!! $errors->first('waf') !!} @endif</div>
+            @if ($errors->first('waf'))<span class="error-input">{!! $errors->first('waf') !!}</span>@endif
           </td>
         </tr>
       </table>
@@ -169,17 +169,17 @@
         <tr>
           <td class="title"><span>※ </span>組織名（日本語）</td>
           <td><input type="text" name="organization_jp" value="{{old('organization_jp')}}" />
-          <div class="text-message">@if ($errors->first('waf')) ※{!! $errors->first('waf') !!} @endif</div></td>
+          @if ($errors->first('organization_jp'))<span class="error-input">{!! $errors->first('organization_jp') !!}</span>@endif</td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>組織名（ふりがな）</td>
           <td><input type="text" name="furigana" value="{{old('furigana')}}" />
-          <div class="text-message">@if ($errors->first('furigana')) ※{!! $errors->first('furigana') !!} @endif</div></td>
+          @if ($errors->first('furigana'))<span class="error-input">{!! $errors->first('furigana') !!}</span>@endif</td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>組織名（英語）</td>
           <td><input type="text" name="organization_en" value="{{old('organization_en')}}" />
-          <div class="text-message">@if ($errors->first('organization_en')) ※{!! $errors->first('organization_en') !!} @endif</div></td>
+          @if ($errors->first('organization_en'))<span class="error-input">{!! $errors->first('organization_en') !!}</span>@endif</td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>郵便番号</td>
@@ -189,38 +189,39 @@
         <tr>
           <td class="title"><span>※ </span>ご住所（日本語）</td>
           <td><input type="text" name="address_jp" value="{{old('address_jp')}}" />
-          <div class="text-message">@if ($errors->first('address_jp')) ※{!! $errors->first('address_jp') !!} @endif</div></td>
+          @if ($errors->first('address_jp'))<span class="error-input">{!! $errors->first('address_jp') !!}</span>@endif</td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>ご住所（英語）</td>
           <td><input type="text" name="address_en" value="{{old('address_en')}}" />
-          <div class="text-message">@if ($errors->first('address_en')) ※{!! $errors->first('address_en') !!} @endif</div>
+          @if ($errors->first('address_en'))<span class="error-input">{!! $errors->first('address_en') !!}</span>@endif
           </td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>登記年月日</td>
           <td><input type="text" name="regist_date" value="{{old('regist_date')}}" />
-          <div class="text-message">@if ($errors->first('regist_date')) ※{!! $errors->first('regist_date') !!} @endif</div></td>
+           @if ($errors->first('regist_date'))<span class="error-input">{!! $errors->first('regist_date') !!}</span>@endif
+          </td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>登記地住所</td>
           <td><input type="text" name="regist_land_address" value="{{old('regist_land_address')}}" />
-          <div class="text-message">@if ($errors->first('regist_land_address')) ※{!! $errors->first('regist_land_address') !!} @endif</div></td>
+          @if ($errors->first('regist_land_address'))<span class="error-input">{!! $errors->first('regist_land_address') !!}</span>@endif</td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>代表者名（日本語）</td>
           <td><input type="text" name="representative_jp" value="{{old('representative_jp')}}" />
-			<div class="text-message">@if ($errors->first('representative_jp')) ※{!! $errors->first('representative_jp') !!} @endif </div>
+          @if ($errors->first('representative_jp'))<span class="error-input">{!! $errors->first('representative_jp') !!}</span>@endif
           </td>
         </tr><tr>
           <td class="title"><span>※ </span>代表者名（英語） </td>
           <td><input type="text" name="representative_en" value="{{old('representative_en')}}" />
-          <div class="text-message">@if ($errors->first('representative_en')) ※{!! $errors->first('representative_en') !!} @endif </div></td>
+          @if ($errors->first('representative_en'))<span class="error-input">{!! $errors->first('representative_en') !!}</span>@endif</td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>代表者方肩書</td>
           <td><input type="text" name="representative_title" value="{{old('representative_title')}}" />
-          <div class="text-message">@if ($errors->first('representative_title')) ※{!! $errors->first('representative_title') !!} @endif </div></td>
+          @if ($errors->first('representative_title'))<span class="error-input">{!! $errors->first('representative_title') !!}</span>@endif</td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>ドメイン登録担当者</td>
@@ -231,74 +232,74 @@
             <div>
               <input type="radio" name="domain_person_regist" value="以下に入力" @if(old('domain_person_regist') == '以下に入力') checked="" @endif /> 以下に入力 
             </div>
+            @if ($errors->first('domain_person_regist'))<span class="error-input">{!! $errors->first('domain_person_regist') !!}</span>@endif
           </td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>ドメイン登録担当者氏名（日本語）</td>
           <td><input type="text" name="domain_person_jp" value="{{old('domain_person_jp')}}" />
-          <div class="text-message">@if ($errors->first('domain_person_jp')) ※{!! $errors->first('domain_person_jp') !!} @endif </div></td>
+          @if ($errors->first('domain_person_jp'))<span class="error-input">{!! $errors->first('domain_person_jp') !!}</span>@endif</td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>ドメイン登録担当者氏名（英語）</td>
           <td><input type="text" name="domain_person_en" value="{{old('domain_person_en')}}" />
-          <div class="text-message">@if ($errors->first('domain_person_en')) ※{!! $errors->first('domain_person_en') !!} @endif </div></td>
+          @if ($errors->first('domain_person_en'))<span class="error-input">{!! $errors->first('domain_person_en') !!}</span>@endif</td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>会社名・組織名</td>
           <td><input type="text" name="company_name" value="{{old('company_name')}}" />
-          <div class="text-message">@if ($errors->first('company_name')) ※{!! $errors->first('company_name') !!} @endif </div></td>
+          @if ($errors->first('company_name'))<span class="error-input">{!! $errors->first('company_name') !!}</span>@endif</td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>ご住所</td>
           <td><input type="text" name="your_address" value="{{old('your_address')}}" />
-          <div class="text-message">@if ($errors->first('your_address')) ※{!! $errors->first('your_address') !!} @endif </div></td>
+          @if ($errors->first('your_address'))<span class="error-input">{!! $errors->first('your_address') !!}</span>@endif</td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>部署名</td>
           <td><input type="text" name="department" value="{{old('department')}}" />
-          <div class="text-message">@if ($errors->first('department')) ※{!! $errors->first('department') !!} @endif </div></td>
+          @if ($errors->first('department'))<span class="error-input">{!! $errors->first('department') !!}</span>@endif</td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>役職名</td>
           <td><input type="text" name="domain_title" value="{{old('domain_title')}}" />
-          <div class="text-message">@if ($errors->first('domain_title')) ※{!! $errors->first('domain_title') !!} @endif </div></td>
+          @if ($errors->first('domain_title'))<span class="error-input">{!! $errors->first('domain_title') !!}</span>@endif</td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>電話番号</td>
           <td><input type="text" name="domain_phone" value="{{old('domain_phone')}}" />
-          <div class="text-message">@if ($errors->first('domain_phone')) ※{!! $errors->first('domain_phone') !!} @endif </div></td>
+          @if ($errors->first('domain_phone'))<span class="error-input">{!! $errors->first('domain_phone') !!}</span>@endif</td>
         </tr>
         <tr>
           <td class="title">FAX</td>
           <td><input type="text" name="domain_fax" value="{{old('domain_fax')}}" />
-          <div class="text-message">@if ($errors->first('domain_title')) ※{!! $errors->first('domain_title') !!} @endif </div></td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>メールアドレス</td>
           <td><input type="text" name="domain_email" value="{{old('domain_email')}}" />
-          <div class="text-message">@if ($errors->first('domain_email')) ※{!! $errors->first('domain_email') !!} @endif </div>
-          <div class="text-message">@if ($errors->first('domain_email')) ※{!! $errors->first('domain_email') !!} @endif </div></td>
+          @if ($errors->first('domain_email'))<span class="error-input">{!! $errors->first('domain_email') !!}</span>@endif</td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>DNSサーバー</td>
           <td>
             <div>
-              <input type="radio" name="dns_server" value="チロロネットのDNSを利用する"  @if(old('dns_server') == 'チロロネットのDNSを利用する') checked="" @endif /> チロロネットのDNSを利用する。 
+              <input type="radio" name="dns_server" value="1"  @if(old('dns_server') == '1') checked="" @endif /> チロロネットのDNSを利用する。 
             </div>
             <div>
-              <input type="radio" name="dns_server" value="以下のDNSサーバーを利用する" @if(old('dns_server') == '以下のDNSサーバーを利用する') checked="" @endif /> 以下のDNSサーバーを利用する。 
+              <input type="radio" name="dns_server" value="2" @if(old('dns_server') == '2') checked="" @endif /> 以下のDNSサーバーを利用する。 
             </div>
 
             <div class="mar-top10">
-              <input type="radio" id="dns_server_chk1" value="1" name="dns_server" @if(old('dns_server') == '1') checked="" @endif />プライマリDNSサーバー
-              <input type="text" name="dns_server_text1" class="input-smheight"　value="{{old('dns_server_text1')}}" />
+              <input type="radio" id="dns_server_chk1" value="3" name="dns_server" @if(old('dns_server') == '3') checked="" @endif />プライマリDNSサーバー
+              <input type="text" name="dns_server_text3" class="iput-smheight"　value="{{old('dns_server_text3')}}" />
             </div>
             <div class="mar-top10">
-              <input type="radio" id="dns_server_chk2" value="2" name="dns_server" @if(old('dns_server') == '2') checked="" @endif /> セカンダリDNSサーバー
-              <input type="text" name="dns_server_text2" class="input-smheight" value="{{old('dns_server_text2')}}" />
+              <input type="radio" id="dns_server_chk2" value="4" name="dns_server" @if(old('dns_server') == '4') checked="" @endif /> セカンダリDNSサーバー
+              <input type="text" name="dns_server_text4" class="input-smheight" value="{{old('dns_server_text4')}}" />
             </div>
-
-            <div class="text-message">@if ($errors->first('dns_server')) ※{!! $errors->first('dns_server') !!} @endif </div>
+            @if ($errors->first('dns_server'))<span class="error-input">{!! $errors->first('dns_server') !!}</span>@endif
+            @if ($errors->first('dns_server_text3'))<span class="error-input">{!! $errors->first('dns_server_text3') !!}</span>@endif
+            @if ($errors->first('dns_server_text4'))<span class="error-input">{!! $errors->first('dns_server_text4') !!}</span>@endif
           </td>
         </tr>
       </table>
@@ -307,55 +308,54 @@
         <tr>
           <td class="title"><span>※ </span>コモンネーム</td>
           <td><input type="text" name="common_name"  value="{{old('common_name')}}" />
-          <div class="text-message">@if ($errors->first('common_name')) ※{!! $errors->first('common_name') !!} @endif </div></td>
+          @if ($errors->first('common_name'))<span class="error-input">{!! $errors->first('common_name') !!}</span>@endif</td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>組織名（日本語）</td>
           <td>
           	 <input type="text" name="organization_name_jp" value="{{old('organization_name_jp')}}" />
-          	 <div class="text-message">@if ($errors->first('organization_name_jp')) ※{!! $errors->first('organization_name_jp') !!} @endif </div>
+             @if ($errors->first('organization_name_jp'))<span class="error-input">{!! $errors->first('organization_name_jp') !!}</span>@endif
           </td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>組織名（英語）</td>
           <td>
           	 <input type="text" name="organization_name_en" value="{{old('organization_name_en')}}" />
-          	 <div class="text-message">@if ($errors->first('organization_name_en')) ※{!! $errors->first('organization_name_en') !!} @endif </div>
+             @if ($errors->first('organization_name_en'))<span class="error-input">{!! $errors->first('organization_name_en') !!}</span>@endif
           </td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>都道府県・市区郡名（日本語）</td>
           <td>
           	 <input type="text" name="prefectures_jp" value="{{old('prefectures_jp')}}" />
-          	  <div class="text-message">@if ($errors->first('prefectures_jp')) ※{!! $errors->first('prefectures_jp') !!} @endif </div>
+             @if ($errors->first('prefectures_jp'))<span class="error-input">{!! $errors->first('prefectures_jp') !!}</span>@endif
           </td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>都道府県・市区郡名（英語）</td>
           <td>
           	 <input type="text" name="prefectures_en" value="{{old('prefectures_en')}}" />
-          	 <div class="text-message">@if ($errors->first('prefectures_en')) ※{!! $errors->first('prefectures_en') !!} @endif </div>
+             @if ($errors->first('prefectures_en'))<span class="error-input">{!! $errors->first('prefectures_en') !!}</span>@endif
           </td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>担当者名</td>
           <td>
           	 <input type="text" name="name_person_charge" value="{{old('name_person_charge')}}" />
-          	 <div class="text-message">@if ($errors->first('name_person_charge')) ※{!! $errors->first('name_person_charge') !!} @endif </div>
+             @if ($errors->first('name_person_charge'))<span class="error-input">{!! $errors->first('name_person_charge') !!}</span>@endif
           </td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>電話番号</td>
           <td>
-          	 <input type="text" name="phone_number" />
-          	 <div class="text-message">@if ($errors->first('phone_number')) ※{!! $errors->first('phone_number') !!} @endif </div>
+          	 <input type="text" name="phone_number" value="{{old('phone_number')}}" />
+             @if ($errors->first('phone_number'))<span class="error-input">{!! $errors->first('phone_number') !!}</span>@endif
           </td>
         </tr>
         <tr>
           <td class="title">FAX</td>
           <td>
           	 <input type="text" name="ssl_fax" value="{{old('ssl_fax')}}" />
-          	 <div class="text-message">@if ($errors->first('ssl_fax')) ※{!! $errors->first('ssl_fax') !!} @endif </div>
           </td>
         </tr>
         <tr>
@@ -363,7 +363,7 @@
           <td>
             <div class="row-radio">
               <div class="input-radio">
-                <input name="receive_mail_addrs" type="radio" value="1" @if(old('receive_mail_addrs') == 1) checked="" @endif >
+                <input name="receive_mail_addrs" type="radio" value="admin@ドメイン名　→　SSL申請後に確認メールが届くので、info@kurumiserver.jp へ、そのまま転送してください" @if(old('receive_mail_addrs') == 'admin@ドメイン名　→　SSL申請後に確認メールが届くので、info@kurumiserver.jp へ、そのまま転送してください') checked="" @endif >
               </div>
               <div>
                 admin@ドメイン名　→　SSL申請後に確認メールが届くので、info@kurumiserver.jp へ、そのまま転送してください 
@@ -371,7 +371,9 @@
             </div>
             <div class="row-radio">
               <div class="input-radio">
-                <input name="receive_mail_addrs" type="radio" value="2" @if(old('receive_mail_addrs') == 2) checked="" @endif>
+                <input name="receive_mail_addrs" type="radio" value="
+administrator@ドメイン名　→　SSL申請後に確認メールが届くので、info@kurumiserver.jp へ、そのまま転送してください" @if(old('receive_mail_addrs') == '
+administrator@ドメイン名　→　SSL申請後に確認メールが届くので、info@kurumiserver.jp へ、そのまま転送してください') checked="" @endif>
               </div>
               <div>
                 administrator@ドメイン名　→　SSL申請後に確認メールが届くので、info@kurumiserver.jp へ、そのまま転送してください
@@ -379,7 +381,7 @@
             </div>
             <div class="row-radio">
               <div class="input-radio">
-                <input name="receive_mail_addrs" type="radio" value="3" @if(old('receive_mail_addrs') == 3) checked="" @endif >
+                <input name="receive_mail_addrs" type="radio" value="hostmaster@ドメイン名　→　SSL申請後に確認メールが届くので、info@kurumiserver.jp へ、そのまま転送してください" @if(old('receive_mail_addrs') =='hostmaster@ドメイン名　→　SSL申請後に確認メールが届くので、info@kurumiserver.jp へ、そのまま転送してください') checked="" @endif >
               </div>
               <div>
                 hostmaster@ドメイン名　→　SSL申請後に確認メールが届くので、info@kurumiserver.jp へ、そのまま転送してください
@@ -387,7 +389,7 @@
             </div>
             <div class="row-radio">
               <div class="input-radio">
-                <input name="receive_mail_addrs" type="radio" value="4" @if(old('receive_mail_addrs') == 4) checked="" @endif >
+                <input name="receive_mail_addrs" type="radio" value="webmaster@ドメイン名　→　SSL申請後に確認メールが届くので、info@kurumiserver.jp へ、そのまま転送してください" @if(old('receive_mail_addrs') == 'webmaster@ドメイン名　→　SSL申請後に確認メールが届くので、info@kurumiserver.jp へ、そのまま転送してください') checked="" @endif >
               </div>
               <div>
                 webmaster@ドメイン名　→　SSL申請後に確認メールが届くので、info@kurumiserver.jp へ、そのまま転送してください
@@ -395,7 +397,7 @@
             </div>
             <div class="row-radio">
               <div class="input-radio">
-                <input name="receive_mail_addrs" type="radio" value="5" @if(old('receive_mail_addrs') == 5) checked="" @endif >
+                <input name="receive_mail_addrs" type="radio" value="postmaster@ドメイン名　→　SSL申請後に確認メールが届くので、info@kurumiserver.jp へ、そのまま転送してください" @if(old('receive_mail_addrs') == 'postmaster@ドメイン名　→　SSL申請後に確認メールが届くので、info@kurumiserver.jp へ、そのまま転送してください') checked="" @endif >
               </div>
               <div>
                 postmaster@ドメイン名　→　SSL申請後に確認メールが届くので、info@kurumiserver.jp へ、そのまま転送してください 
@@ -403,13 +405,13 @@
             </div>
             <div class="row-radio">
               <div class="input-radio">
-                <input name="receive_mail_addrs" type="radio" value="6" @if(old('receive_mail_addrs') == 6) checked="" @endif >
+                <input name="receive_mail_addrs" type="radio" value="未使用ドメインにつきお任せ" @if(old('receive_mail_addrs') == '未使用ドメインにつきお任せ') checked="" @endif >
               </div>
               <div>
                 未使用ドメインにつきお任せ  
               </div>
             </div>
-            <div class="text-message">@if ($errors->first('receive_mail_addrs')) ※{!! $errors->first('receive_mail_addrs') !!} @endif </div>
+            @if ($errors->first('receive_mail_addrs'))<span class="error-input">{!! $errors->first('receive_mail_addrs') !!}</span>@endif
           </td>
         </tr>
       </table>
@@ -426,6 +428,7 @@
             <div>
               <input type="radio" name="policy_contract_info"  @if(old('policy_contract_info') == '以下に入力') checked="" @endif /> 以下に入力 
             </div>
+            @if ($errors->first('policy_contract_info'))<span class="error-input">{!! $errors->first('policy_contract_info') !!}</span>@endif
           </td>
         </tr>
         <tr>
@@ -437,28 +440,28 @@
           <td class="title"><span>※ </span>代表者名</td>
           <td>
           	 <input type="text" name="policy_representative_name" value="{{old('policy_representative_name')}}" />
-          	 <div class="text-message">@if ($errors->first('policy_representative_name')) ※{!! $errors->first('policy_representative_name') !!} @endif </div>
+             @if ($errors->first('policy_representative_name'))<span class="error-input">{!! $errors->first('policy_representative_name') !!}</span>@endif
           </td>
         </tr>
         <tr>
           <td class="title">役職名</td>
           <td>
           	 <input type="text" name="policy_title" value="{{old('policy_title')}}" />
-          	 <div class="text-message">@if ($errors->first('policy_title')) ※{!! $errors->first('policy_title') !!} @endif </div>
+             @if ($errors->first('policy_title'))<span class="error-input">{!! $errors->first('policy_title') !!}</span>@endif
           </td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>氏名</td>
           <td>
           	 <input type="text" name="policy_name" value="{{old('policy_name')}}" />
-          	 <div class="text-message">@if ($errors->first('policy_name')) ※{!! $errors->first('policy_name') !!} @endif </div>
+             @if ($errors->first('policy_name'))<span class="error-input">{!! $errors->first('policy_name') !!}</span>@endif
           </td>
         </tr>
         <tr>
           <td class="title">所在地</td>
           <td>
           	 <input type="text" name="location" value="{{old('location')}}" />
-          	 <div class="text-message">@if ($errors->first('location')) ※{!! $errors->first('location') !!} @endif </div>
+             @if ($errors->first('location'))<span class="error-input">{!! $errors->first('location') !!}</span>@endif
           </td>
         </tr>
       </table>
@@ -474,22 +477,26 @@
             <div>
               <input type="radio" name="person_charge_info" value="以下に入力" @if(old('person_charge_info') == '以下に入力') checked="" @endif /> 以下に入力
             </div>
+            @if ($errors->first('person_charge_info'))<span class="error-input">{!! $errors->first('person_charge_info') !!}</span>@endif
           </td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>組織名</td>
-          <td><input type="text" name="person_charge_organization_name" value="{{old('person_charge_organization_name')}}" /></td>
+          <td><input type="text" name="person_charge_organization_name" value="{{old('person_charge_organization_name')}}" />
+          @if ($errors->first('person_charge_organization_name'))<span class="error-input">{!! $errors->first('person_charge_organization_name') !!}</span>@endif</td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>氏名</td>
           <td>
           	 <input type="text" name="person_charge_name" value="{{old('person_charge_name')}}" />
+             @if ($errors->first('person_charge_name'))<span class="error-input">{!! $errors->first('person_charge_name') !!}</span>@endif
           </td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>部署名</td>
           <td>
           	 <input type="text" name="person_charge_dept_name" value="{{old('person_charge_dept_name')}}" />
+             @if ($errors->first('person_charge_dept_name'))<span class="error-input">{!! $errors->first('person_charge_dept_name') !!}</span>@endif
           </td>
         </tr>
         <tr>
@@ -503,12 +510,15 @@
           <td>
           	 〒 <input type="text" name="person_charge_zipcode" value="{{old('person_charge_zipcode')}}" class="input-xs"/>
              住所 <input name="person_charge_your_addrs" value="{{old('person_charge_your_addrs')}}" type="text" style="width:400px!important;">
+             @if ($errors->first('person_charge_zipcode'))<span class="error-input">{!! $errors->first('person_charge_zipcode') !!}</span>@endif
+             @if ($errors->first('person_charge_your_addrs'))<span class="error-input">{!! $errors->first('person_charge_your_addrs') !!}</span>@endif
           </td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>連絡先TEL</td>
           <td>
           	 <input type="text" name="person_charge_tel" value="{{old('person_charge_tel')}}" />
+             @if ($errors->first('person_charge_tel'))<span class="error-input">{!! $errors->first('person_charge_tel') !!}</span>@endif
           </td>
         </tr>
         <tr>
@@ -521,6 +531,7 @@
           <td class="title"><span>※ </span>連絡先メールアドレス</td>
           <td>
           	 <input type="text" name="person_charge_email_addrs" value="{{old('person_charge_email_addrs')}}" />
+             @if ($errors->first('person_charge_email_addrs'))<span class="error-input">{!! $errors->first('person_charge_email_addrs') !!}</span>@endif
           </td>
         </tr>
       </table>
