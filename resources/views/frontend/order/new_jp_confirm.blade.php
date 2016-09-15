@@ -60,7 +60,6 @@
           </td>
         </tr>
       </table>
- 	  
       
       <h3>ドメイン登録情報</h3>
        <table class="form-input">

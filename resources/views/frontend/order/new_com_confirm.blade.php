@@ -39,13 +39,13 @@
         <tr>
           <td class="title"><span></span>外部バックアップ世代数追加<br />（1世代あたり）</td>
           <td>
-          	{{$new_com->generation}}
+          	{{$new_com->generation}}世代
           </td>
         </tr>
         <tr>
           <td class="title">IPアドレス追加 (1個あたり)<br />※最大合計3個</td>
           <td>
-          	{{$new_com->individual}}
+          	{{$new_com->individual}}個
           </td>
         </tr>
         <tr>

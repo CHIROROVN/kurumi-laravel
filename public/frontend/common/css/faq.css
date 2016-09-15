@@ -1,0 +1,70 @@
+@charset "utf-8";
+
+/*--------------------------------------------------------------------------------------------------
+
+   faq
+
+--------------------------------------------------------------------------------------------------*/
+
+
+#faqWrap {
+	width: 940px;
+	margin: 0 auto;
+}
+
+#faqWrap p {
+	margin: 0 0 20px;
+}
+
+#faqWrap h2 {
+	margin: 0 0 10px;
+	padding: 14px 19px;
+	background: url(../image/bg-title-h2-content.png) no-repeat 0 0;
+	color: #FFFFFF;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#faqWrap .faqCat {
+	margin: 0;
+	padding: 0 20px;
+	list-style: none;
+	background-color: #FFFFDD;
+}
+
+#faqWrap .faqCat li {
+	float: left;
+}
+
+#faqWrap .faqCat li a {
+	display: block;
+	padding: 8px 30px 8px 10px;
+	background: url(../image/arrow-01.png) no-repeat 0 12px;
+	color: #1353A2;
+}
+
+#faqWrap dl {
+	margin: 0 0 50px;
+}
+
+#faqWrap dl dt {
+	margin: 0 0 3px;
+	padding: 10px 10px 10px 46px;
+	border-bottom: 1px solid #CCCCCC;
+	background: url(../image/q.png) #EEEEEE no-repeat 10px 7px;
+}
+
+#faqWrap dl dd {
+	margin: 0 0 20px;
+	padding: 10px 10px 10px 46px;
+	line-height: 1.6;
+	background: url(../image/a.png) #FFFFFF no-repeat 10px 7px;
+}
+
+#faqWrap dl dd p:last-child {
+	margin: 0;
+}
+
+.btn a {
+	color: #FFFFFF;
+}

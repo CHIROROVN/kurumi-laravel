@@ -5,8 +5,8 @@
 
 <section class="clear" id="company">
   <div class="container">
-    <h1 class="title-content"><img src="{{ asset('') }}public/frontend/image/order/title-index.png" alt="" /></h1>
-    <h2 class="title"><img src="{{ asset('') }}public/frontend/image/company/title1-h2.png" alt="" /></h2>
+    <h1 class="title-content"><img src="{{ asset('') }}public/frontend/image/company/title.png" alt="" /></h1>
+<!--     <h2 class="title"><img src="{{ asset('') }}public/frontend/image/company/title1-h2.png" alt="" /></h2>
     <div class="content">
       <div class="top-info clear">
         <div class="fl-left">
@@ -17,7 +17,7 @@
           <img src="{{ asset('') }}public/frontend/image/company/photo-top.png" alt="" />
         </div>
       </div>
-    </div>
+    </div> -->
     <h2 class="title"><img src="{{ asset('') }}public/frontend/image/company/title2-h2.png" alt="" /></h2>
       <div class="content">
         <table class="table-info">

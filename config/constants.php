@@ -3,9 +3,9 @@
 
 return [
 	'DEFINE' => array(
-		'MAIL_FROM_ADDRESS' 					=> 'chiroviet@gmail.com',
-		'MAIL_FROM_NAME' 						=> 'CHIRORO NET',
-		'MAIL_TO_ADDRESS_MANAGER'				=> 'phuongnd360@gmail.com',
+		'MAIL_FROM_ADDRESS' 					=> 'info@kurumiserver.jp',
+		'MAIL_FROM_NAME' 					=> 'チロロネットカスタマーサポート',
+		'MAIL_TO_ADDRESS_MANAGER'				=> 'info@kurumiserver.jp',
 
 		//MOVE
 		'SUBJECT_CONTACT_USER'					=> '【チロロネット】お問合せいただきありがとうございました。',

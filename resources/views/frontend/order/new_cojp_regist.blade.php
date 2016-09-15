@@ -34,16 +34,17 @@
             <div>
               <input type="radio" name="service" value="希望あり" @if(old('service') == '希望あり') checked="" @endif /> 希望あり
             </div>
+
             <div style="margin-top:5px;">
               <select name="year" id="year" class="input-xs">
-                <option value="2015" @if(old('year') == '2015') selected="" @endif >2015</option>
+<!--                 <option value="2015" @if(old('year') == '2015') selected="" @endif >2015</option>
                 <option value="2016" @if(old('year') == '2016') selected="" @endif >2016</option>
                 <option value="2017" @if(old('year') == '2017') selected="" @endif >2017</option>
                 <option value="2018" @if(old('year') == '2018') selected="" @endif >2018</option>
-                <option value="2019" @if(old('year') == '2019') selected="" @endif >2019</option>
+                <option value="2019" @if(old('year') == '2019') selected="" @endif >2019</option> -->
               </select> 年
               <select name="month" id="month" class="input-xs">
-                <option value="1">1</option>
+<!--                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
@@ -54,10 +55,10 @@
                 <option value="9">9</option>
                 <option value="10">10</option>
                 <option value="11">11</option>
-                <option value="12">12</option>
+                <option value="12">12</option> -->
               </select> 月
-              <select name="day" class="input-xs">
-                <option value="1">1</option>
+              <select name="day" id="day" class="input-xs">
+<!--                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
@@ -87,7 +88,7 @@
                 <option value="28">28</option>
                 <option value="29">29</option>
                 <option value="30">30</option>
-                <option value="31">31</option>
+                <option value="31">31</option> -->
               </select> 日
             </div>
             @if ($errors->first('service'))<span class="error-input">{!! $errors->first('service') !!}</span>@endif
@@ -184,7 +185,7 @@
         <tr>
           <td class="title"><span>※ </span>郵便番号</td>
           <td><input type="text" name="postal_code" value="{{old('postal_code')}}" />
-          <div class="text-message">@if ($errors->first('postal_code')) ※{!! $errors->first('postal_code') !!} @endif</div></td>
+          @if ($errors->first('postal_code'))<span class="error-input">{!! $errors->first('postal_code') !!}</span>@endif</td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>ご住所（日本語）</td>
@@ -283,18 +284,18 @@
           <td class="title"><span>※ </span>DNSサーバー</td>
           <td>
             <div>
-              <input type="radio" name="dns_server" value="1"  @if(old('dns_server') == '1') checked="" @endif /> チロロネットのDNSを利用する。 
+              <input type="radio" name="dns_server" value="1"  @if(old('dns_server') == '1') checked="" @endif />チロロネットのDNSを利用する。 
             </div>
             <div>
-              <input type="radio" name="dns_server" value="2" @if(old('dns_server') == '2') checked="" @endif /> 以下のDNSサーバーを利用する。 
+              <input type="radio" name="dns_server" value="2" @if(old('dns_server') == '2') checked="" @endif />以下のDNSサーバーを利用する。 
             </div>
 
             <div class="mar-top10">
               <input type="radio" id="dns_server_chk1" value="3" name="dns_server" @if(old('dns_server') == '3') checked="" @endif />プライマリDNSサーバー
-              <input type="text" name="dns_server_text3" class="iput-smheight"　value="{{old('dns_server_text3')}}" />
+              <input type="text" name="dns_server_text3" class="input-smheight" value="{{old('dns_server_text3')}}" />
             </div>
             <div class="mar-top10">
-              <input type="radio" id="dns_server_chk2" value="4" name="dns_server" @if(old('dns_server') == '4') checked="" @endif /> セカンダリDNSサーバー
+              <input type="radio" id="dns_server_chk2" value="4" name="dns_server" @if(old('dns_server') == '4') checked="" @endif />セカンダリDNSサーバー
               <input type="text" name="dns_server_text4" class="input-smheight" value="{{old('dns_server_text4')}}" />
             </div>
             @if ($errors->first('dns_server'))<span class="error-input">{!! $errors->first('dns_server') !!}</span>@endif
@@ -434,7 +435,7 @@ administrator@ドメイン名　→　SSL申請後に確認メールが届くの
         <tr>
           <td class="title"><span>※ </span>組織名</td>
           <td><input type="text" name="policy_organization_name" value="{{old('policy_organization_name')}}" />
-           <div class="text-message">@if ($errors->first('policy_organization_name')) ※{!! $errors->first('policy_organization_name') !!} @endif </div></td>
+            @if ($errors->first('policy_organization_name'))<span class="error-input">{!! $errors->first('policy_organization_name') !!}</span>@endif</td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>代表者名</td>
@@ -552,4 +553,63 @@ administrator@ドメイン名　→　SSL申請後に確認メールが届くの
   </div>
 </section>
 <!-- End content -->
+
+<script  type="text/javascript">
+$( document ).ready(function() {
+    var dt = new Date();
+    var year = dt.getFullYear();
+    var month = format2Digit(dt.getMonth()+1);
+    var day = format2Digit(dt.getDate());
+
+    var year_html  = "<option value=''>----</option>";
+    var month_html = "<option value=''>--</option>";
+    var day_html   = "<option value=''>--</option>";
+    var totalday = dayOfMonth(year, month);
+
+    for(y=year; y<=year+5; y++){
+      year_html += "<option value='"+y+"'>"+y+"</option>";
+    }
+    $('#year').html(year_html);
+    var oldYear = "{{old('year')}}";
+    if(typeof oldYear != 'undefined'){
+      $('#year option[value="' + oldYear + '"]').prop('selected',true);
+    }else{
+      $('#year option[value="' + year + '"]').prop('selected',true);
+    }
+
+    for(i=1; i<=totalday; i++){
+      month_html += "<option value='"+format2Digit(i)+"'>"+format2Digit(i)+"</option>";
+    }
+    $('#month').html(month_html);
+    var oldMonth = "{{old('month')}}";
+    if(typeof oldMonth != 'undefined'){
+      $('#month option[value="' + oldMonth + '"]').prop('selected',true);
+    }else{
+      $('#month option[value="' + month + '"]').prop('selected',true);
+    }
+
+    for(d=1; d<=totalday; d++){
+      day_html += "<option value='"+format2Digit(d)+"'>"+format2Digit(d)+"</option>";
+    }
+    $('#day').html(day_html);
+    var oldDay = "{{old('day')}}";
+    if(typeof oldDay != 'undefined'){
+      $('#day option[value="' + oldDay + '"]').prop('selected',true);
+    }else{
+      $('#day option[value="' + day + '"]').prop('selected',true);
+    }
+
+  });
+
+  function dayOfMonth(year, month)
+  {
+    return new Date(year,month,1,-1).getDate();
+  }
+
+  function format2Digit(num)
+  {
+    if(num < 10) { return '0'+num }
+    else return num;
+  }
+</script>
 @endsection

@@ -26,7 +26,16 @@ class OrderController extends FrontendController
 
 	public function postNewCojp() {
 		$clsOrder 				= new OrderModel();
-		$validator      		= Validator::make(Input::all(), $clsOrder->RuleNewCoJp(), $clsOrder->MsgNewCoJp());
+        $RuleNewCoJp            = $clsOrder->RuleNewCoJp();
+        if(Input::get('dns_server') == 1 || Input::get('dns_server') == 2){
+            unset($RuleNewCoJp['dns_server']);
+        }elseif(Input::get('dns_server') == 3){
+            if(!empty(Input::get('dns_server_text3'))) unset($RuleNewCoJp['dns_server']);
+        }elseif(Input::get('dns_server') == 4){
+            if(!empty(Input::get('dns_server_text4'))) unset($RuleNewCoJp['dns_server']);
+        }
+
+		$validator      		= Validator::make(Input::all(), $RuleNewCoJp, $clsOrder->MsgNewCoJp());
 		if ($validator->fails()) {
             return redirect()->route('frontend.order.new_cojp_regist')->withErrors($validator)->withInput();
         }
@@ -102,7 +111,6 @@ class OrderController extends FrontendController
 
         Session::put('new_cojp', $dataInput);
         return redirect()->route('frontend.order.new_cojp_confirm');
-
 	}
 
 	public function getNewCojpCnf() {
@@ -126,7 +134,7 @@ class OrderController extends FrontendController
         });
 
         Mail::send('frontend.order.email.new_cojp_mail_user_side', ['new_cojp'=>$new_cojp], function($message) use ($new_cojp) {
-        $email_to   = MAIL_TO_ADDRESS_MANAGER;
+        $email_to   = $new_cojp['person_charge_email_addrs'];
         $email_from = MAIL_FROM_ADDRESS;
         $email_subject = SUBJECT_NEW_COM_USER;
         $message->to($email_to, MAIL_FROM_NAME);
@@ -148,7 +156,7 @@ class OrderController extends FrontendController
 		$clsOrder                 = new OrderModel();
         $validator              = Validator::make(Input::all(), $clsOrder->RuleNewJp(), $clsOrder->MsgNewJp());
         if ($validator->fails()) {
-            return redirect()->route('frontend.order.new_cojp_regist')->withErrors($validator)->withInput();
+            return redirect()->route('frontend.order.new_jp_regist')->withErrors($validator)->withInput();
         }
 
         Session::put('new_jp', Input::all());
@@ -175,8 +183,7 @@ class OrderController extends FrontendController
         });
 
         Mail::send('frontend.order.email.new_jp_mail_user_side', ['new_jp'=>$new_jp], function($message) use ($new_jp) {
-            // $email_to   = $new_jp['dns_email_addrs'];
-            $email_to   = MAIL_TO_ADDRESS_MANAGER;
+            $email_to   = $new_jp['person_charge_email_addrs'];
             $email_from = MAIL_FROM_ADDRESS;
             $email_subject = SUBJECT_NEW_JP_USER;
             $message->to($email_to, MAIL_FROM_NAME);
@@ -241,7 +248,7 @@ class OrderController extends FrontendController
         $dataInput['policy_title'] 						= Input::get('policy_title');
         $dataInput['policy_name'] 						= Input::get('policy_name');
         $dataInput['location'] 							= Input::get('location');
-        
+
         $dataInput['person_charge_info'] 				= Input::get('person_charge_info');
         $dataInput['person_charge_organization_name'] 	= Input::get('person_charge_organization_name');
         $dataInput['person_charge_name'] 				= Input::get('person_charge_name');
@@ -281,7 +288,7 @@ class OrderController extends FrontendController
         });
 
         Mail::send('frontend.order.email.new_com_mail_user_side', ['new_com'=>$new_com], function($message) use ($new_com) {
-            $email_to   = MAIL_TO_ADDRESS_MANAGER;
+            $email_to   = $new_com['person_charge_email_addrs'];
             $email_from = MAIL_FROM_ADDRESS;
             $email_subject = SUBJECT_NEW_JP_USER;
             $message->to($email_to, MAIL_FROM_NAME);

@@ -31,15 +31,15 @@
         </div>
         <div class="fl-right">
           <ul class="clear">
-            <li><a href="" title="">ホーム</a></li>
-            <li><a href="" title="">サポート</a></li>
-            <li><a href="" title="">お申し込み</a></li>
-            <li><a href="" title="">強み</a></li>
-            <li><a href="" title="">FAQ</a></li>
-            <li><a href="" title="">お問い合わせ</a></li>
-            <li><a href="" title="">プラン</a></li>
-            <li><a href="" title="">会社案内</a></li>
-            <li><a href="" title="">プライバシーポリシー</a></li>
+            <li><a href="{{route('frontend.index')}}" title="ホーム">ホーム</a></li>
+            <li><a href="http://support.kurumiserver.jp/" title="サポート">サポート</a></li>
+            <!-- <li><a href="" title="">お申し込み</a></li> -->
+            <li><a href="{{ route('frontend.feature.index') }}" title="強み">強み</a></li>
+            <li><a href="{{route('frontend.faq.index')}}" title="FAQ">FAQ</a></li>
+            <li><a href="{{ route('frontend.contact.index') }}" title="お問い合わせ">お問い合わせ</a></li>
+            <li><a href="{{route('frontend.plan.index')}}" title="プラン">プラン</a></li>
+            <li><a href="{{route('frontend.company.index')}}" title="会社案内">会社案内</a></li>
+<!--             <li><a href="" title="">プライバシーポリシー</a></li> -->
           </ul>
         </div>
       </div>
