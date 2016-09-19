@@ -1,6 +1,7 @@
 @extends('frontend.frontend')
 
 @section('content')
+
 <!--Content -->
 <section class="order-child clear" id="contact">
   <div class="container">
@@ -22,7 +23,7 @@
         </tr>
         <tr>
           <td class="title"><span>※ </span>ドメイン名</td>
-          <td><input type="text" name="domain" />
+          <td><input type="text" name="domain" value="{{old('domain')}}" />
           @if ($errors->first('domain'))<span class="error-input">{!! $errors->first('domain') !!}</span>@endif</td>
         </tr>
         <tr>
@@ -224,60 +225,62 @@
           <td><input type="text" name="representative_title" value="{{old('representative_title')}}" />
           @if ($errors->first('representative_title'))<span class="error-input">{!! $errors->first('representative_title') !!}</span>@endif</td>
         </tr>
+
+
         <tr>
           <td class="title"><span>※ </span>ドメイン登録担当者</td>
           <td>
             <div>
-              <input type="radio" name="domain_person_regist" value="上記登録者情報と同一"  @if(old('domain_person_regist') == '上記登録者情報と同一') checked="" @endif /> 上記登録者情報と同一 
+              <input type="radio" id="domain_disallow" name="domain_person_regist" value="上記登録者情報と同一"  @if(old('domain_person_regist') == '上記登録者情報と同一') checked="" @else checked="" @endif /> 上記登録者情報と同一 
             </div>
             <div>
-              <input type="radio" name="domain_person_regist" value="以下に入力" @if(old('domain_person_regist') == '以下に入力') checked="" @endif /> 以下に入力 
+              <input type="radio" id="domain_allow" name="domain_person_regist" value="以下に入力" @if(old('domain_person_regist') == '以下に入力') checked="" @endif /> 以下に入力 
             </div>
             @if ($errors->first('domain_person_regist'))<span class="error-input">{!! $errors->first('domain_person_regist') !!}</span>@endif
           </td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>ドメイン登録担当者氏名（日本語）</td>
-          <td><input type="text" name="domain_person_jp" value="{{old('domain_person_jp')}}" />
+          <td><input type="text" id="domain_allow" name="domain_person_jp" value="{{old('domain_person_jp')}}" class="domain-status" />
           @if ($errors->first('domain_person_jp'))<span class="error-input">{!! $errors->first('domain_person_jp') !!}</span>@endif</td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>ドメイン登録担当者氏名（英語）</td>
-          <td><input type="text" name="domain_person_en" value="{{old('domain_person_en')}}" />
+          <td><input type="text" name="domain_person_en" value="{{old('domain_person_en')}}" class="domain-status" />
           @if ($errors->first('domain_person_en'))<span class="error-input">{!! $errors->first('domain_person_en') !!}</span>@endif</td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>会社名・組織名</td>
-          <td><input type="text" name="company_name" value="{{old('company_name')}}" />
+          <td><input type="text" name="company_name" value="{{old('company_name')}}" class="domain-status"/>
           @if ($errors->first('company_name'))<span class="error-input">{!! $errors->first('company_name') !!}</span>@endif</td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>ご住所</td>
-          <td><input type="text" name="your_address" value="{{old('your_address')}}" />
+          <td><input type="text" name="your_address" value="{{old('your_address')}}" class="domain-status" />
           @if ($errors->first('your_address'))<span class="error-input">{!! $errors->first('your_address') !!}</span>@endif</td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>部署名</td>
-          <td><input type="text" name="department" value="{{old('department')}}" />
+          <td><input type="text" name="department" value="{{old('department')}}" class="domain-status"/>
           @if ($errors->first('department'))<span class="error-input">{!! $errors->first('department') !!}</span>@endif</td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>役職名</td>
-          <td><input type="text" name="domain_title" value="{{old('domain_title')}}" />
+          <td><input type="text" name="domain_title" value="{{old('domain_title')}}" class="domain-status"/>
           @if ($errors->first('domain_title'))<span class="error-input">{!! $errors->first('domain_title') !!}</span>@endif</td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>電話番号</td>
-          <td><input type="text" name="domain_phone" value="{{old('domain_phone')}}" />
+          <td><input type="text" name="domain_phone" value="{{old('domain_phone')}}"/>
           @if ($errors->first('domain_phone'))<span class="error-input">{!! $errors->first('domain_phone') !!}</span>@endif</td>
         </tr>
         <tr>
           <td class="title">FAX</td>
-          <td><input type="text" name="domain_fax" value="{{old('domain_fax')}}" />
+          <td><input type="text" name="domain_fax" value="{{old('domain_fax')}}"/>
         </tr>
         <tr>
           <td class="title"><span>※ </span>メールアドレス</td>
-          <td><input type="text" name="domain_email" value="{{old('domain_email')}}" />
+          <td><input type="text" name="domain_email" value="{{old('domain_email')}}"/>
           @if ($errors->first('domain_email'))<span class="error-input">{!! $errors->first('domain_email') !!}</span>@endif</td>
         </tr>
         <tr>
@@ -287,7 +290,7 @@
               <input type="radio" name="dns_server" value="1"  @if(old('dns_server') == '1') checked="" @endif />チロロネットのDNSを利用する。 
             </div>
             <div>
-              <input type="radio" name="dns_server" value="2" @if(old('dns_server') == '2') checked="" @endif />以下のDNSサーバーを利用する。 
+              <input type="radio" name="dns_server" value="2" @if(old('dns_server') == '2') checked="" @endif/>以下のDNSサーバーを利用する。 
             </div>
 
             <div class="mar-top10">
@@ -424,44 +427,44 @@ administrator@ドメイン名　→　SSL申請後に確認メールが届くの
           <td class="title"><span>※ </span>ご契約者情報</td>
           <td>
             <div>
-              <input type="radio" name="policy_contract_info" value="ドメイン登録情報と同一" @if(old('policy_contract_info') == 'ドメイン登録情報と同一') @endif /> ドメイン登録情報と同一 
+              <input type="radio" name="policy_contract_info" id="contract_disallow" value="ドメイン登録情報と同一" @if(old('policy_contract_info') == 'ドメイン登録情報と同一') checked="" @else checked="" @endif /> ドメイン登録情報と同一 
             </div>
             <div>
-              <input type="radio" name="policy_contract_info"  @if(old('policy_contract_info') == '以下に入力') checked="" @endif /> 以下に入力 
+              <input type="radio" name="policy_contract_info" id="contract_allow" value="以下に入力"  @if(old('policy_contract_info') == '以下に入力') checked="" @endif /> 以下に入力 
             </div>
             @if ($errors->first('policy_contract_info'))<span class="error-input">{!! $errors->first('policy_contract_info') !!}</span>@endif
           </td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>組織名</td>
-          <td><input type="text" name="policy_organization_name" value="{{old('policy_organization_name')}}" />
+          <td><input type="text" name="policy_organization_name" value="{{old('policy_organization_name')}}" class="policy-status" />
             @if ($errors->first('policy_organization_name'))<span class="error-input">{!! $errors->first('policy_organization_name') !!}</span>@endif</td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>代表者名</td>
           <td>
-          	 <input type="text" name="policy_representative_name" value="{{old('policy_representative_name')}}" />
+          	 <input type="text" name="policy_representative_name" value="{{old('policy_representative_name')}}" class="policy-status" />
              @if ($errors->first('policy_representative_name'))<span class="error-input">{!! $errors->first('policy_representative_name') !!}</span>@endif
           </td>
         </tr>
         <tr>
           <td class="title">役職名</td>
           <td>
-          	 <input type="text" name="policy_title" value="{{old('policy_title')}}" />
+          	 <input type="text" name="policy_title" value="{{old('policy_title')}}" class="policy-status" />
              @if ($errors->first('policy_title'))<span class="error-input">{!! $errors->first('policy_title') !!}</span>@endif
           </td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>氏名</td>
           <td>
-          	 <input type="text" name="policy_name" value="{{old('policy_name')}}" />
+          	 <input type="text" name="policy_name" value="{{old('policy_name')}}" class="policy-status"/>
              @if ($errors->first('policy_name'))<span class="error-input">{!! $errors->first('policy_name') !!}</span>@endif
           </td>
         </tr>
         <tr>
           <td class="title">所在地</td>
           <td>
-          	 <input type="text" name="location" value="{{old('location')}}" />
+          	 <input type="text" name="location" value="{{old('location')}}" class="policy-status"/>
              @if ($errors->first('location'))<span class="error-input">{!! $errors->first('location') !!}</span>@endif
           </td>
         </tr>
@@ -473,44 +476,44 @@ administrator@ドメイン名　→　SSL申請後に確認メールが届くの
           <td class="title"><span>※ </span>ご担当者情報</td>
           <td>
             <div>
-              <input type="radio" name="person_charge_info" value="ドメイン登録情報と同一" @if(old('person_charge_info') == 'ドメイン登録情報と同一') checked="" @endif /> ドメイン登録情報と同一
+              <input type="radio" id="person_disallow" name="person_charge_info" value="ドメイン登録情報と同一" @if(old('person_charge_info') == 'ドメイン登録情報と同一') checked="" @else checked="" @endif /> ドメイン登録情報と同一
             </div>
             <div>
-              <input type="radio" name="person_charge_info" value="以下に入力" @if(old('person_charge_info') == '以下に入力') checked="" @endif /> 以下に入力
+              <input type="radio" id="person_allow" name="person_charge_info" value="以下に入力" @if(old('person_charge_info') == '以下に入力') checked="" @endif /> 以下に入力
             </div>
             @if ($errors->first('person_charge_info'))<span class="error-input">{!! $errors->first('person_charge_info') !!}</span>@endif
           </td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>組織名</td>
-          <td><input type="text" name="person_charge_organization_name" value="{{old('person_charge_organization_name')}}" />
+          <td><input type="text" name="person_charge_organization_name" value="{{old('person_charge_organization_name')}}" class="person-status" />
           @if ($errors->first('person_charge_organization_name'))<span class="error-input">{!! $errors->first('person_charge_organization_name') !!}</span>@endif</td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>氏名</td>
           <td>
-          	 <input type="text" name="person_charge_name" value="{{old('person_charge_name')}}" />
+          	 <input type="text" name="person_charge_name" value="{{old('person_charge_name')}}" class="person-status" />
              @if ($errors->first('person_charge_name'))<span class="error-input">{!! $errors->first('person_charge_name') !!}</span>@endif
           </td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>部署名</td>
           <td>
-          	 <input type="text" name="person_charge_dept_name" value="{{old('person_charge_dept_name')}}" />
+          	 <input type="text" name="person_charge_dept_name" value="{{old('person_charge_dept_name')}}" class="person-status" />
              @if ($errors->first('person_charge_dept_name'))<span class="error-input">{!! $errors->first('person_charge_dept_name') !!}</span>@endif
           </td>
         </tr>
         <tr>
           <td class="title">役職名</td>
           <td>
-          	 <input type="text" name="person_charge_title" value="{{old('person_charge_title')}}" />
+          	 <input type="text" name="person_charge_title" value="{{old('person_charge_title')}}" class="person-status" />
           </td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>ご住所</td>
           <td>
-          	 〒 <input type="text" name="person_charge_zipcode" value="{{old('person_charge_zipcode')}}" class="input-xs"/>
-             住所 <input name="person_charge_your_addrs" value="{{old('person_charge_your_addrs')}}" type="text" style="width:400px!important;">
+          	 〒 <input type="text" name="person_charge_zipcode" value="{{old('person_charge_zipcode')}}" class="input-xs person-status" />
+             住所 <input name="person_charge_your_addrs" value="{{old('person_charge_your_addrs')}}" type="text" style="width:400px!important;" class="person-status">
              @if ($errors->first('person_charge_zipcode'))<span class="error-input">{!! $errors->first('person_charge_zipcode') !!}</span>@endif
              @if ($errors->first('person_charge_your_addrs'))<span class="error-input">{!! $errors->first('person_charge_your_addrs') !!}</span>@endif
           </td>
@@ -573,18 +576,20 @@ $( document ).ready(function() {
     var oldYear = "{{old('year')}}";
     if(typeof oldYear != 'undefined'){
       $('#year option[value="' + oldYear + '"]').prop('selected',true);
-    }else{
+    }
+    if(oldYear == ''){
       $('#year option[value="' + year + '"]').prop('selected',true);
     }
 
-    for(i=1; i<=totalday; i++){
+    for(i=1; i<=12; i++){
       month_html += "<option value='"+format2Digit(i)+"'>"+format2Digit(i)+"</option>";
     }
     $('#month').html(month_html);
     var oldMonth = "{{old('month')}}";
     if(typeof oldMonth != 'undefined'){
       $('#month option[value="' + oldMonth + '"]').prop('selected',true);
-    }else{
+    }
+    if(oldMonth == ''){
       $('#month option[value="' + month + '"]').prop('selected',true);
     }
 
@@ -594,12 +599,61 @@ $( document ).ready(function() {
     $('#day').html(day_html);
     var oldDay = "{{old('day')}}";
     if(typeof oldDay != 'undefined'){
+
       $('#day option[value="' + oldDay + '"]').prop('selected',true);
-    }else{
+    }
+    if(oldDay == ''){
       $('#day option[value="' + day + '"]').prop('selected',true);
     }
 
+//Check radio group
+    if($('#domain_allow').is(':checked')){
+       $('input.domain-status').attr('disabled', false);
+    }else{
+       $('input.domain-status').attr('disabled', true);
+    }
+
+    if($('#contract_allow').is(':checked')){
+       $('input.policy-status').attr('disabled', false);
+    }else{
+       $('input.policy-status').attr('disabled', true);
+    }
+
+
+    if($('#person_allow').is(':checked')){
+       $('input.person-status').attr('disabled', false);
+    }else{
+       $('input.person-status').attr('disabled', true);
+    }
+
   });
+
+ $('#domain_allow').click(function(event) {
+    $('input.domain-status').attr('disabled', false);
+  });
+
+  $('#domain_disallow').click(function(event) {
+    $('input.domain-status').attr('disabled', true);
+  });
+
+  
+  $('#contract_allow').click(function(event) {
+    $('input.policy-status').attr('disabled', false);
+  });
+
+  $('#contract_disallow').click(function(event) {
+    $('input.policy-status').attr('disabled', true);
+  });
+
+
+    $('#person_allow').click(function(event) {
+    $('input.person-status').attr('disabled', false);
+  });
+
+  $('#person_disallow').click(function(event) {
+    $('input.person-status').attr('disabled', true);
+  });
+
 
   function dayOfMonth(year, month)
   {

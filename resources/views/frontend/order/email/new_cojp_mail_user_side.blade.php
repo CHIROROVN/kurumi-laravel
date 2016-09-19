@@ -12,7 +12,7 @@
 ------------------------------------------------------------ <br />
 お申込みプラン名　　　　　　　：{{$new_cojp['plan']}} <br />
 ドメイン名　　　　　　　　　　：{{$new_cojp['domain']}} <br />
-サービス開始希望日　　　　　　：{{$new_cojp['service']}} {{$new_cojp['year']}}年 {{$new_cojp['month']}}月 {{$new_cojp['day']}}日 <br />
+サービス開始希望日　　　　　　：{{$new_cojp['service']}} {{$new_cojp['year']}}/{{$new_cojp['month']}}/{{$new_cojp['day']}}<br />
 お支払い方法　　　　　　　　　：{{$new_cojp['paymonth']}}  {{$new_cojp['payinvoice']}} <br />
 ・オプション　　　　　　　　　：{{$new_cojp['option']}} <br />
 外部バックアップ世代数追加　　：{{$new_cojp['generation']}}世代 <br />
@@ -35,13 +35,14 @@ WAF追加　　　　　　　　　　　 ：{{$new_cojp['waf']}}不要 <br /> 
 代者者名（英語）　　　　　　　：{{$new_cojp['representative_en']}} <br />
 代表者肩書　　　　　　　　　　：{{$new_cojp['representative_title']}} <br /> <br />
 
-・ドメイン登録担当者　　　　　：{{$new_cojp['domain_person_regist']}} <br />
+@if($new_cojp['domain_person_regist'] == '以下に入力')
 登録担当者氏名（日本語）　　　：{{$new_cojp['domain_person_jp']}} <br />
 登録担当者氏名（英語）　　　　：{{$new_cojp['domain_person_en']}} <br />
 会社名・組織名　　　　　　　　：{{$new_cojp['company_name']}} <br />
 ご住所　　　　　　　　　　　　：{{$new_cojp['your_address']}} <br />
 部署名　　　　　　　　　　　　：{{$new_cojp['department']}} <br />
 役職名　　　　　　　　　　　　：{{$new_cojp['domain_title']}} <br />
+@endif
 電話番号　　　　　　　　　　　：{{$new_cojp['domain_phone']}} <br />
 FAX 　　　　　　　　　　　　　：{{$new_cojp['domain_fax']}} <br />
 メールアドレス　　　　　　　　：{{$new_cojp['domain_email']}} <br />
@@ -60,25 +61,27 @@ DNSサーバー 　　　　　　　　　：{{$new_cojp['dns_server']}} <br />
 FAX 　　　　　　　　　　　　　：{{$new_cojp['ssl_fax']}} <br />
 受信可能メールアドレス　　　　：{{$new_cojp['receive_mail_addrs']}} <br /> <br />
 
+@if($new_cojp['policy_contract_info'] == '以下に入力')
 ------------------------------------------------------------ <br />
 ○ご契約者について <br />
 ------------------------------------------------------------ <br />
-ご契約者情報　　　　　　　　　：{{$new_cojp['policy_contract_info']}} <br />
 組織名　　　　　　　　　　　　：{{$new_cojp['policy_organization_name']}} <br />
 代表者名　　　　　　　　　　　：{{$new_cojp['policy_representative_name']}} <br />
 役職名　　　　　　　　　　　　：{{$new_cojp['policy_title']}} <br />
 氏名　　　　　　　　　　　　　：{{$new_cojp['policy_name']}} <br />
 所在地　　　　　　　　　　　　：{{$new_cojp['location']}} <br /> <br />
+@endif
 
+@if($new_cojp['person_charge_info'] == '以下に入力')
 ------------------------------------------------------------ <br />
 ○ご担当者について <br />
 ------------------------------------------------------------ <br />
-ご担当者情報　　　　　　　　　：{{$new_cojp['person_charge_info']}} <br />
 組織名　　　　　　　　　　　　：{{$new_cojp['person_charge_organization_name']}} <br />
 氏名　　　　　　　　　　　　　：{{$new_cojp['person_charge_name']}} <br />
 部署名　　　　　　　　　　　　：{{$new_cojp['person_charge_dept_name']}} <br />
 役職名　　　　　　　　　　　　：{{$new_cojp['person_charge_title']}} <br />
 ご住所　　　　　　　　　　　　：{{$new_cojp['person_charge_zipcode']}} <br />
+@endif
 連絡先TEL 　　　　　　　　　　：{{$new_cojp['person_charge_tel']}} <br />
 連絡先FAX 　　　　　　　　　　：{{$new_cojp['person_charge_fax']}} <br />
 連絡先メールアドレス　　　　　：{{$new_cojp['person_charge_email_addrs']}} <br /> <br />

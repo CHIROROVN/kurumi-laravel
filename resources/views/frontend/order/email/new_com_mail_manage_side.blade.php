@@ -49,25 +49,27 @@ DNSサーバー 　　　　　　　　　：{{$new_com['dns_server']}} <br /><
 FAX 　　　　　　　　　　　　　：{{$new_com['ssl_fax']}} <br />
 受信可能メールアドレス　　　　：{{$new_com['receive_mail_addrs']}} <br /><br />
 
+@if($new_com['policy_contract_info'] == '以下に入力')
 ------------------------------------------------------------ <br />
 ○ご契約者について <br />
 ------------------------------------------------------------ <br />
-ご契約者情報　　　　　　　　　：{{$new_com['policy_contract_info']}} <br />
 組織名　　　　　　　　　　　　： {{$new_com['policy_organization_name']}} <br />
 代表者名　　　　　　　　　　　：{{$new_com['policy_representative_name']}} <br />
 役職名　　　　　　　　　　　　：{{$new_com['policy_title']}} <br />
 氏名　　　　　　　　　　　　　：{{$new_com['policy_name']}} <br />
 所在地　　　　　　　　　　　　：{{$new_com['location']}} <br /><br />
+@endif
 
 ------------------------------------------------------------ <br />
 ○ご担当者について <br />
 ------------------------------------------------------------ <br />
-ご担当者情報　　　　　　　　　：{{$new_com['person_charge_info']}} <br />
+@if($new_com['person_charge_info'] == '以下に入力')
 組織名　　　　　　　　　　　　：{{$new_com['person_charge_organization_name']}} <br />
 氏名　　　　　　　　　　　　　：{{$new_com['person_charge_name']}} <br />
 部署名　　　　　　　　　　　　：{{$new_com['person_charge_dept_name']}} <br />
 役職名　　　　　　　　　　　　：{{$new_com['person_charge_title']}} <br />
 ご住所　　　　　　　　　　　　：{{$new_com['person_charge_zipcode']}} {{$new_com['person_charge_your_addrs']}}住所 <br />
+@endif
 連絡先TEL 　　　　　　　　　　：{{$new_com['person_charge_tel']}} <br />
 連絡先FAX 　　　　　　　　　　：{{$new_com['person_charge_fax']}} <br />
 連絡先メールアドレス　　　　　：{{$new_com['person_charge_email_addrs']}} <br /><br />

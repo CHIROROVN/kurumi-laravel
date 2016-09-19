@@ -8,14 +8,14 @@ use Auth;
 
 class PlanController extends FrontendController
 {
-	public function __construct()
-	{
-		parent::__construct();
-	}
+  public function __construct()
+  {
+    parent::__construct();
+  }
 
-	public function index() {
-		return view('frontend.plan.index');
-	}
+  public function index() {
+    return view('frontend.plan.index');
+  }
 
 
 }

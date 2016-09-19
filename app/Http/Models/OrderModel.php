@@ -8,43 +8,46 @@ class OrderModel
 
     public function RuleNewCoJp()
     {
-    	return array(
-    		'plan'                                    => 'required',
+        return array(
+            'plan'                                    => 'required',
             'domain'                                  => 'required',
             'service'                                 => 'required',
             'paymonth'                                => 'required',
             'payinvoice'                              => 'required',
             'generation'                              => 'required',
-            'individual'                              => 'required',
+//            'individual'                              => 'required',
             'organization_jp'                         => 'required',
             'furigana'                                => 'required|regex:/^[\x{3041}-\x{3096}]+$/u',
-            'organization_en'                         => 'required',
+            'organization_en'                         => 'required|alpha_num',
             'postal_code'                             => 'required',
             'address_jp'                              => 'required',
-            'address_en'                              => 'required',
+            'address_en'                              => 'required|alpha_num',
             'regist_date'                             => 'required',
             'regist_land_address'                     => 'required',
             'representative_jp'                       => 'required',
-            'representative_en'                       => 'required',
+            'representative_en'                       => 'required|alpha_num',
             'representative_title'                    => 'required',
-            'domain_person_regist'                    => 'required',
+
             'domain_person_jp'                        => 'required',
-            'domain_person_en'                        => 'required',
+            'domain_person_en'                        => 'required|alpha_num',
             'company_name'                            => 'required',
             'your_address'                            => 'required',
             'department'                              => 'required',
             'domain_title'                            => 'required',
-            'domain_phone'                            => 'required',
+            'domain_phone'                            => 'required|numeric',
+
             'domain_email'                            => 'required',
             'dns_server'                              => 'required',
+            'dns_server_text3'                        => 'required',
+            'dns_server_text4'                        => 'required',
             'common_name'                             => 'required',
             'organization_name_jp'                    => 'required',
-            'organization_name_en'                    => 'required',
+            'organization_name_en'                    => 'required|alpha_num',
             'prefectures_jp'                          => 'required',
-            'prefectures_en'                          => 'required',
+            'prefectures_en'                          => 'required|alpha_num',
             'name_person_charge'                      => 'required',
             'phone_number'                            => 'required',
-            'policy_contract_info'                    => 'required',
+
             'policy_organization_name'                => 'required',
             'policy_representative_name'              => 'required',
             'policy_name'                             => 'required',
@@ -52,17 +55,17 @@ class OrderModel
             'person_charge_organization_name'         => 'required',
             'person_charge_name'                      => 'required',
             'person_charge_dept_name'                 => 'required',
-            'person_charge_title'                     => 'required',
-            'person_charge_zipcode'                   => 'required',
-            'person_charge_tel'                       => 'required',
-            'person_charge_email_addrs'               => 'required',
 
-		);
+            'person_charge_zipcode'                   => 'required',
+            'person_charge_tel'                       => 'required|numeric',
+            'person_charge_fax'                       => 'numeric',
+            'person_charge_email_addrs'               => 'required',
+        );
     }
 
     public function MsgNewCoJp()
     {
-    	return array(
+        return array(
             'plan.required'                                 => trans('validation.error_plan_required'),
             'domain.required'                               => trans('validation.error_domain_required'),
             'service.required'                              => trans('validation.error_service_required'),
@@ -74,19 +77,25 @@ class OrderModel
             'furigana.required'                             => trans('validation.error_furigana_required'),
             'furigana.regex'                                => trans('validation.error_furigana_regex'),
             'organization_en.required'                      => trans('validation.error_organization_en_required'),
+            'organization_en.alpha_num'                     => trans('validation.error_organization_en_alpha_num'),
             'postal_code.required'                          => trans('validation.error_postal_code_required'),
 
             'address_jp.required'                           => trans('validation.error_address_jp_required'),
-            'address_en.required'                           => trans('validation.error_address_en_required'),            
+            'address_en.required'                           => trans('validation.error_address_en_required'),
+            'address_en.alpha_num'                          => trans('validation.error_address_en_alpha_num'),
             'regist_date.required'                          => trans('validation.error_regist_date_required'),
             'regist_land_address.required'                  => trans('validation.error_regist_land_address_required'),
 
             'representative_jp.required'                    => trans('validation.error_representative_jp_required'),
             'representative_en.required'                    => trans('validation.error_representative_enpostal_code_required'),
+            'representative_en.alpha_num'                   => trans('validation.error_representative_enpostal_code_alpha_num'),
             'representative_title.required'                 => trans('validation.error_representative_title_required'),
             'domain_person_regist.required'                 => trans('validation.error_domain_person_regist_required'),
             'domain_person_jp.required'                     => trans('validation.error_domain_person_jp_required'),
+
             'domain_person_en.required'                     => trans('validation.error_domain_person_en_required'),
+            'domain_person_en.alpha_num'                    => trans('validation.error_domain_person_en_alpha_num'),
+
             'name_person_charge.required'                   => trans('validation.error_name_person_charge_required'),
             'phone_number.required'                         => trans('validation.error_phone_number_required'),
             'company_name.required'                         => trans('validation.error_company_name_required'),
@@ -94,14 +103,23 @@ class OrderModel
             'department.required'                           => trans('validation.error_department_required'),
             'domain_title.required'                         => trans('validation.error_domain_title_required'),
             'domain_phone.required'                         => trans('validation.error_domain_phone_required'),
+            'domain_fax.numeric'                            => trans('validation.error_domain_fax_numeric'),
             'domain_email.required'                         => trans('validation.error_domain_email_required'),
+
             'dns_server.required'                           => trans('validation.error_dns_server_required'),
+            'dns_server_text3.required'                     => trans('validation.error_dns_server_text3_required'),
+            'dns_server_text4.required'                     => trans('validation.error_dns_server_text4_required'),
+
             'common_name.required'                          => trans('validation.error_common_name_required'),
             'organization_name_jp.required'                 => trans('validation.error_organization_name_jp_required'),
+
             'organization_name_en.required'                 => trans('validation.error_organization_name_en_required'),
+            'organization_name_en.alpha_num'                => trans('validation.error_organization_name_en_alpha_num'),
+
             'prefectures_jp.required'                       => trans('validation.error_prefectures_jp_required'),
             'prefectures_en.required'                       => trans('validation.error_prefectures_en_required'),
-            '.phone_number'                                 => trans('validation.error_phone_number_required'),
+            'prefectures_en.alpha_num'                      => trans('validation.error_prefectures_en_alpha_num'),
+            'phone_number'                                  => trans('validation.error_phone_number_required'),
             'policy_contract_info.required'                 => trans('validation.error_policy_contract_info_rquired'),
             'policy_organization_name.required'             => trans('validation.error_policy_organization_name_required'),
             'policy_representative_name.required'           => trans('validation.error_ppolicy_representative_namerefectures_jp_required'),
@@ -112,13 +130,13 @@ class OrderModel
             'person_charge_dept_name.required'              => trans('validation.error_person_charge_dept_name_required'),
             'person_charge_title.required'                  => trans('validation.error_person_charge_title_required'),
             'person_charge_zipcode.required'                => trans('validation.error_person_charge_zipcode_required'),
+
             'person_charge_tel.required'                    => trans('validation.error_person_charge_tel_required'),
+            'person_charge_tel.numeric'                     => trans('validation.error_person_charge_tel_numeric'),
+
             'person_charge_email_addrs.required'            => trans('validation.error_person_charge_email_addrs_required'),
 
-
-
-
-		);
+        );
     }
 
     public function RuleNewJp()
@@ -134,20 +152,20 @@ class OrderModel
             //'individual'                              => 'required',
 
             'dns_organization_jp'                     => 'required',
-            'dns_organization_en'                     => 'required',
+            'dns_organization_en'                     => 'required|alpha_num',
 
             'dns_owner_name'                          => 'required',
             'dns_dept_name'                           => 'required',
             'dns_addrs_jp'                            => 'required',
-            'dns_addrs_en'                            => 'required',
+            'dns_addrs_en'                            => 'required|alpha_num',
             'dns_email_addrs'                         => 'required',
             'public_contact'                          => 'required',
             'dns_server'                              => 'required',
             'common_name'                             => 'required',
             'organization_name_jp'                    => 'required',
-            'organization_name_en'                    => 'required',
+            'organization_name_en'                    => 'required|alpha_num',
             'prefectures_jp'                          => 'required',
-            'prefectures_en'                          => 'required',
+            'prefectures_en'                          => 'required|alpha_num',
             'name_person_charge'                      => 'required',
             'phone_number'                            => 'required',
             'policy_contract_info'                    => 'required',
@@ -159,7 +177,7 @@ class OrderModel
             'person_charge_name'                      => 'required',
             'person_charge_dept_name'                 => 'required',
             'person_charge_zipcode'                   => 'required',
-            'person_charge_tel'                       => 'required',
+            'person_charge_tel'                       => 'required|numeric',
             'person_charge_email_addrs'               => 'required|email',
 
         );
@@ -179,10 +197,12 @@ class OrderModel
 
             'dns_organization_jp.required'                  => trans('validation.error_dns_organization_jp_required'),
             'dns_organization_en.required'                  => trans('validation.error_dns_organization_en_required'),
+            'dns_organization_en.alpha_num'                 => trans('validation.error_dns_organization_en_alpha_num'),
             'dns_owner_name.required'                       => trans('validation.error_dns_owner_name_required'),
             'dns_dept_name.required'                        => trans('validation.error_dns_dept_name_required'),
             'dns_addrs_jp.required'                         => trans('validation.error_dns_addrs_jp_required'),
             'dns_addrs_en.required'                         => trans('validation.error_dns_addrs_en_required'),
+            'dns_addrs_en.alpha_num'                        => trans('validation.error_dns_addrs_en_alpha_num'),
             'dns_email_addrs.required'                      => trans('validation.error_dns_email_addrs_required'),
             'public_contact.required'                       => trans('validation.error_public_contact_required'),
 
@@ -190,8 +210,10 @@ class OrderModel
             'common_name.required'                          => trans('validation.error_common_name_required'),
             'organization_name_jp.required'                 => trans('validation.error_organization_name_jp_required'),
             'organization_name_en.required'                 => trans('validation.error_organization_name_en_required'),
+            'organization_name_en.alpha_num'                => trans('validation.error_organization_name_en_alpha_num'),
             'prefectures_jp.required'                       => trans('validation.error_prefectures_jp_required'),
             'prefectures_en.required'                       => trans('validation.error_prefectures_en_required'),
+            'prefectures_en.alpha_num'                      => trans('validation.error_prefectures_en_alpha_num'),
             'name_person_charge.required'                   => trans('validation.error_name_person_charge_required'),
             'phone_number.required'                         => trans('validation.error_phone_number_required'),
             'policy_contract_info.required'                 => trans('validation.error_policy_contract_info_rquired'),
@@ -204,6 +226,7 @@ class OrderModel
             'person_charge_dept_name.required'              => trans('validation.error_person_charge_dept_name_required'),
             'person_charge_zipcode.required'                => trans('validation.error_person_charge_zipcode_required'),
             'person_charge_tel.required'                    => trans('validation.error_person_charge_tel_required'),
+            'person_charge_tel.numeric'                     => trans('validation.error_person_charge_tel_numeric'),
             'person_charge_email_addrs.required'            => trans('validation.error_person_charge_email_addrs_required'),
             'person_charge_email_addrs.email'               => trans('validation.error_person_charge_email_addrs_email'),     
 
@@ -221,19 +244,19 @@ class OrderModel
             'generation'                              => 'required',
             'individual'                              => 'required',
             'dns_organization_jp'                     => 'required',
-            'dns_organization_en'                     => 'required',
+            'dns_organization_en'                     => 'required|alpha_num',
             'dns_owner_name'                          => 'required',
             'dns_dept_name'                           => 'required',
             'dns_addrs_jp'                            => 'required',
-            'dns_addrs_en'                            => 'required', 
+            'dns_addrs_en'                            => 'required|alpha_num', 
             'dns_phone'                               => 'required', 
             'dns_email_addrs'                         => 'required',
             'dns_server'                              => 'required', 
             'common_name'                             => 'required',
             'organization_name_jp'                    => 'required',
-            'organization_name_en'                    => 'required',
+            'organization_name_en'                    => 'required|alpha_num',
             'prefectures_jp'                          => 'required',
-            'prefectures_en'                          => 'required',
+            'prefectures_en'                          => 'required|alpha_num',
             'name_person_charge'                      => 'required',
             'phone_number'                            => 'required',
             'policy_contract_info'                    => 'required',
@@ -246,7 +269,7 @@ class OrderModel
             'person_charge_dept_name'                 => 'required',
             'person_charge_zipcode'                   => 'required',
             //'person_charge_your_addrs'                => 'required',
-            'person_charge_tel'                       => 'required',
+            'person_charge_tel'                       => 'required|',
             'person_charge_email_addrs'               => 'required|email',
 
         );
@@ -264,10 +287,13 @@ class OrderModel
             'individual.required'                           => trans('validation.error_individual_required'),
             'dns_organization_jp.required'                  => trans('validation.error_dns_organization_jp_required'),
             'dns_organization_en.required'                  => trans('validation.error_dns_organization_en_required'),
+            'dns_organization_en.alpha_num'                 => trans('validation.error_dns_organization_en_alpha_num'),
             'dns_owner_name.required'                       => trans('validation.error_dns_owner_name_required'),
             'dns_dept_name.required'                        => trans('validation.error_dns_dept_name_required'),
             'dns_addrs_jp.required'                         => trans('validation.error_dns_addrs_jp_required'),
             'dns_addrs_en.required'                         => trans('validation.error_dns_addrs_en_required'),
+            'dns_addrs_en.alpha_num'                        => trans('validation.error_dns_addrs_en_alpha_num'),
+
             'dns_phone.required'                            => trans('validation.error_dns_phone_required'),
             'dns_email_addrs.required'                      => trans('validation.error_dns_email_addrs_required'),
 
@@ -278,16 +304,20 @@ class OrderModel
             'postal_code.required'                          => trans('validation.error_postal_code_required'),
 
             'address_jp.required'                           => trans('validation.error_address_jp_required'),
-            'address_en.required'                           => trans('validation.error_address_en_required'),            
+            'address_en.alpha_num'                          => trans('validation.error_address_en_alpha_num'),
+            'address_en.required'                           => trans('validation.error_address_en_required'),
             'regist_date.required'                          => trans('validation.error_regist_date_required'),
             'regist_land_address.required'                  => trans('validation.error_regist_land_address_required'),
 
             'representative_jp.required'                    => trans('validation.error_representative_jp_required'),
             'representative_en.required'                    => trans('validation.error_representative_enpostal_code_required'),
+            'representative_en.alpha_num'                   => trans('validation.error_representative_enpostal_code_alpha_num'),
             'representative_title.required'                 => trans('validation.error_representative_title_required'),
             'domain_person_regist.required'                 => trans('validation.error_domain_person_regist_required'),
             'domain_person_jp.required'                     => trans('validation.error_domain_person_jp_required'),
             'domain_person_en.required'                     => trans('validation.error_domain_person_en_required'),
+            'domain_person_en.alpha_num'                    => trans('validation.error_domain_person_en_alpha_num'),
+
             'name_person_charge.required'                   => trans('validation.error_name_person_charge_required'),
             'phone_number.required'                         => trans('validation.error_phone_number_required'),
             'company_name.required'                         => trans('validation.error_company_name_required'),
@@ -300,8 +330,10 @@ class OrderModel
             'common_name.required'                          => trans('validation.error_common_name_required'),
             'organization_name_jp.required'                 => trans('validation.error_organization_name_jp_required'),
             'organization_name_en.required'                 => trans('validation.error_organization_name_en_required'),
+            'organization_name_en.alpha_num'                => trans('validation.error_organization_name_en_alpha_num'),
             'prefectures_jp.required'                       => trans('validation.error_prefectures_jp_required'),
             'prefectures_en.required'                       => trans('validation.error_prefectures_en_required'),
+            'prefectures_en.alpha_num'                      => trans('validation.error_prefectures_en_alpha_num'),
             '.phone_number'                                 => trans('validation.error_phone_number_required'),
             'policy_contract_info.required'                 => trans('validation.error_policy_contract_info_rquired'),
             'policy_organization_name.required'             => trans('validation.error_policy_organization_name_required'),
@@ -314,12 +346,11 @@ class OrderModel
             'person_charge_title.required'                  => trans('validation.error_person_charge_title_required'),
             'person_charge_zipcode.required'                => trans('validation.error_person_charge_zipcode_required'),
             'person_charge_tel.required'                    => trans('validation.error_person_charge_tel_required'),
+            'person_charge_tel.numeric'                     => trans('validation.error_person_charge_tel_numeric'),
             'person_charge_email_addrs.required'            => trans('validation.error_person_charge_email_addrs_required'),
             'person_charge_email_addrs.email'               => trans('validation.error_person_charge_email_addrs_email'),
-            
         );
     }
-
 
     // move-cojp
     public function rMoveCoJp()

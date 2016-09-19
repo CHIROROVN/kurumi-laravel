@@ -310,44 +310,44 @@ admin@ドメイン名　→　SSL申請後に確認メールが届くので、in
           <td class="title"><span>※ </span>ご契約者情報</td>
           <td>
             <div>
-              <input type="radio" name="policy_contract_info" value="ドメイン登録情報と同一" @if(old('policy_contract_info') == 'ドメイン登録情報と同一') checked="" @endif /> ドメイン登録情報と同一 
+              <input type="radio" id="contract_disallow" name="policy_contract_info" value="ドメイン登録情報と同一" @if(old('policy_contract_info') == 'ドメイン登録情報と同一') checked="" @else checked="" @endif /> ドメイン登録情報と同一 
             </div>
             <div>
-              <input type="radio" name="policy_contract_info"  @if(old('policy_contract_info') == '以下に入力') checked="" @endif /> 以下に入力 
+              <input type="radio" id="contract_allow" name="policy_contract_info" value="以下に入力"  @if(old('policy_contract_info') == '以下に入力') checked="" @endif /> 以下に入力 
             </div>
             @if ($errors->first('policy_contract_info'))<span class="error-input">{!! $errors->first('policy_contract_info') !!}</span>@endif
           </td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>組織名</td>
-          <td><input type="text" name="policy_organization_name" value="{{old('policy_organization_name')}}" />
+          <td><input type="text" name="policy_organization_name" value="{{old('policy_organization_name')}}" class="contract-status" />
           @if ($errors->first('policy_organization_name'))<span class="error-input">{!! $errors->first('policy_organization_name') !!}</span>@endif</td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>代表者名</td>
           <td>
-             <input type="text" name="policy_representative_name" value="{{old('policy_representative_name')}}" />
+             <input type="text" name="policy_representative_name" value="{{old('policy_representative_name')}}" class="contract-status"/>
              @if ($errors->first('policy_representative_name'))<span class="error-input">{!! $errors->first('policy_representative_name') !!}</span>@endif
           </td>
         </tr>
         <tr>
           <td class="title">役職名</td>
           <td>
-             <input type="text" name="policy_title" value="{{old('policy_title')}}" />
+             <input type="text" name="policy_title" value="{{old('policy_title')}}" class="contract-status"/>
              @if ($errors->first('policy_title'))<span class="error-input">{!! $errors->first('policy_title') !!}</span>@endif
           </td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>氏名</td>
           <td>
-             <input type="text" name="policy_name" value="{{old('policy_name')}}" />
+             <input type="text" name="policy_name" value="{{old('policy_name')}}" class="contract-status"/>
              @if ($errors->first('policy_name'))<span class="error-input">{!! $errors->first('policy_name') !!}</span>@endif
           </td>
         </tr>
         <tr>
           <td class="title">所在地</td>
           <td>
-             <input type="text" name="location" value="{{old('location')}}" />
+             <input type="text" name="location" value="{{old('location')}}" class="contract-status"/>
              @if ($errors->first('location'))<span class="error-input">{!! $errors->first('location') !!}</span>@endif
           </td>
         </tr>
@@ -359,45 +359,45 @@ admin@ドメイン名　→　SSL申請後に確認メールが届くので、in
           <td class="title"><span>※ </span>ご担当者情報</td>
           <td>
             <div>
-              <input type="radio" name="person_charge_info" value="ドメイン登録情報と同一" @if(old('person_charge_info') == 'ドメイン登録情報と同一') checked="" @endif /> ドメイン登録情報と同一
+              <input type="radio" id="person_disallow" name="person_charge_info" value="ドメイン登録情報と同一" @if(old('person_charge_info') == 'ドメイン登録情報と同一') checked="" @else checked="" @endif /> ドメイン登録情報と同一
             </div>
             <div>
-              <input type="radio" name="person_charge_info" value="以下に入力" @if(old('person_charge_info') == '以下に入力') checked="" @endif /> 以下に入力
+              <input type="radio" id="person_allow" name="person_charge_info" value="以下に入力" @if(old('person_charge_info') == '以下に入力') checked="" @endif /> 以下に入力
             </div>
             @if ($errors->first('person_charge_info'))<span class="error-input">{!! $errors->first('person_charge_info') !!}</span>@endif
           </td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>組織名</td>
-          <td><input type="text" name="person_charge_organization_name" value="{{old('person_charge_organization_name')}}" />
+          <td><input type="text" name="person_charge_organization_name" value="{{old('person_charge_organization_name')}}" class="person-status" />
              @if ($errors->first('person_charge_organization_name'))<span class="error-input">{!! $errors->first('person_charge_organization_name') !!}</span>@endif
           </td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>氏名</td>
           <td>
-             <input type="text" name="person_charge_name" value="{{old('person_charge_name')}}" />
+             <input type="text" name="person_charge_name" value="{{old('person_charge_name')}}" class="person-status"/>
              @if ($errors->first('person_charge_name'))<span class="error-input">{!! $errors->first('person_charge_name') !!}</span>@endif
           </td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>部署名</td>
           <td>
-             <input type="text" name="person_charge_dept_name" value="{{old('person_charge_dept_name')}}" />
+             <input type="text" name="person_charge_dept_name" value="{{old('person_charge_dept_name')}}" class="person-status"/>
              @if ($errors->first('person_charge_dept_name'))<span class="error-input">{!! $errors->first('person_charge_dept_name') !!}</span>@endif
           </td>
         </tr>
         <tr>
           <td class="title">役職名</td>
           <td>
-             <input type="text" name="person_charge_title" value="{{old('person_charge_title')}}" />              
+             <input type="text" name="person_charge_title" value="{{old('person_charge_title')}}" class="person-status"/>
           </td>
         </tr>
         <tr>
           <td class="title"><span>※ </span>ご住所</td>
           <td>
-             〒 <input type="text" name="person_charge_zipcode" value="{{old('person_charge_zipcode')}}" class="input-xs"/>
-             住所 <input name="person_charge_your_addrs" value="{{old('person_charge_your_addrs')}}" type="text" style="width:400px!important;">
+             〒 <input type="text" name="person_charge_zipcode" value="{{old('person_charge_zipcode')}}" class="input-xs person-status"/>
+             住所 <input name="person_charge_your_addrs" value="{{old('person_charge_your_addrs')}}" type="text" style="width:400px!important;" class="person-status">
              @if ($errors->first('person_charge_zipcode'))<span class="error-input">{!! $errors->first('person_charge_zipcode') !!}</span>@endif
           </td>
         </tr>
@@ -438,5 +438,42 @@ admin@ドメイン名　→　SSL申請後に確認メールが届くので、in
     </div>
   </div>
 </section>
+
+<script  type="text/javascript">
+$( document ).ready(function() {
+
+//Check radio group
+    if($('#contract_allow').is(':checked')){
+       $('input.contract-status').attr('disabled', false);
+    }else{
+       $('input.contract-status').attr('disabled', true);
+    }
+
+    if($('#person_allow').is(':checked')){
+       $('input.person-status').attr('disabled', false);
+    }else{
+       $('input.person-status').attr('disabled', true);
+    }
+
+});
+
+$('#contract_allow').click(function(event) {
+    $('input.contract-status').attr('disabled', false);
+  });
+
+$('#contract_disallow').click(function(event) {
+  $('input.contract-status').attr('disabled', true);
+});
+
+$('#person_allow').click(function(event) {
+    $('input.person-status').attr('disabled', false);
+  });
+
+$('#person_disallow').click(function(event) {
+  $('input.person-status').attr('disabled', true);
+});
+
+
+</script>
 <!-- End content -->
 @endsection

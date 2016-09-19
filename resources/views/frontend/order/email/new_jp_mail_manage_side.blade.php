@@ -49,25 +49,26 @@ DNSサーバー           ：{{$new_jp['dns_server']}} <br /><br />
 FAX 　　　　　　　　　　　　　：{{$new_jp['ssl_fax']}} <br />
 受信可能メールアドレス　　　　：{{$new_jp['receive_mail_addrs']}} <br /><br />
 
+@if($new_jp['policy_contract_info'] == '以下に入力')
 ------------------------------------------------------------ <br />
 ○ご契約者について <br />
 ------------------------------------------------------------ <br />
-ご契約者情報　　　　　　　　　：{{$new_jp['policy_contract_info']}}  <br />
 組織名　　　　　　　　　　　　：{{$new_jp['policy_organization_name']}}  <br />
 代表者名　　　　　　　　　　　：{{$new_jp['policy_representative_name']}}  <br />
 役職名　　　　　　　　　　　　：{{$new_jp['policy_title']}}  <br />
 氏名　　　　　　　　　　　　　：{{$new_jp['policy_name']}}  <br />
 所在地　　　　　　　　　　　　：{{$new_jp['location']}}  <br /><br />
-
+@endif
 ------------------------------------------------------------ <br />
 ○ご担当者について <br />
 ------------------------------------------------------------ <br />
-ご担当者情報　　　　　　　　　：{{$new_jp['person_charge_info']}}  <br />
+@if($new_jp['person_charge_info'] == '以下に入力')
 組織名　　　　　　　　　　　　：{{$new_jp['person_charge_organization_name']}}  <br />
 氏名　　　　　　　　　　　　　：{{$new_jp['person_charge_name']}}  <br />
 部署名　　　　　　　　　　　　：{{$new_jp['person_charge_dept_name']}}  <br />
 役職名　　　　　　　　　　　　：{{$new_jp['person_charge_title']}}  <br />
 ご住所　　　　　　　　　　　　：{{$new_jp['person_charge_zipcode']}} {{$new_jp['person_charge_your_addrs']}} <br />
+@endif
 連絡先TEL 　　　　　　　　　　：{{$new_jp['person_charge_tel']}}  <br />
 連絡先FAX 　　　　　　　　　　：{{$new_jp['person_charge_fax']}}  <br />
 連絡先メールアドレス　　　　　：{{$new_jp['person_charge_email_addrs']}}  <br /><br />

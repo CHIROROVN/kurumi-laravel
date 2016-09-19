@@ -69,6 +69,7 @@
             <td class="title"><img src="{{ asset('') }}public/frontend/image/order/title3-table-index.png" alt="" /></td>
             <td>
               <a class="fl-left" href="{{ asset('') }}public/frontend/files/order/move/order_move-com.pdf" title=""><img src="{{ asset('') }}public/frontend/image/order/img-pdf.png" alt="" /></a>
+
               <a class="fl-right" href="{{route('frontend.order.move_com.index')}}" title=""><img src="{{ asset('') }}public/frontend/image/order/img-internet.png" alt="" /></a>
             </td>
           </tr>

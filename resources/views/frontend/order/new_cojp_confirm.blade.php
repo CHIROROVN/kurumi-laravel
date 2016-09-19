@@ -106,12 +106,14 @@
           <td class="title"><span> </span>代表者方肩書</td>
           <td>{{$new_cojp->representative_title}}</td>
         </tr>
-        <tr>
+
+        @if($new_cojp->domain_person_regist == '以下に入力')
+{{--         <tr>
           <td class="title"><span> </span>ドメイン登録担当者</td>
           <td>
             {{$new_cojp->domain_person_regist}}
           </td>
-        </tr>
+        </tr> --}}
         <tr>
           <td class="title"><span> </span>ドメイン登録担当者氏名（日本語）</td>
           <td>{{$new_cojp->domain_person_jp}}</td>
@@ -136,13 +138,14 @@
           <td class="title"><span> </span>役職名</td>
           <td>{{$new_cojp->domain_title}}</td>
         </tr>
+      @endif
         <tr>
           <td class="title"><span> </span>電話番号</td>
           <td>{{$new_cojp->domain_phone}}</td>
         </tr>
         <tr>
           <td class="title">FAX</td>
-          <td>{{$new_cojp->domain_fax}}</td>
+          <td>{{@$new_cojp->domain_fax}}</td>
         </tr>
         <tr>
           <td class="title"><span> </span>メールアドレス</td>
@@ -154,8 +157,10 @@
             {{$new_cojp->dns_server}}
           </td>
         </tr>
+
+
       </table>
-      
+
       <h3>SSL登録情報</h3>
        <table class="form-input">
         <tr>
@@ -212,15 +217,15 @@
         </tr>
       </table>
       
+      @if($new_cojp->policy_contract_info == '以下に入力')
       <h3>ご契約者について</h3>
        <table class="form-input">
-      
-        <tr>
+{{--         <tr>
           <td class="title"><span> </span>ご契約者情報</td>
           <td>
             {{$new_cojp->policy_contract_info}}
           </td>
-        </tr>
+        </tr> --}}
         <tr>
           <td class="title"><span> </span>組織名</td>
           <td>{{$new_cojp->policy_organization_name}}</td>
@@ -234,7 +239,7 @@
         <tr>
           <td class="title">役職名</td>
           <td>
-          	 {{$new_cojp->policy_title}}
+          	 {{@$new_cojp->policy_title}}
           </td>
         </tr>
         <tr>
@@ -250,15 +255,17 @@
           </td>
         </tr>
       </table>
-      
+      @endif
+
       <h3>ご担当者について</h3>
        <table class="form-input">
-          <tr>
+     @if($new_cojp->person_charge_info == '以下に入力')
+{{--           <tr>
           <td class="title"><span> </span>ご担当者情報</td>
           <td>
             {{$new_cojp->person_charge_info}}
           </td>
-        </tr>
+        </tr> --}}
         <tr>
           <td class="title"><span> </span>組織名</td>
           <td>{{$new_cojp->person_charge_organization_name}}</td>
@@ -278,7 +285,7 @@
         <tr>
           <td class="title">役職名</td>
           <td>
-          	 {{$new_cojp->person_charge_title}}
+          	 {{@$new_cojp->person_charge_title}}
           </td>
         </tr>
         <tr>
@@ -288,6 +295,7 @@
              住所 {{$new_cojp->person_charge_your_addrs}}
           </td>
         </tr>
+      @endif
         <tr>
           <td class="title"><span> </span>連絡先TEL</td>
           <td>
@@ -317,6 +325,7 @@
       </table>
       <div class="box-submit">
         <input value="送信" type="button" class="bt-submit" onclick="location.href='{{route('frontend.order.new_cojp_sent')}}'" />
+        <input value="裏面" type="button" class="btn-back" onclick="location.href='javascript:history.back()'" />
       <div>
     </div>
   </div>

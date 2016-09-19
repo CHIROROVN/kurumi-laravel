@@ -66,32 +66,38 @@ return [
     'error_name_person_charge_required'                         => '担当者名を入力してください。',
     'error_phone_number_required'                               => '電話番号を入力してください。',
     'error_policy_contract_info_rquired'                        => 'ご契約者情報を選択してください。',
+    'error_organization_en_alpha_num'                           => '組織名はアルファベット文字でなければなりません。',
+    'error_address_en_alpha_num'                                => 'ご住所はアルファベット文字でなければなりません。',
+    'error_representative_enpostal_code_alpha_num'              => '組織名はアルファベット文字でなければなりません。',
+    'error_prefectures_en_alpha_num'                            => '都道府県・市区郡名はアルファベット文字でなければなりません。',
+    'error_dns_server_text3_required'                           => 'DNSサーバーを入力してください。',
+    'error_dns_server_text4_required'                           => 'DNSサーバーを入力してください。',
 
     //new-com
     'error_dns_organization_jp_required'                        => '組織名（日本語）を入力してください。',
     'error_dns_organization_en_required'                        => '組織名（英語を入力してください。',
+    'error_dns_organization_en_alpha_num'                       => '組織名はアルファベット文字でなければなりません。',
+
     'error_dns_owner_name_required'                             => '所有者名を入力してください。',
     'error_dns_dept_name_required'                              => '部署名を入力してください。',
     'error_dns_addrs_jp_required'                               => 'ご住所（日本語）を入力してください。',
     'error_dns_addrs_en_required'                               => 'ご住所（英語）を入力してください。',
+    'error_dns_addrs_en_alpha_num'                              => 'ご住所はアルファベット文字でなければなりません。',
     'error_dns_phone_required'                                  => '電話番号を入力してください。',
     'error_dns_email_addrs_required'                            => 'メールアドレスを入力してください。',
+    'error_prefectures_en_alpha_num'                            => '都道府県・市区郡名はアルファベット文字でなければなりません。',
+    'error_organization_name_en_alpha_num'                      => '組織名はアルファベット文字でなければなりません。',
+
+
+
 
     //new-jp
     'error_public_contact_required'                             => '公開連絡先を選択してください。',
-
-
-
-
-
-
-
-
-
-
-
-
-
+    'error_person_charge_tel_numeric'                           => '電話は数値でなければなりません。',
+    'error_organization_name_en_alpha_num'                      => '組織名はアルファベット文字でなければなりません。',
+    'error_prefectures_en_alpha_num'                            => '都道府県・市区郡名はアルファベット文字でなければなりません。',
+    'error_dns_addrs_en_alpha_num'                              => 'ご住所はアルファベット文字でなければなりません。',
+    'error_dns_organization_en_alpha_num'                       => '組織名はアルファベット文字でなければなりません。',
 
 
 

@@ -167,15 +167,16 @@
           </td>
         </tr>
       </table>
-      
+
+      @if($new_com->policy_contract_info == '以下に入力')
       <h3>ご契約者について</h3>
-       <table class="form-input">      
-        <tr>
+       <table class="form-input">
+       {{--  <tr>
           <td class="title"><span></span>ご契約者情報</td>
           <td>
             {{$new_com->policy_contract_info}}
           </td>
-        </tr>
+        </tr> --}}
         <tr>
           <td class="title"><span></span>組織名</td>
           <td>{{$new_com->policy_organization_name}}</td>
@@ -205,14 +206,16 @@
           </td>
         </tr>
       </table>
+      @endif
       
       <h3>ご担当者について</h3>
        <table class="form-input">
-          <tr>
+       @if($new_com->person_charge_info == '以下に入力')
+          {{-- <tr>
           <td class="title"><span></span>ご担当者情報</td>
           <td>
             {{$new_com->person_charge_info}}
-          </td>
+          </td> --}}
         </tr>
         <tr>
           <td class="title"><span></span>組織名</td>
@@ -243,6 +246,7 @@
              住所 {{$new_com->person_charge_your_addrs}}
           </td>
         </tr>
+        @endif
         <tr>
           <td class="title"><span></span>連絡先TEL</td>
           <td>
@@ -272,6 +276,7 @@
       </table>
       <div class="box-submit">
         <input value="送信" type="button" class="bt-submit" onclick="location.href='{{route('frontend.order.new_com_sent')}}'"/>
+        <input value="裏面" type="button" class="btn-back" onclick="location.href='javascript:history.back()'" />
       <div>
     </div>
   </div>
