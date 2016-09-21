@@ -47,7 +47,7 @@
               </td>
             </tr>
             <tr>
-              <td class="title">お名前（フリガナ</td>
+              <td class="title">お名前（フリガナ)</td>
               <td>
                 @if ( isset($back['name_kana']) )
                 <input type="text" name="name_kana" value="{{ $back['name_kana'] }}" />

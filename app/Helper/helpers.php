@@ -14,4 +14,6 @@
 		return date_format($dates,"Y/m/d");
 	}
 
-
+	function Convert2Digit($number){
+		return sprintf("%02d", $number);
+	}

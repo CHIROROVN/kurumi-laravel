@@ -29,24 +29,17 @@ class OrderController extends FrontendController
         $RuleNewCoJp            = $clsOrder->RuleNewCoJp();
 
         if(Input::get('dns_server') == 1 || Input::get('dns_server') == 2){
-            unset($RuleNewCoJp['dns_server']);
             unset($RuleNewCoJp['dns_server_text3']);
             unset($RuleNewCoJp['dns_server_text4']);
         }elseif(Input::get('dns_server') == 3){
-            if(!empty(Input::get('dns_server_text3'))){
-                unset($RuleNewCoJp['dns_server']);
-                unset($RuleNewCoJp['dns_server_text4']);
-            }
+            unset($RuleNewCoJp['dns_server_text4']);
+            
         }elseif(Input::get('dns_server') == 4){
-            if(!empty(Input::get('dns_server_text4'))){
-                unset($RuleNewCoJp['dns_server']);
-                unset($RuleNewCoJp['dns_server_text3']);
-            }
+            unset($RuleNewCoJp['dns_server_text3']);
         }else{
             unset($RuleNewCoJp['dns_server_text3']);
             unset($RuleNewCoJp['dns_server_text4']);
         }
-
 
         if(Input::get('domain_person_regist') == '上記登録者情報と同一')
         {
@@ -221,7 +214,20 @@ class OrderController extends FrontendController
             unset($RuleNewJp['policy_name']);
         }
 
-        if(Input::get('person_charge_info') == '以下に入力'){
+        if(Input::get('dns_server') == 1 || Input::get('dns_server') == 2){
+            unset($RuleNewJp['dns_server_text3']);
+            unset($RuleNewJp['dns_server_text4']);
+        }elseif(Input::get('dns_server') == 3){
+            unset($RuleNewJp['dns_server_text4']);
+            
+        }elseif(Input::get('dns_server') == 4){
+            unset($RuleNewJp['dns_server_text3']);
+        }else{
+            unset($RuleNewJp['dns_server_text3']);
+            unset($RuleNewJp['dns_server_text4']);
+        }
+
+        if(Input::get('person_charge_info') == 'ドメイン登録情報と同一'){
             unset($RuleNewJp['person_charge_organization_name']);
             unset($RuleNewJp['person_charge_name']);
             unset($RuleNewJp['person_charge_dept_name']);
@@ -258,7 +264,16 @@ class OrderController extends FrontendController
         $dataInput['dns_email_addrs']                   = Input::get('dns_email_addrs');
 
         $dataInput['public_contact']                    = Input::get('public_contact');
-        $dataInput['dns_server']                        = Input::get('dns_server');
+
+        if(Input::get('dns_server') == 1){
+            $dataInput['dns_server']                    = 'チロロネットのDNSを利用する';
+        }elseif(Input::get('dns_server') == 2){
+            $dataInput['dns_server']                    = '以下のDNSサーバーを利用する';
+        }elseif(Input::get('dns_server') == 3){
+            $dataInput['dns_server']                    = Input::get('dns_server_text3');
+        }else{
+            $dataInput['dns_server']                    = Input::get('dns_server_text4');
+        }
 
         $dataInput['common_name']                       = Input::get('common_name');
         $dataInput['organization_name_jp']              = Input::get('organization_name_jp');
@@ -272,7 +287,7 @@ class OrderController extends FrontendController
         $dataInput['receive_mail_addrs']                = Input::get('receive_mail_addrs');
 
         $dataInput['policy_contract_info']              = Input::get('policy_contract_info');
-        $dataInput['policy_title']              = Input::get('policy_title');
+        $dataInput['policy_title']                      = Input::get('policy_title');
 
         if(Input::get('policy_contract_info') == '以下に入力'){
             $dataInput['policy_organization_name']          = Input::get('policy_organization_name');
@@ -356,6 +371,19 @@ class OrderController extends FrontendController
             unset($RuleNewCom['person_charge_your_addrs']);
         }
 
+        if(Input::get('dns_server') == 1 || Input::get('dns_server') == 2){
+            unset($RuleNewCom['dns_server_text3']);
+            unset($RuleNewCom['dns_server_text4']);
+        }elseif(Input::get('dns_server') == 3){
+            unset($RuleNewCom['dns_server_text4']);
+            
+        }elseif(Input::get('dns_server') == 4){
+            unset($RuleNewCom['dns_server_text3']);
+        }else{
+            unset($RuleNewCom['dns_server_text3']);
+            unset($RuleNewCom['dns_server_text4']);
+        }
+
         $validator              = Validator::make(Input::all(), $RuleNewCom, $clsOrder->MsgNewCom());
         if ($validator->fails()) {
             return redirect()->route('frontend.order.new_com_regist')->withErrors($validator)->withInput();
@@ -384,7 +412,17 @@ class OrderController extends FrontendController
         $dataInput['dns_phone']                         = Input::get('dns_phone');
         $dataInput['dns_fax']                           = Input::get('dns_fax');
         $dataInput['dns_email_addrs']                   = Input::get('dns_email_addrs');
-        $dataInput['dns_server']                        = Input::get('dns_server');
+
+        if(Input::get('dns_server') == 1){
+            $dataInput['dns_server']                    = 'チロロネットのDNSを利用する';
+        }elseif(Input::get('dns_server') == 2){
+            $dataInput['dns_server']                    = '以下のDNSサーバーを利用する';
+        }elseif(Input::get('dns_server') == 3){
+            $dataInput['dns_server']                    = Input::get('dns_server_text3');
+        }else{
+            $dataInput['dns_server']                    = Input::get('dns_server_text4');
+        }
+
         $dataInput['common_name']                       = Input::get('common_name');
         $dataInput['organization_name_jp']              = Input::get('organization_name_jp');
         $dataInput['organization_name_en']              = Input::get('organization_name_en');
@@ -405,18 +443,19 @@ class OrderController extends FrontendController
             $dataInput['location']                          = Input::get('location');
         }
 
+        $dataInput['person_charge_info']                = Input::get('person_charge_info');
         if(Input::get('person_charge_info') == '以下に入力'){
-            $dataInput['person_charge_info']                = Input::get('person_charge_info');
             $dataInput['person_charge_organization_name']   = Input::get('person_charge_organization_name');
             $dataInput['person_charge_name']                = Input::get('person_charge_name');
             $dataInput['person_charge_dept_name']           = Input::get('person_charge_dept_name');
             $dataInput['person_charge_title']               = Input::get('person_charge_title');
             $dataInput['person_charge_zipcode']             = Input::get('person_charge_zipcode');
             $dataInput['person_charge_your_addrs']          = Input::get('person_charge_your_addrs');
-            $dataInput['person_charge_tel']                 = Input::get('person_charge_tel');
-            $dataInput['person_charge_fax']                 = Input::get('person_charge_fax');
-            $dataInput['person_charge_email_addrs']         = Input::get('person_charge_email_addrs');
         }
+
+        $dataInput['person_charge_tel']                 = Input::get('person_charge_tel');
+        $dataInput['person_charge_fax']                 = Input::get('person_charge_fax');
+        $dataInput['person_charge_email_addrs']         = Input::get('person_charge_email_addrs');
         $dataInput['remark']                            = Input::get('remark');
 
         Session::put('new_com', $dataInput);

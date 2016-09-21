@@ -8,6 +8,11 @@
     <h1 class="title-content"><img src="{{ asset('') }}public/frontend/image/order/title-move-jp.png" alt="" /></h1>
     <div class="content">
       <h3>お申込みサーバー情報</h3>
+      <ul class="breadcrum-step">
+        <li><a href="" title=""><img src="{{ asset('') }}public/frontend/image/order/text1-normal-frame02.png" alt="" /></a></li>
+        <li><a href="" title=""><img src="{{ asset('') }}public/frontend/image/order/text2-frame02.png" alt="" /></a></li>
+        <li><a href="" title=""><img src="{{ asset('') }}public/frontend/image/order/text3-normal-frame02.png" alt="" /></a></li>
+      </ul>
       <table class="form-input">
       
         <!-- Application server information -->
@@ -360,8 +365,8 @@
 
       <div style="float: left; width: 100%; margin: 50px 0 80px;">
         <div class="box-submit">
-          <a href="{{ route('frontend.order.move_jp.back') }}" class="bt-submit">Back</a>
-          <a href="{{ route('frontend.order.move_jp.send') }}" class="bt-submit">Send</a>
+          <a href="{{ route('frontend.order.move_jp.send') }}" class="bt-submit">送信</a>
+          <a href="{{ route('frontend.order.move_jp.back') }}" class="btn-back">戻る</a>
         <div>
       </div>
     </div>

@@ -6,6 +6,11 @@
   <div class="container">
     <h1 class="title-content"><img src="{{ asset('') }}public/frontend/image/order/title-new-com.png" alt="" /></h1>
     <div class="content">
+      <ul class="breadcrum-step">
+        <li><a href="" title=""><img src="{{ asset('') }}public/frontend/image/order/text1-frame02.png" alt="" /></a></li>
+        <li><a href="" title=""><img src="{{ asset('') }}public/frontend/image/order/text2-normal-frame02.png" alt="" /></a></li>
+        <li><a href="" title=""><img src="{{ asset('') }}public/frontend/image/order/text3-normal-frame02.png" alt="" /></a></li>
+      </ul>
     {!! Form::open(array('route' => ['frontend.order.new_com_regist', 'method' => 'post', 'enctype'=>'multipart/form-data', 'accept-charset'=>'utf-8'])) !!}
       <div class="text-message">※ は必須項目です。</div>
       <h3>お申込みサーバー情報</h3>
@@ -22,7 +27,7 @@
         </tr>
         <tr>
           <td class="title"><span>※ </span>ドメイン名</td>
-          <td><input type="text" name="domain" />
+          <td><input type="text" name="domain" value="{{old('domain')}}" />
           @if ($errors->first('domain'))<span class="error-input">{!! $errors->first('domain') !!}</span>@endif
         </tr>
         <tr>
@@ -169,7 +174,18 @@
             <div>
               <input type="radio" name="dns_server" value="以下のDNSサーバーを利用する" @if(old('dns_server') == '以下のDNSサーバーを利用する') checked="" @endif /> 以下のDNSサーバーを利用する 
             </div>
+
+            <div class="mar-top10">
+              <input type="radio" id="dns_server_chk1" value="3" name="dns_server" @if(old('dns_server') == '3') checked="" @endif />プライマリDNSサーバー
+              <input type="text" name="dns_server_text3" class="input-smheight" value="{{old('dns_server_text3')}}" />
+            </div>
+            <div class="mar-top10">
+              <input type="radio" id="dns_server_chk2" value="4" name="dns_server" @if(old('dns_server') == '4') checked="" @endif />セカンダリDNSサーバー
+              <input type="text" name="dns_server_text4" class="input-smheight" value="{{old('dns_server_text4')}}" />
+            </div>
             @if ($errors->first('dns_server'))<span class="error-input">{!! $errors->first('dns_server') !!}</span>@endif
+            @if ($errors->first('dns_server_text3'))<span class="error-input">{!! $errors->first('dns_server_text3') !!}</span>@endif
+            @if ($errors->first('dns_server_text4'))<span class="error-input">{!! $errors->first('dns_server_text4') !!}</span>@endif
           </td>
         </tr>
       </table>
@@ -220,7 +236,7 @@
         <tr>
           <td class="title"><span>※ </span>電話番号</td>
           <td>
-             <input type="text" name="phone_number" />
+             <input type="text" name="phone_number" value="{{old('phone_number')}}" />
              @if ($errors->first('phone_number'))<span class="error-input">{!! $errors->first('phone_number') !!}</span>@endif
           </td>
         </tr>

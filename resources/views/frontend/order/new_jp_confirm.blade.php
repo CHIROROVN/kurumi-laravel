@@ -7,6 +7,11 @@
   	<h1 class="title-content"><img src="{{ asset('') }}public/frontend/image/order/title-new-jp.png" alt="" /></h1>
     <div class="content">
       <h3>お申込みサーバー情報</h3>
+      <ul class="breadcrum-step">
+        <li><a href="" title=""><img src="{{ asset('') }}public/frontend/image/order/text1-normal-frame02.png" alt="" /></a></li>
+        <li><a href="" title=""><img src="{{ asset('') }}public/frontend/image/order/text2-frame02.png" alt="" /></a></li>
+        <li><a href="" title=""><img src="{{ asset('') }}public/frontend/image/order/text3-normal-frame02.png" alt="" /></a></li>
+      </ul>
       <table class="form-input">
         <tr>
           <td class="title"><span></span>お申込みプラン名</td>
@@ -277,7 +282,7 @@
       </table>
       <div class="box-submit">
         <input value="送信" type="button" class="bt-submit" onclick="location.href='{{route('frontend.order.new_jp_sent')}}'"/>
-        <input value="裏面" type="button" class="btn-back" onclick="location.href='javascript:history.back()'" />
+        <input value="戻る" type="button" class="btn-back" onclick="location.href='javascript:history.back()'" />
       <div>
     </div>
   </div>

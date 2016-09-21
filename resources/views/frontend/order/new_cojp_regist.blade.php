@@ -7,6 +7,12 @@
   <div class="container">
   <h1 class="title-content"><img src="{{ asset('') }}public/frontend/image/order/title-new-cojp.png" alt="" /></h1>
     <div class="content">
+      <ul class="breadcrum-step">
+        <li><a href="" title=""><img src="{{ asset('') }}public/frontend/image/order/text1-frame02.png" alt="" /></a></li>
+        <li><a href="" title=""><img src="{{ asset('') }}public/frontend/image/order/text2-normal-frame02.png" alt="" /></a></li>
+        <li><a href="" title=""><img src="{{ asset('') }}public/frontend/image/order/text3-normal-frame02.png" alt="" /></a></li>
+      </ul>
+
     {!! Form::open(array('route' => ['frontend.order.new_cojp_regist', 'method' => 'post', 'enctype'=>'multipart/form-data', 'accept-charset'=>'utf-8'])) !!}
 
           <div class="text-message">※ は必須項目です。</div>
@@ -221,7 +227,7 @@
           @if ($errors->first('representative_en'))<span class="error-input">{!! $errors->first('representative_en') !!}</span>@endif</td>
         </tr>
         <tr>
-          <td class="title"><span>※ </span>代表者方肩書</td>
+          <td class="title"><span>※ </span>代表者肩書</td>
           <td><input type="text" name="representative_title" value="{{old('representative_title')}}" />
           @if ($errors->first('representative_title'))<span class="error-input">{!! $errors->first('representative_title') !!}</span>@endif</td>
         </tr>
@@ -277,6 +283,7 @@
         <tr>
           <td class="title">FAX</td>
           <td><input type="text" name="domain_fax" value="{{old('domain_fax')}}"/>
+          @if ($errors->first('domain_fax'))<span class="error-input">{!! $errors->first('domain_fax') !!}</span>@endif
         </tr>
         <tr>
           <td class="title"><span>※ </span>メールアドレス</td>
@@ -360,6 +367,7 @@
           <td class="title">FAX</td>
           <td>
           	 <input type="text" name="ssl_fax" value="{{old('ssl_fax')}}" />
+             @if ($errors->first('ssl_fax'))<span class="error-input">{!! $errors->first('ssl_fax') !!}</span>@endif
           </td>
         </tr>
         <tr>
@@ -529,6 +537,7 @@ administrator@ドメイン名　→　SSL申請後に確認メールが届くの
           <td class="title">連絡先FAX</td>
           <td>
           	 <input type="text" name="person_charge_fax" value="{{old('person_charge_fax')}}" />
+             @if ($errors->first('person_charge_fax'))<span class="error-input">{!! $errors->first('person_charge_fax') !!}</span>@endif
           </td>
         </tr>
         <tr>
@@ -569,7 +578,7 @@ $( document ).ready(function() {
     var day_html   = "<option value=''>--</option>";
     var totalday = dayOfMonth(year, month);
 
-    for(y=year; y<=year+5; y++){
+    for(y=year; y<=year+2; y++){
       year_html += "<option value='"+y+"'>"+y+"</option>";
     }
     $('#year').html(year_html);

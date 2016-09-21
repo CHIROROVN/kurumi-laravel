@@ -1016,3 +1016,30 @@
 .btn a {
 	color: #FFFFFF;
 }
+
+ul.breadcrum-step li{
+ float: left;
+ pointer-events: none;
+  cursor: default;
+}
+
+ul.breadcrum-step  li:before{
+  float:left;
+  content:url(../../image/contact/icon-next.png);
+  padding:15px 17px;
+}
+
+ul.breadcrum-step  li:first-child:before{
+  content:"";
+  padding:0px;
+}
+
+.show-msg{
+    font-size: 40px !important;
+    font-weight: bold;
+    height: 120px;
+    line-height: 60px;
+    margin: 30px auto;
+    position: relative;
+    text-align: center;
+}

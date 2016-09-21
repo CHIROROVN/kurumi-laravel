@@ -173,6 +173,7 @@ text.<br />
 		<td>FAX</td>
 		<td>:{{ $data['ssl_fax'] }}</td>
 	</tr>
+	@if(isset($data['ssl_email_address']))
 	<tr>
 		<td>受信可能メールアドレス</td>
 		<td>
@@ -191,6 +192,7 @@ text.<br />
 			@endif
 		</td>
 	</tr>
+	@endif
 </table>
 <br />
 ------------------------------------------------------------<br />

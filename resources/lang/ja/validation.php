@@ -16,18 +16,18 @@ return [
     'error_payinvoice_required'                                 => 'Please enter payinvoice',
     'error_generation_required'                                 => '外部バックアップ世代数追加（1世代あたり）を入力してください。',
     'error_individual_required'                                 => 'IPアドレス追加 (1個あたり)を選択してください。',
-    'error_organization_jp_required'                            => '組織名（英語）を入力してください。',
+    'error_organization_jp_required'                            => '組織名（日本語）を入力してください。',
     'error_furigana_regex'                                      => '組織名（ひらがな）入力してください。',
     'error_furigana_required'                                   => '組織名（ひらがな）入力してください。',
 
-    'error_organization_en_required'                            => '組織名（日本語）を入力してください。',
+    'error_organization_en_required'                            => '組織名（英語）を入力してください。',
     'error_postal_code_required'                                => '郵便番号を入力してください。',
     'error_address_jp_required'                                 => 'ご住所（日本語）を入力してください。',
     'error_address_en_required'                                 => 'ご住所（英語）を入力してください。',
 
     'error_regist_date_required'                                => '登記年月日を入力してください。',
     'error_regist_land_address_required'                        => '登記地住所を入力してください。',
-    'error_representative_jp_required'                          => '代表者名（日本語を入力してください。）',
+    'error_representative_jp_required'                          => '代表者名（日本語）を入力してください。',
     'error_representative_enpostal_code_required'               => '代表者名（英語）を入力してください。',
 
     'error_representative_title_required'                       => '代表者方肩書を入力してください。',
@@ -41,7 +41,10 @@ return [
 
     'error_domain_title_required'                               => '役職名を入力してください。',
     'error_domain_phone_required'                               => '電話番号を入力してください。',
+    'error_domain_phone_numeric'                                => '電話番号を正しく入力してください。',
+    'error_domain_fax_numeric'                                  => 'FAXを正しく入力してください。',
     'error_domain_email_required'                               => 'メールアドレスを入力してください。',
+    'error_domain_email_email'                                  => 'メールアドレスを正しく入力してください。',
 
     'error_dns_server_required'                                 => 'DNSサーバーを入力してください。',
     'error_common_name_required'                                => 'コモンネームを入力してください。',
@@ -49,7 +52,7 @@ return [
     'error_organization_name_en_required'                       => '組織名（英語）を入力してください。',
 
     'error_prefectures_jp_required'                             => '都道府県・市区郡名（日本語）を入力してください。',
-    'error_prefectures_en_required'                             => '都道府県・市区郡名（英語）を入を入力してください。力してください',
+    'error_prefectures_en_required'                             => '都道府県・市区郡名（英語）を入を入力してください。',
     'error_policy_organization_name_required'                   => '組織名を入力してください。',
     'error_ppolicy_representative_namerefectures_jp_required'   => '代表者名を入力してください。',
     'error_policy_name_required'                                => '氏名を入力してください。',
@@ -61,10 +64,15 @@ return [
     'error_person_charge_title_required'                        => 'Please enter person_charge_title',
     'error_person_charge_zipcode_required'                      => 'ご住所を入力してください。',
     'error_person_charge_tel_required'                          => '連絡先TELを入力してください。',
+    'error_person_charge_tel_numeric'                          => '電話番号を正しく入力してください。',
+    'error_person_charge_fax_numeric'                           => 'FAXを正しく入力してください。',
+
     'error_person_charge_email_addrs_required'                  => '連絡先メールアドレスを入力してください。',
     'error_person_charge_email_addrs_email'                     => '正しいメール形式を入力する必要があります。',
     'error_name_person_charge_required'                         => '担当者名を入力してください。',
     'error_phone_number_required'                               => '電話番号を入力してください。',
+    'error_phone_number_numeric'                                => '電話番号を正しく入力してください。',
+    'error_ssl_fax_numeric'                                     => 'FAXを正しく入力してください。',
     'error_policy_contract_info_rquired'                        => 'ご契約者情報を選択してください。',
     'error_organization_en_alpha_num'                           => '組織名はアルファベット文字でなければなりません。',
     'error_address_en_alpha_num'                                => 'ご住所はアルファベット文字でなければなりません。',
@@ -211,6 +219,7 @@ return [
     'error_movejp_ssl_name_person_required'                     => '担当者名を入力してください。',
     'error_movejp_ssl_phone_number_required'                    => '電話番号を入力してください。',
     'error_movejp_ssl_phone_number_numeric'                     => '電話番号を入力してください。',
+    'error_person_charge_fax_numeric'                           => 'FAXを正しく入力してください。',
 
     'error_movejp_policyholders_organization_name_required'     => '組織名を入力してください。',
     'error_movejp_policyholders_representative_name_required'   => '代表者名を入力してください。',

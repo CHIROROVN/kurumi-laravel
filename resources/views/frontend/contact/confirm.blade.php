@@ -83,18 +83,14 @@
               <td>{!! nl2br($confirmData['content']) !!}</td>
             </tr>
           </table>
-          
-          <div style="float: left; width: 100%;">
-            <div class="box-submit">
-              <a href="{{ route('frontend.contact.back') }}" class="bt-submit">Back</a>
-              <a href="{{ route('frontend.contact.send') }}" class="bt-submit">Send</a>
-            <div>
-          </div>
         </div>
-        <!-- end form -->
-
+              <div class="box-submit">
+            <input value="送信" type="button" class="bt-submit" onclick="location.href='{{ route('frontend.contact.send') }}'" />
+            <input value="裏面" type="button" class="btn-back" onclick="location.href='{{ route('frontend.contact.back') }}'" />
+          <div>
+        </div>
       </div>
-    </div>
+
   <!--End frame02 -->
 </section>
 

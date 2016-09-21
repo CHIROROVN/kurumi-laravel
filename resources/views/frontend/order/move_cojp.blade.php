@@ -12,6 +12,11 @@
     <div class="content">
       <div class="text-message">※ は必須項目です。</div>
       <h3>お申込みサーバー情報</h3>
+      <ul class="breadcrum-step">
+        <li><a href="" title=""><img src="{{ asset('') }}public/frontend/image/order/text1-frame02.png" alt="" /></a></li>
+        <li><a href="" title=""><img src="{{ asset('') }}public/frontend/image/order/text2-normal-frame02.png" alt="" /></a></li>
+        <li><a href="" title=""><img src="{{ asset('') }}public/frontend/image/order/text3-normal-frame02.png" alt="" /></a></li>
+      </ul>
       <table class="form-input">
 
         <!-- Application server information -->
@@ -278,7 +283,7 @@
        <table class="form-input">
         <!-- domain_transfe -->
         <tr>
-          <td class="title"><span>※ </span>移管元事業者名）</td>
+          <td class="title"><span>※ </span>移管元事業者名</td>
           <td>
             @if ( isset($back['domain_transfe']) )
             <input type="text" name="domain_transfe" value="{{ $back['domain_transfe'] }}" />
@@ -308,8 +313,10 @@
           <td>
             <!-- domain_transfer_work_year -->
             <?php
-            $yearNow = date('Y');
-            $yearNext = $yearNow + 1;
+              $yearNow = date('Y');
+              $monthNow = Convert2Digit(date('m'));
+              $dayNow = Convert2Digit(date('d'));
+              $yearNext = $yearNow + 1;
             ?>
             <select name="domain_transfer_work_year" id="year" class="input-xs">
               @if ( isset($back['domain_transfer_work_year']) && $back['domain_transfer_work_year'] == $yearNow )
@@ -324,30 +331,30 @@
               @elseif ( old('domain_transfer_work_year') == $yearNow )
               <option value="{{ $yearNext }}" selected="">{{ $yearNext }}</option>
               @else
-              <option value="{{ $yearNext }}">{{ $yearNext }}</option>
+              <option value="{{ $yearNext }}"  @if(Convert2Digit($yearNext) == $yearNow) selected="" @endif>{{ $yearNext }}</option>
               @endif
             </select> 年
             <!-- domain_transfer_work_month -->
             <select name="domain_transfer_work_month" id="month" class="input-xs">
               @for ( $i = 1; $i <= 12; $i++ )
-                @if ( isset($back['domain_transfer_work_month']) && $back['domain_transfer_work_month'] == $i )
-                <option value="{{ $i }}" selected="">{{ $i }}</option>
+                @if ( isset($back['domain_transfer_work_month']) && $back['domain_transfer_work_month'] == Convert2Digit($i) )
+                <option value="{{ Convert2Digit($i) }}" selected="">{{ Convert2Digit($i) }}</option>
                 @elseif ( old('domain_transfer_work_month') == $i )
-                <option value="{{ $i }}" selected="">{{ $i }}</option>
+                <option value="{{ Convert2Digit($i) }}" selected="">{{ Convert2Digit($i) }}</option>
                 @else
-                <option value="{{ $i }}">{{ $i }}</option>
+                <option value="{{ Convert2Digit($i) }}" @if(Convert2Digit($i) == $monthNow) selected="" @endif>{{ Convert2Digit($i) }}</option>
                 @endif
               @endfor
             </select> 月
             <!-- domain_transfer_work_day -->
             <select name="domain_transfer_work_day" class="input-xs">
               @for ( $i = 1; $i <= 31; $i++ )
-                @if ( isset($back['domain_transfer_work_day']) && $back['domain_transfer_work_day'] == $i )
-                <option value="{{ $i }}" selected="">{{ $i }}</option>
+                @if ( isset($back['domain_transfer_work_day']) && $back['domain_transfer_work_day'] == Convert2Digit($i) )
+                <option value="{{ Convert2Digit($i) }}" selected="">{{ Convert2Digit($i) }}</option>
                 @elseif ( old('domain_transfer_work_day') == $i )
-                <option value="{{ $i }}" selected="">{{ $i }}</option>
+                <option value="{{ Convert2Digit($i) }}" selected="">{{ Convert2Digit($i) }}</option>
                 @else
-                <option value="{{ $i }}">{{ $i }}</option>
+                <option value="{{ Convert2Digit($i) }}" @if(Convert2Digit($i) == $dayNow) selected="" @endif>{{ Convert2Digit($i) }}</option>
                 @endif
               @endfor
               </select> 日
