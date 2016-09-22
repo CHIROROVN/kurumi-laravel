@@ -385,6 +385,8 @@
   height:46px;
   margin-bottom:40px;
   display:block;
+  pointer-events: none;
+  cursor: default;
 }
 
 #contact .frame02 .content li:before {
@@ -1018,8 +1020,8 @@
 }
 
 ul.breadcrum-step li{
- float: left;
- pointer-events: none;
+  float: left;
+  pointer-events: none;
   cursor: default;
 }
 
@@ -1043,3 +1045,32 @@ ul.breadcrum-step  li:first-child:before{
     position: relative;
     text-align: center;
 }
+
+.form-input select.cls-date {
+  text-align: center;
+  text-align-last: center;
+}
+
+.form-input select.cls-year {
+  text-align: center;
+  text-align-last: center;
+}
+
+.form-input select.cls-year option {
+  text-align: left;
+}
+
+.form-input select.cls-date option {
+  text-align: left;
+}
+
+.form-input .cls-date {
+    margin-right: 0px;
+    width: 78px !important;
+}
+
+.form-input .cls-year {
+    margin-right: 0px;
+    width: 100px !important;
+}
+

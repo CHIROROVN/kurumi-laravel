@@ -10,13 +10,14 @@
     <!-- form -->
     {!! Form::open(array('route' => 'frontend.order.move_com.index', 'enctype'=>'multipart/form-data')) !!}
     <div class="content">
-      <div class="text-message">※ は必須項目です。</div>
-      <h3>お申込みサーバー情報</h3>
       <ul class="breadcrum-step">
         <li><a href="" title=""><img src="{{ asset('') }}public/frontend/image/order/text1-frame02.png" alt="" /></a></li>
         <li><a href="" title=""><img src="{{ asset('') }}public/frontend/image/order/text2-normal-frame02.png" alt="" /></a></li>
         <li><a href="" title=""><img src="{{ asset('') }}public/frontend/image/order/text3-normal-frame02.png" alt="" /></a></li>
       </ul>
+      <div class="text-message">※ は必須項目です。</div>
+      <h3>お申込みサーバー情報</h3>
+
       <table class="form-input">
 
         <!-- Application server information -->
@@ -316,7 +317,7 @@
             $yearNow = date('Y');
             $yearNext = $yearNow + 1;
             ?>
-            <select name="domain_transfer_work_year" id="year" class="input-xs">
+            <select name="domain_transfer_work_year" id="year" class="cls-year">
               @if ( isset($back['domain_transfer_work_year']) && $back['domain_transfer_work_year'] == $yearNow )
               <option value="{{ $yearNow }}" selected="">{{ $yearNow }}</option>
               @elseif ( old('domain_transfer_work_year') == $yearNow )
@@ -333,7 +334,7 @@
               @endif
             </select> 年
             <!-- domain_transfer_work_month -->
-            <select name="domain_transfer_work_month" id="month" class="input-xs">
+            <select name="domain_transfer_work_month" id="month" class="cls-date">
               @for ( $i = 1; $i <= 12; $i++ )
                 @if ( isset($back['domain_transfer_work_month']) && $back['domain_transfer_work_month'] == $i )
                 <option value="{{ Convert2Digit($i) }}" selected="">{{ Convert2Digit($i) }}</option>
@@ -345,7 +346,7 @@
               @endfor
             </select> 月
             <!-- domain_transfer_work_day -->
-            <select name="domain_transfer_work_day" class="input-xs">
+            <select name="domain_transfer_work_day" class="cls-date">
               @for ( $i = 1; $i <= 31; $i++ )
                 @if ( isset($back['domain_transfer_work_day']) && $back['domain_transfer_work_day'] == Convert2Digit($i) )
                 <option value="{{ Convert2Digit($i) }}" selected="">{{ Convert2Digit($i) }}</option>

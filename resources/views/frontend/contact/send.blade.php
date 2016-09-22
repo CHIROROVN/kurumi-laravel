@@ -32,10 +32,11 @@
             <li><a href="" title=""><img src="{{ asset('') }}public/frontend/image/contact/text2-frame02.png" alt="" /></a></li>
             <li><a href="" title=""><img src="{{ asset('') }}public/frontend/image/contact/text3-active-frame02.png" alt="" /></a></li>
           </ul>
-          <p class="text-message-sent">お問い合わせ送信完了</p>
+          <div class="show-msg">
+            <p class="text-message-sent">お問い合わせ送信完了</p>
+          </div>
         </div>
         <!-- end form -->
-
       </div>
     </div>
   <!--End frame02 -->

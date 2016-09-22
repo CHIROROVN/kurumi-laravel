@@ -43,14 +43,14 @@
             </div>
 
             <div style="margin-top:5px;">
-              <select name="year" id="year" class="input-xs">
+              <select name="year" id="year" class="cls-year">
 <!--                 <option value="2015" @if(old('year') == '2015') selected="" @endif >2015</option>
                 <option value="2016" @if(old('year') == '2016') selected="" @endif >2016</option>
                 <option value="2017" @if(old('year') == '2017') selected="" @endif >2017</option>
                 <option value="2018" @if(old('year') == '2018') selected="" @endif >2018</option>
                 <option value="2019" @if(old('year') == '2019') selected="" @endif >2019</option> -->
               </select> 年
-              <select name="month" id="month" class="input-xs">
+              <select name="month" id="month" class="cls-date">
 <!--                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -64,7 +64,7 @@
                 <option value="11">11</option>
                 <option value="12">12</option> -->
               </select> 月
-              <select name="day" id="day" class="input-xs">
+              <select name="day" id="day" class="cls-date">
 <!--                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>

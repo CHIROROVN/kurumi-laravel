@@ -86,7 +86,7 @@
         </div>
               <div class="box-submit">
             <input value="送信" type="button" class="bt-submit" onclick="location.href='{{ route('frontend.contact.send') }}'" />
-            <input value="裏面" type="button" class="btn-back" onclick="location.href='{{ route('frontend.contact.back') }}'" />
+            <input value="戻る" type="button" class="btn-back" onclick="location.href='{{ route('frontend.contact.back') }}'" />
           <div>
         </div>
       </div>
