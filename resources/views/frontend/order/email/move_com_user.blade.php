@@ -8,9 +8,9 @@ text.<br />
 ///////////////////////////////////////////////////////////////<br />
 <br />
 ＊＊＊＊＊  御中<br />
-　　　　　　　　　　　　　　　　　　　　　　　yyyy年mm月dd日<br />
-　　　　　　　　　　　　　　　　　　　　株式会社チロロネット<br />
-　　　　　　　　　　　　　　　　　　　　　カスタマーサポート<br />
+　　　　　　　yyyy年mm月dd日<br />
+　　　　　　　株式会社チロロネット<br />
+　　　　　　　カスタマーサポート<br />
 <br />
 ──────────────────────────────<br />
     くるみサーバーをお申込みいただきありがとうございます<br />
@@ -136,7 +136,7 @@ text.<br />
 		<td>:{{ $data['domain_youraddress_english'] }}</td>
 	</tr>
 	<tr>
-		<td>電話番号</td>
+		<td>電話番号（ハイフンを除く）</td>
 		<td>:{{ $data['domain_phone'] }}</td>
 	</tr>
 	<tr>
@@ -178,7 +178,7 @@ text.<br />
 		<td>:{{ $data['ssl_name_person'] }}</td>
 	</tr>
 	<tr>
-		<td>電話番号</td>
+		<td>電話番号（ハイフンを除く）</td>
 		<td>:{{ $data['ssl_phone_number'] }}</td>
 	</tr>
 	<tr>
@@ -260,7 +260,7 @@ text.<br />
 		<td>:〒{{ $data['person_your_address_1'] }} 住所{{ $data['person_your_address_2'] }}</td>
 	</tr>
 	<tr>
-		<td>連絡先TEL</td>
+		<td>連絡先TEL（ハイフンを除く）</td>
 		<td>:{{ $data['person_tel'] }}</td>
 	</tr>
 	<tr>

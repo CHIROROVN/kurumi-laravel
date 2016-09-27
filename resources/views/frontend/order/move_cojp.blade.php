@@ -445,7 +445,7 @@
 
         <!-- ssl_phone_number -->
         <tr>
-          <td class="title"><span>※ </span>電話番号</td>
+          <td class="title"><span>※ </span>電話番号（ハイフンを除く）</td>
           <td>
             @if ( isset($back['ssl_phone_number']) )
             <input type="text" name="ssl_phone_number" value="{{ $back['ssl_phone_number'] }}" />
@@ -708,7 +708,7 @@
 
         <!-- person_tel -->
         <tr>
-          <td class="title"><span>※ </span>連絡先TEL</td>
+          <td class="title"><span>※ </span>連絡先TEL（ハイフンを除く）</td>
           <td>
             @if ( isset($back['person_tel']) )
             <input type="text" name="person_tel" value="{{ $back['person_tel'] }}" />

@@ -55,7 +55,7 @@
               <td>{{ $confirmData['address'] }}</td>
             </tr>
             <tr>
-              <td class="title">電話番号</td>
+              <td class="title">電話番号（ハイフンを除く）</td>
               <td>{{ $confirmData['phone'] }}</td>
             </tr>
             <tr>

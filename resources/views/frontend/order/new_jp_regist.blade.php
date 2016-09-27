@@ -177,19 +177,19 @@
           <td class="title"><span>※ </span>DNSサーバー</td>
           <td>
             <div>
-              <input type="radio" name="dns_server" value="チロロネットのDNSを利用する" @if(old('dns_server') == 'チロロネットのDNSを利用する') checked="" @endif  /> チロロネットのDNSを利用する
+              <input type="radio" id="dns_server_chiroro" name="dns_server" value="1"  @if(old('dns_server') == '1') checked="" @else checked="" @endif />チロロネットのDNSを利用する。 
             </div>
             <div>
-              <input type="radio" name="dns_server" value="以下のDNSサーバーを利用する" @if(old('dns_server') == '以下のDNSサーバーを利用する') checked="" @endif /> 以下のDNSサーバーを利用する
+              <input type="radio" id="dns_server_other" name="dns_server" value="2" @if(old('dns_server') == '2') checked="" @endif/>以下のDNSサーバーを利用する。 
             </div>
 
             <div class="mar-top10">
-              <input type="radio" id="dns_server_chk1" value="3" name="dns_server" @if(old('dns_server') == '3') checked="" @endif />プライマリDNSサーバー
-              <input type="text" name="dns_server_text3" class="input-smheight" value="{{old('dns_server_text3')}}" />
+              プライマリDNSサーバー
+              <input type="text" name="dns_server_text3" class="input-smheight dns_server_status" value="{{old('dns_server_text3')}}" />
             </div>
             <div class="mar-top10">
-              <input type="radio" id="dns_server_chk2" value="4" name="dns_server" @if(old('dns_server') == '4') checked="" @endif />セカンダリDNSサーバー
-              <input type="text" name="dns_server_text4" class="input-smheight" value="{{old('dns_server_text4')}}" />
+              セカンダリDNSサーバー
+              <input type="text" name="dns_server_text4" class="input-smheight dns_server_status" value="{{old('dns_server_text4')}}" />
             </div>
             @if ($errors->first('dns_server'))<span class="error-input">{!! $errors->first('dns_server') !!}</span>@endif
             @if ($errors->first('dns_server_text3'))<span class="error-input">{!! $errors->first('dns_server_text3') !!}</span>@endif
@@ -242,7 +242,7 @@
           </td>
         </tr>
         <tr>
-          <td class="title"><span>※ </span>電話番号</td>
+          <td class="title"><span>※ </span>電話番号（ハイフンを除く）</td>
           <td>
              <input type="text" name="phone_number" value="{{old('phone_number')}}" />
              @if ($errors->first('phone_number'))<span class="error-input">{!! $errors->first('phone_number') !!}</span>@endif
@@ -420,7 +420,7 @@ admin@ドメイン名　→　SSL申請後に確認メールが届くので、in
           </td>
         </tr>
         <tr>
-          <td class="title"><span>※ </span>連絡先TEL</td>
+          <td class="title"><span>※ </span>連絡先TEL（ハイフンを除く）</td>
           <td>
              <input type="text" name="person_charge_tel" value="{{old('person_charge_tel')}}" />
              @if ($errors->first('person_charge_tel'))<span class="error-input">{!! $errors->first('person_charge_tel') !!}</span>@endif
@@ -460,7 +460,7 @@ admin@ドメイン名　→　SSL申請後に確認メールが届くので、in
 <script  type="text/javascript">
 $( document ).ready(function() {
 
-//Check radio group
+  //Check radio group
     if($('#contract_allow').is(':checked')){
        $('input.contract-status').attr('disabled', false);
     }else{
@@ -473,23 +473,43 @@ $( document ).ready(function() {
        $('input.person-status').attr('disabled', true);
     }
 
+    if($('#person_allow').is(':checked')){
+       $('input.person-status').attr('disabled', false);
+    }else{
+       $('input.person-status').attr('disabled', true);
+    }
+
+    if($('#dns_server_chiroro').is(':checked')){
+       $('input.dns_server_status').attr('disabled', true);
+    }else{
+       $('input.dns_server_status').attr('disabled', false);
+    }
+
 });
 
-$('#contract_allow').click(function(event) {
-    $('input.contract-status').attr('disabled', false);
+  $('#contract_allow').click(function(event) {
+      $('input.contract-status').attr('disabled', false);
+    });
+
+  $('#contract_disallow').click(function(event) {
+    $('input.contract-status').attr('disabled', true);
   });
 
-$('#contract_disallow').click(function(event) {
-  $('input.contract-status').attr('disabled', true);
-});
+  $('#person_allow').click(function(event) {
+      $('input.person-status').attr('disabled', false);
+    });
 
-$('#person_allow').click(function(event) {
-    $('input.person-status').attr('disabled', false);
+  $('#person_disallow').click(function(event) {
+    $('input.person-status').attr('disabled', true);
   });
 
-$('#person_disallow').click(function(event) {
-  $('input.person-status').attr('disabled', true);
-});
+  $('#dns_server_other').click(function(event) {
+    $('input.dns_server_status').attr('disabled', false);
+  });
+
+  $('#dns_server_chiroro').click(function(event) {
+    $('input.dns_server_status').attr('disabled', true);
+  });
 
 
 </script>

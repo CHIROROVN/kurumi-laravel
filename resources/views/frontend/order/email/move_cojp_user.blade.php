@@ -142,7 +142,7 @@ yyyy年mm月dd日<br />
 		<td>:{{ $data['ssl_name_person'] }}</td>
 	</tr>
 	<tr>
-		<td>電話番号</td>
+		<td>電話番号（ハイフンを除く）</td>
 		<td>:{{ $data['ssl_phone_number'] }}</td>
 	</tr>
 	<tr>
@@ -224,7 +224,7 @@ yyyy年mm月dd日<br />
 		<td>:〒{{ $data['person_your_address_1'] }} 住所{{ $data['person_your_address_2'] }}</td>
 	</tr>
 	<tr>
-		<td>連絡先TEL</td>
+		<td>連絡先TEL（ハイフンを除く）</td>
 		<td>:{{ $data['person_tel'] }}</td>
 	</tr>
 	<tr>

@@ -30,7 +30,7 @@
 【会社名】 {{ $data['company'] }}<br />
 【郵便番号】 {{ $data['zipcode'] }}<br />
 【ご住所】 {{ $data['address'] }}<br />
-【電話番号】 {{ $data['phone'] }}<br />
+【電話番号（ハイフンを除く）】 {{ $data['phone'] }}<br />
 【FAX番号】 {{ $data['fax'] }}<br />
 【メールアドレス】 {{ $data['email'] }}<br />
 <br />

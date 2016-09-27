@@ -191,7 +191,7 @@
 
         <!-- domain_phone -->
         <tr>
-          <td class="title">電話番号</td>
+          <td class="title">電話番号（ハイフンを除く）</td>
           <td>{{ $confirmData['domain_phone'] }}</td>
         </tr>
 
@@ -249,7 +249,7 @@
 
         <!-- ssl_phone_number -->
         <tr>
-          <td class="title">電話番号</td>
+          <td class="title">電話番号（ハイフンを除く）</td>
           <td>{{ $confirmData['ssl_phone_number'] }}</td>
         </tr>
 
@@ -354,7 +354,7 @@
 
         <!-- person_tel -->
         <tr>
-          <td class="title">連絡先TEL</td>
+          <td class="title">連絡先TEL（ハイフンを除く）</td>
           <td>{{ $confirmData['person_tel'] }}</td>
         </tr>
 

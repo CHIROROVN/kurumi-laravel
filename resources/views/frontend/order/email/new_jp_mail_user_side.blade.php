@@ -45,7 +45,7 @@ DNSサーバー　　　　　　　：{{$new_jp['dns_server']}} <br /><br />
 都道府県・市区郡名（日本語）　：{{$new_jp['prefectures_jp']}} <br />
 都道府県・市区郡名（英語）　　：{{$new_jp['prefectures_en']}} <br />
 担当者名　　　　　　　　　　：{{$new_jp['name_person_charge']}} <br />
-電話番号　　　　　　　　　　：{{$new_jp['phone_number']}} <br />
+電話番号（ハイフンを除く）　　　　　　　　　　：{{$new_jp['phone_number']}} <br />
 FAX 　　　　　　　　　　　：{{$new_jp['ssl_fax']}} <br />
 受信可能メールアドレス　　　　　：{{$new_jp['receive_mail_addrs']}} <br /><br />
 
@@ -69,7 +69,7 @@ FAX 　　　　　　　　　　　：{{$new_jp['ssl_fax']}} <br />
 役職名　　　　　　　　　　　　：{{$new_jp['person_charge_title']}}  <br />
 ご住所　　　　　　　　　　　　：{{$new_jp['person_charge_zipcode']}} {{$new_jp['person_charge_your_addrs']}} <br />
 @endif
-連絡先TEL 　　　　　　　　　：{{$new_jp['person_charge_tel']}}  <br />
+連絡先TEL（ハイフンを除く） 　　　　　　　　　：{{$new_jp['person_charge_tel']}}  <br />
 連絡先FAX 　　　　　　　　　：{{$new_jp['person_charge_fax']}}  <br />
 連絡先メールアドレス　　　　　　　：{{$new_jp['person_charge_email_addrs']}}  <br /><br />
 

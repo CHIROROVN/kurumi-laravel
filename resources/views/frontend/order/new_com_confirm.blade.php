@@ -98,7 +98,7 @@
           <td>{{$new_com->dns_addrs_en}}</td>
         </tr>
         <tr>
-          <td class="title"><span></span>電話番号</td>
+          <td class="title"><span></span>電話番号（ハイフンを除く）</td>
           <td>{{$new_com->dns_phone}}</td>
         </tr>
         <tr>
@@ -112,7 +112,17 @@
         <tr>
           <td class="title"><span></span>DNSサーバー</td>
           <td>
-            {{$new_com->dns_server}}
+            @if($new_com->dns_server == 1)
+              チロロネットのDNSを利用する。
+            @elseif($new_com->dns_server == 2)
+              @if(!empty($new_com->dns_server_text3))
+                {{$new_com->dns_server_text3}} 
+                @if(!empty($new_com->dns_server_text4))<br />@endif
+              @endif
+              @if(!empty($new_com->dns_server_text4))
+                {{$new_com->dns_server_text4}}
+              @endif
+            @endif
           </td>
         </tr>
       </table>
@@ -154,7 +164,7 @@
           </td>
         </tr>
         <tr>
-          <td class="title"><span></span>電話番号</td>
+          <td class="title"><span></span>電話番号（ハイフンを除く）</td>
           <td>
           	 {{$new_com->phone_number}}
           </td>
@@ -253,7 +263,7 @@
         </tr>
         @endif
         <tr>
-          <td class="title"><span></span>連絡先TEL</td>
+          <td class="title"><span></span>連絡先TEL（ハイフンを除く）</td>
           <td>
           	 {{$new_com->person_charge_tel}} 
           </td>

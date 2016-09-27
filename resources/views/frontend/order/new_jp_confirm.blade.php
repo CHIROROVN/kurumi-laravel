@@ -4,7 +4,7 @@
 <!--Content -->
 <section class="order-child clear" id="contact">
   <div class="container">
-  	<h1 class="title-content"><img src="{{ asset('') }}public/frontend/image/order/title-new-jp.png" alt="" /></h1>
+    <h1 class="title-content"><img src="{{ asset('') }}public/frontend/image/order/title-new-jp.png" alt="" /></h1>
     <div class="content">
           <ul class="breadcrum-step">
         <li><a href="" title=""><img src="{{ asset('') }}public/frontend/image/order/text1-normal-frame02.png" alt="" /></a></li>
@@ -34,7 +34,7 @@
         <tr>
           <td class="title"><span></span>お支払い方法</td>
           <td>
-          	{{$new_jp->paymonth}} {{$new_jp->payinvoice}}
+            {{$new_jp->paymonth}} {{$new_jp->payinvoice}}
           </td>
         </tr>
         <tr>
@@ -44,19 +44,19 @@
         <tr>
           <td class="title"><span></span>外部バックアップ世代数追加<br />（1世代あたり）</td>
           <td>
-          	{{$new_jp->generation}} 世代
+            {{$new_jp->generation}} 世代
           </td>
         </tr>
         <tr>
           <td class="title">IPアドレス追加 (1個あたり)<br />※最大合計3個</td>
           <td>
-          	{{$new_jp->individual}}  個
+            {{$new_jp->individual}}  個
           </td>
         </tr>
         <tr>
           <td class="title">Plesk Web Pro Editionへの変更</td>
           <td>
-          	{{$new_jp->plesk}}
+            {{$new_jp->plesk}}
           </td>
         </tr>
         <tr>
@@ -114,7 +114,17 @@
         <tr>
           <td class="title"><span></span>DNSサーバー</td>
           <td>
-            {{$new_jp->dns_server}}
+            @if($new_jp->dns_server == 1)
+              チロロネットのDNSを利用する。
+            @elseif($new_jp->dns_server == 2)
+              @if(!empty($new_jp->dns_server_text3))
+                {{$new_jp->dns_server_text3}} 
+                @if(!empty($new_jp->dns_server_text4))<br />@endif
+              @endif
+              @if(!empty($new_jp->dns_server_text4))
+                {{$new_jp->dns_server_text4}}
+              @endif
+            @endif
           </td>
         </tr>
       </table>
@@ -128,43 +138,43 @@
         <tr>
           <td class="title"><span></span>組織名（日本語）</td>
           <td>
-          	 {{$new_jp->organization_name_jp}}
+             {{$new_jp->organization_name_jp}}
           </td>
         </tr>
         <tr>
           <td class="title"><span></span>組織名（英語）</td>
           <td>
-          	 {{$new_jp->organization_name_en}}
+             {{$new_jp->organization_name_en}}
           </td>
         </tr>
         <tr>
           <td class="title"><span></span>都道府県・市区郡名（日本語）</td>
           <td>
-          	 {{$new_jp->prefectures_jp}}
+             {{$new_jp->prefectures_jp}}
           </td>
         </tr>
         <tr>
           <td class="title"><span></span>都道府県・市区郡名（英語）</td>
           <td>
-          	 {{$new_jp->prefectures_en}}
+             {{$new_jp->prefectures_en}}
           </td>
         </tr>
         <tr>
           <td class="title"><span></span>担当者名</td>
           <td>
-          	 {{$new_jp->name_person_charge}}
+             {{$new_jp->name_person_charge}}
           </td>
         </tr>
         <tr>
-          <td class="title"><span></span>電話番号</td>
+          <td class="title"><span></span>電話番号（ハイフンを除く）</td>
           <td>
-          	 {{$new_jp->phone_number}}
+             {{$new_jp->phone_number}}
           </td>
         </tr>
         <tr>
           <td class="title">FAX</td>
           <td>
-          	 {{$new_jp->ssl_fax}}
+             {{$new_jp->ssl_fax}}
           </td>
         </tr>
         <tr>
@@ -191,25 +201,25 @@
         <tr>
           <td class="title"><span></span>代表者名</td>
           <td>
-          	 {{$new_jp->policy_representative_name}}
+             {{$new_jp->policy_representative_name}}
           </td>
         </tr>
         <tr>
           <td class="title">役職名</td>
           <td>
-          	 {{$new_jp->policy_title}}
+             {{$new_jp->policy_title}}
           </td>
         </tr>
         <tr>
           <td class="title"><span></span>氏名</td>
           <td>
-          	 {{$new_jp->policy_name}}
+             {{$new_jp->policy_name}}
           </td>
         </tr>
         <tr>
           <td class="title">所在地</td>
           <td>
-          	 {{$new_jp->location}}
+             {{$new_jp->location}}
           </td>
         </tr>
       </table>
@@ -231,45 +241,45 @@
         <tr>
           <td class="title"><span></span>氏名</td>
           <td>
-          	 {{$new_jp->person_charge_name}}
+             {{$new_jp->person_charge_name}}
           </td>
         </tr>
         <tr>
           <td class="title"><span></span>部署名</td>
           <td>
-          	 {{$new_jp->person_charge_dept_name}}
+             {{$new_jp->person_charge_dept_name}}
           </td>
         </tr>
         <tr>
           <td class="title">役職名</td>
           <td>
-          	 {{$new_jp->person_charge_title}}
+             {{$new_jp->person_charge_title}}
           </td>
         </tr>
         <tr>
           <td class="title"><span></span>ご住所</td>
           <td>
-          	 〒 {{$new_jp->person_charge_zipcode}} <br />
+             〒 {{$new_jp->person_charge_zipcode}} <br />
              住所 {{$new_jp->person_charge_your_addrs}}
           </td>
         </tr>
         @endif
         <tr>
-          <td class="title"><span></span>連絡先TEL</td>
+          <td class="title"><span></span>連絡先TEL（ハイフンを除く）</td>
           <td>
-          	 {{$new_jp->person_charge_tel}}
+             {{$new_jp->person_charge_tel}}
           </td>
         </tr>
         <tr>
           <td class="title">連絡先FAX</td>
           <td>
-          	 {{$new_jp->person_charge_fax}}
+             {{$new_jp->person_charge_fax}}
           </td>
         </tr>
         <tr>
           <td class="title"><span></span>連絡先メールアドレス</td>
           <td>
-          	 {{$new_jp->person_charge_email_addrs}}
+             {{$new_jp->person_charge_email_addrs}}
           </td>
         </tr>
       </table>

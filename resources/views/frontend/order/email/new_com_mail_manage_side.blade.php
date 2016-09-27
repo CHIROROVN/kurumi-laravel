@@ -31,10 +31,21 @@ WAF追加　　　　　　　　　　　：{{$new_com['waf']}} <br /><br />
 役職名　　　　　　　　　　　　：{{$new_com['dns_title']}} <br />
 ご住所（日本語）　　　　　　　：{{$new_com['dns_addrs_jp']}} <br />
 ご住所（英語）　　　　　　　　：{{$new_com['dns_addrs_en']}} <br />
-電話番号　　　　　　　　　　　：{{$new_com['dns_phone']}} <br />
+電話番号（ハイフンを除く）　　　　　　　　　　　：{{$new_com['dns_phone']}} <br />
 FAX 　　　　　　　　　　　　：{{$new_com['dns_fax']}} <br />
 メールアドレス　　　　　　　　　　：{{$new_com['dns_email_addrs']}} <br />
-DNSサーバー 　　　　　　　　　：{{$new_com['dns_server']}} <br /><br />
+DNSサーバー 　　　　　　　　　：<br />
+@if($new_com['dns_server'] == 1)
+    チロロネットのDNSを利用する。
+@elseif($new_com['dns_server'] == 2)
+  @if(!empty($new_com['dns_server_text3']))
+    {{$new_com['dns_server_text3']}} 
+    @if(!empty($new_com['dns_server_text4']))<br />@endif
+  @endif
+  @if(!empty($new_com['dns_server_text4']))
+    {{$new_com['dns_server_text4']}}
+  @endif
+@endif <br /><br />
 
 ------------------------------------------------------------ <br />
 ○SSL登録情報 <br />
@@ -45,7 +56,7 @@ DNSサーバー 　　　　　　　　　：{{$new_com['dns_server']}} <br /><
 都道府県・市区郡名（日本語）　：{{$new_com['prefectures_jp']}} <br />
 都道府県・市区郡名（英語）　　：{{$new_com['prefectures_en']}} <br />
 担当者名　　　　　　　　　　　：{{$new_com['name_person_charge']}} <br />
-電話番号　　　　　　　　　　　：{{$new_com['phone_number']}} <br />
+電話番号（ハイフンを除く）　　　　　　　　　　　：{{$new_com['phone_number']}} <br />
 FAX 　　　　　　　　　　　　：{{$new_com['ssl_fax']}} <br />
 受信可能メールアドレス　　　　　　：{{$new_com['receive_mail_addrs']}} <br /><br />
 
@@ -70,7 +81,7 @@ FAX 　　　　　　　　　　　　：{{$new_com['ssl_fax']}} <br />
 役職名　　　　　　　　　　　　：{{$new_com['person_charge_title']}} <br />
 ご住所　　　　　　　　　　　　：{{$new_com['person_charge_zipcode']}} {{$new_com['person_charge_your_addrs']}}住所 <br />
 @endif
-連絡先TEL 　　　　　　　　　：{{$new_com['person_charge_tel']}} <br />
+連絡先TEL（ハイフンを除く） 　　　　　　　　　：{{$new_com['person_charge_tel']}} <br />
 連絡先FAX 　　　　　　　　　：{{$new_com['person_charge_fax']}} <br />
 連絡先メールアドレス　　　　　　　：{{$new_com['person_charge_email_addrs']}} <br /><br />
 

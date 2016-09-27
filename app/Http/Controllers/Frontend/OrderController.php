@@ -28,17 +28,15 @@ class OrderController extends FrontendController
         $clsOrder               = new OrderModel();
         $RuleNewCoJp            = $clsOrder->RuleNewCoJp();
 
-        if(Input::get('dns_server') == 1 || Input::get('dns_server') == 2){
+        if(Input::get('dns_server') == 1){
             unset($RuleNewCoJp['dns_server_text3']);
             unset($RuleNewCoJp['dns_server_text4']);
-        }elseif(Input::get('dns_server') == 3){
-            unset($RuleNewCoJp['dns_server_text4']);
-            
-        }elseif(Input::get('dns_server') == 4){
-            unset($RuleNewCoJp['dns_server_text3']);
-        }else{
-            unset($RuleNewCoJp['dns_server_text3']);
-            unset($RuleNewCoJp['dns_server_text4']);
+        }elseif(Input::get('dns_server') == 2){
+            if(!empty(Input::get('dns_server_text3'))){
+                unset($RuleNewCoJp['dns_server_text4']);
+            }else{
+                unset($RuleNewCoJp['dns_server_text3']);
+            }
         }
 
         if(Input::get('domain_person_regist') == '上記登録者情報と同一')
@@ -106,13 +104,13 @@ class OrderController extends FrontendController
         $dataInput['domain_email']                      = Input::get('domain_email');
 
         if(Input::get('dns_server') == 1){
-            $dataInput['dns_server']                    = 'チロロネットのDNSを利用する';
+            $dataInput['dns_server']                    = 1;
         }elseif(Input::get('dns_server') == 2){
-            $dataInput['dns_server']                    = '以下のDNSサーバーを利用する';
-        }elseif(Input::get('dns_server') == 3){
-            $dataInput['dns_server']                    = Input::get('dns_server_text3');
-        }else{
-            $dataInput['dns_server']                    = Input::get('dns_server_text4');
+            $dataInput['dns_server']                    = 2;
+            if(!empty(Input::get('dns_server_text3'))) 
+                $dataInput['dns_server_text3']                    = Input::get('dns_server_text3');
+            if(!empty(Input::get('dns_server_text4'))) 
+                $dataInput['dns_server_text4']                    = Input::get('dns_server_text4');
         }
 
         if(Input::get('policy_contract_info') == '以下に入力'){
@@ -214,17 +212,15 @@ class OrderController extends FrontendController
             unset($RuleNewJp['policy_name']);
         }
 
-        if(Input::get('dns_server') == 1 || Input::get('dns_server') == 2){
+        if(Input::get('dns_server') == 1){
             unset($RuleNewJp['dns_server_text3']);
             unset($RuleNewJp['dns_server_text4']);
-        }elseif(Input::get('dns_server') == 3){
-            unset($RuleNewJp['dns_server_text4']);
-            
-        }elseif(Input::get('dns_server') == 4){
-            unset($RuleNewJp['dns_server_text3']);
-        }else{
-            unset($RuleNewJp['dns_server_text3']);
-            unset($RuleNewJp['dns_server_text4']);
+        }elseif(Input::get('dns_server') == 2){
+            if(!empty(Input::get('dns_server_text3'))){
+                unset($RuleNewJp['dns_server_text4']);
+            }else{
+                unset($RuleNewJp['dns_server_text3']);
+            }
         }
 
         if(Input::get('person_charge_info') == 'ドメイン登録情報と同一'){
@@ -266,13 +262,13 @@ class OrderController extends FrontendController
         $dataInput['public_contact']                    = Input::get('public_contact');
 
         if(Input::get('dns_server') == 1){
-            $dataInput['dns_server']                    = 'チロロネットのDNSを利用する';
+            $dataInput['dns_server']                    = 1;
         }elseif(Input::get('dns_server') == 2){
-            $dataInput['dns_server']                    = '以下のDNSサーバーを利用する';
-        }elseif(Input::get('dns_server') == 3){
-            $dataInput['dns_server']                    = Input::get('dns_server_text3');
-        }else{
-            $dataInput['dns_server']                    = Input::get('dns_server_text4');
+            $dataInput['dns_server']                    = 2;
+            if(!empty(Input::get('dns_server_text3'))) 
+                $dataInput['dns_server_text3']                    = Input::get('dns_server_text3');
+            if(!empty(Input::get('dns_server_text4'))) 
+                $dataInput['dns_server_text4']                    = Input::get('dns_server_text4');
         }
 
         $dataInput['common_name']                       = Input::get('common_name');
@@ -371,17 +367,15 @@ class OrderController extends FrontendController
             unset($RuleNewCom['person_charge_your_addrs']);
         }
 
-        if(Input::get('dns_server') == 1 || Input::get('dns_server') == 2){
+        if(Input::get('dns_server') == 1){
             unset($RuleNewCom['dns_server_text3']);
             unset($RuleNewCom['dns_server_text4']);
-        }elseif(Input::get('dns_server') == 3){
-            unset($RuleNewCom['dns_server_text4']);
-            
-        }elseif(Input::get('dns_server') == 4){
-            unset($RuleNewCom['dns_server_text3']);
-        }else{
-            unset($RuleNewCom['dns_server_text3']);
-            unset($RuleNewCom['dns_server_text4']);
+        }elseif(Input::get('dns_server') == 2){
+            if(!empty(Input::get('dns_server_text3'))){
+                unset($RuleNewCom['dns_server_text4']);
+            }else{
+                unset($RuleNewCom['dns_server_text3']);
+            }
         }
 
         $validator              = Validator::make(Input::all(), $RuleNewCom, $clsOrder->MsgNewCom());
@@ -414,13 +408,13 @@ class OrderController extends FrontendController
         $dataInput['dns_email_addrs']                   = Input::get('dns_email_addrs');
 
         if(Input::get('dns_server') == 1){
-            $dataInput['dns_server']                    = 'チロロネットのDNSを利用する';
+            $dataInput['dns_server']                    = 1;
         }elseif(Input::get('dns_server') == 2){
-            $dataInput['dns_server']                    = '以下のDNSサーバーを利用する';
-        }elseif(Input::get('dns_server') == 3){
-            $dataInput['dns_server']                    = Input::get('dns_server_text3');
-        }else{
-            $dataInput['dns_server']                    = Input::get('dns_server_text4');
+            $dataInput['dns_server']                    = 2;
+            if(!empty(Input::get('dns_server_text3'))) 
+                $dataInput['dns_server_text3']                    = Input::get('dns_server_text3');
+            if(!empty(Input::get('dns_server_text4'))) 
+                $dataInput['dns_server_text4']                    = Input::get('dns_server_text4');
         }
 
         $dataInput['common_name']                       = Input::get('common_name');
@@ -585,7 +579,6 @@ class OrderController extends FrontendController
 
     public function postMoveCom() {
         $clsOrder               = new OrderModel();
-
         $input = Input::all();
 
         $validator  = Validator::make($input, $clsOrder->rMoveCom(), $clsOrder->mMoveCom());
@@ -594,7 +587,6 @@ class OrderController extends FrontendController
         }
 
         Session::put('confirmData', Input::all());
-
         return redirect()->route('frontend.order.move_com.confirm');
     }
 
