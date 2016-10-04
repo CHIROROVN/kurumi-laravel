@@ -49,7 +49,6 @@ class OrderController extends FrontendController
             unset($RuleNewCoJp['domain_title']);
         }
 
-
         if(Input::get('policy_contract_info') == 'ドメイン登録情報と同一')
         {
             unset($RuleNewCoJp['policy_organization_name']);

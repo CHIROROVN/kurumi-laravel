@@ -5,7 +5,7 @@
 
 <section class="clear" id="company">
   <div class="container">
-    <h1 class="title-content"><img src="{{ asset('') }}public/frontend/image/company/title.png" alt="" /></h1>
+    <h1 class="title-content">会社案内</h1>
 <!--     <h2 class="title"><img src="{{ asset('') }}public/frontend/image/company/title1-h2.png" alt="" /></h2>
     <div class="content">
       <div class="top-info clear">
@@ -18,7 +18,7 @@
         </div>
       </div>
     </div> -->
-    <h2 class="title"><img src="{{ asset('') }}public/frontend/image/company/title2-h2.png" alt="" /></h2>
+    <h2 class="title">会社概要</h2>
       <div class="content">
         <table class="table-info">
           <tr>
@@ -123,7 +123,7 @@
           </tr>
         </table>
       </div>
-    <h2 class="title"><img src="{{ asset('') }}public/frontend/image/company/title3-h2.png" alt="" /></h2>
+    <h2 class="title">本社アクセス</h2>
     <div class="bg-map">
       <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6570.8188905220395!2d133.74824816145926!3d34.56850497790106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35515777c11c7899%3A0x467e0bb513860205!2s125-7+Fukui%2C+Kurashiki-shi%2C+Okayama-ken+710-0844%2C+Japan!5e0!3m2!1sen!2s!4v1473411274557"  frameborder="0" style="border:0" allowfullscreen></iframe>
     </div>

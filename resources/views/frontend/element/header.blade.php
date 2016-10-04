@@ -12,7 +12,7 @@
 <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 <![endif]-->
 <link href="{{ asset('') }}public/frontend/common/css/import.css" rel="stylesheet" type="text/css" media="all">
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="{{asset('') }}public/frontend/common/js/jquery.min.js"></script>
 <script type="text/javascript" src="{{ asset('') }}public/frontend/common/js/function.js"></script>
 </head>
 
@@ -37,6 +37,20 @@
         <img src="{{ asset('') }}public/frontend/common/image/img-person-header.png" alt="" />
       </div>
     </div>
+    <div class="menusp">
+      <img src="{{ asset('') }}public/frontend/common/image/menu-sp.png" alt="menu" width="57" height="58">
+    </div>
+    <ul class="menu">
+      <li><a href="{{ route('frontend.index') }}" title="ホーム">ホーム</a></li>
+      <li><a href="{{ route('frontend.feature.index') }}" title="強み">強み</a></li>
+      <li><a href="{{route('frontend.plan.index')}}" title="プラン">プラン</a></li>
+      <li><a href="http://support.kurumiserver.jp/" title="サポート">サポート</a></li>
+      <li><a href="{{route('frontend.faq.index')}}" title="FAQ">FAQ</a></li>
+      <li><a href="{{ route('frontend.company.index') }}" title="会社案内">会社案内</a></li>
+      <li><a href="{{route('frontend.order.index')}}" title="お申し込み">お申し込み</a></li>
+      <li><a href="{{ route('frontend.contact.index') }}" title="お問い合わせはこちら">お問い合わせはこちら</a></li>
+    </ul>
+    
   </div>
   <div class="frame02">
     <div class="container">

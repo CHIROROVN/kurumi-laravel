@@ -54,9 +54,8 @@ WAF追加
 ドメイン所有者　　　　　　　　：{{$data['domain_owner']}}
 移管作業日　　　　　　　　　　：{{$data['domain_transfer_work_year']}}/{{$data['domain_transfer_work_month']}}/{{$data['domain_transfer_work_day']}}
 公開連絡先　　　　　　　　　　：{{$data['domain_public_contact'] }}
-
-@if ( $data['domain_registered_name'] == 1 )
-登録担当者名
+登録担当者名　　　　　　　　：@if( $data['domain_registered_name'] == 1)
+チロロネットを窓口として公開する
 @elseif($data['domain_registered_name'] == 2)
 以下情報を窓口として公開する
 @else
@@ -65,7 +64,6 @@ WAF追加
 ご住所（日本語）　　　　　　　　：{{$data['domain_address_japan']}}
 電話番号（ハイフンを除く）　：{{ $data['domain_phone'] }}
 メールアドレス　　　　　　　　　　：{{$data['domain_email']}}
-@endif
 
 ------------------------------------------------------------
 ○SSL登録情報
@@ -79,8 +77,7 @@ WAF追加
 電話番号（ハイフンを除く）　　　：{{$data['ssl_phone_number']}}
 FAX　　　　　　　　　　　　　　：{{$data['ssl_fax']}}
 @if(isset($data['ssl_email_address']))
-受信可能メールアドレス
-@if ( $data['ssl_email_address'] == 1 )
+受信可能メールアドレス　　　　：@if( $data['ssl_email_address'] == 1 )
 admin@ドメイン名　→　SSL申請後に確認メールが届くので、info@kurumiserver.jp へ、そのまま転送してください
 @elseif ( $data['ssl_email_address'] == 2 )
 administrator@ドメイン名　→　SSL申請後に確認メールが届くので、info@kurumiserver.jp へ、そのまま転送してください

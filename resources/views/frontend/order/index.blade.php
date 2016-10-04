@@ -5,12 +5,12 @@
 
 <section class="clear" id="order">
     <div class="container">
-      <h1 class="title-content"><img src="{{ asset('') }}public/frontend/image/order/title-index.png" alt="" /></h1>
+      <h1 class="title-content">お申込み</h1>
       <div class="top clear">
         <img class="fl-left" src="{{ asset('') }}public/frontend/image/order/img1-index.png" alt="" />
         <img class="fl-right" src="{{ asset('') }}public/frontend/image/order/img2-index.png" alt="" />
       </div>
-      <h2 class="title"><img src="{{ asset('') }}public/frontend/image/order/title-h2-index.png" alt="" /></h2>
+      <h2 class="title">新規でお申込みの方(サーバーとドメイン取得を同時お申し込み)</h2>
       <div class="content">
         <p>PDFでお申込みの場合、以下より必要な書面をダウンロードしていただき、<br />
            ご記入・ご捺印の上、チロロネットまでFAXもしくは郵送にてお送りください。</p>
@@ -46,7 +46,7 @@
           </ul>
         </div>
       </div>
-      <h2 class="title"><img src="{{ asset('') }}public/frontend/image/order/title2-h2-index.png" alt="" /></h2>
+      <h2 class="title">他社サーバーから移転の方(ドメイン取得済みでサーバーをお申し込み)</h2>
       <div class="content">
         <p>PDFでお申込みの場合、以下より必要な書面をダウンロードしていただき、<br />
             ご記入・ご捺印の上、チロロネットまでFAXもしくは郵送にてお送りください</p>

@@ -4,10 +4,11 @@
 <!--Content -->
 <section class="clear" id="plan">
   <div class="container">
-    <h1 class="title-content"><img src="{{ asset('') }}public/frontend/image/plan/title.png" alt="" /></h1>
-    <h2 class="title"><img src="{{ asset('') }}public/frontend/image/company/title1-h2.png" alt="" /></h2>
+    <h1 class="title-content">プラン</h1>
+    <h2 class="title">プランの比較表</h2>
     <img class="info1" src="{{ asset('') }}public/frontend/image/top/img-frame03.png" alt="" />
-    <div class="info2">
+    <script type="text/javascript" src="{{ asset('') }}public/frontend/common/js/bootstrap.min.js"></script>
+    <div class="info2  table-responsive">
       <table>
         <tr>
           <td colspan="4" class="title">オプション</td>

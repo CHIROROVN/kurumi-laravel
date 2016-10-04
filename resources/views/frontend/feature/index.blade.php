@@ -3,9 +3,9 @@
 @section('content')
 <section class="clear" id="feature">
   <div class="frame01">
-    <h1 class="title-content"><img src="{{ asset('') }}public/frontend/image/feature/title.png" alt="" /></h1>
+    <h1 class="title-content">強み</h1>
     <div class="container">
-      <h2 class="title"><img src="{{ asset('') }}public/frontend/image/feature/title1-h2.png" alt="" /></h2>
+      <h2 class="title">くるみサーバーが選ばれる理由</h2>
       <div class="content">
       
         <div class="box">
@@ -106,7 +106,7 @@
     
     <div class="frame02">
       <div class="container">
-      	<h2 class="title"><img src="{{ asset('') }}public/frontend/image/feature/title2-h2.png" alt="" /></h2>
+      	<h2 class="title">他にも強みがたくさん！</h2>
       	<div class="content">
           <ul class="clear">
           	<li>
@@ -137,7 +137,8 @@
           </ul>
           
           <div class="box02">
-          	<h3><img src="{{ asset('') }}public/frontend/image/feature/title-box02-frame02.png" alt="" /></h3>
+          	<h3><img src="{{ asset('') }}public/frontend/image/feature/title1-box02-frame02.png" alt="" /></h3>
+            <img src="{{ asset('') }}public/frontend/image/feature/title2-box02-frame02.png" alt="" />
             <p>WAFとはウェブ・アプリケーション・ファイアウォールの略で、WebサイトやWebアプリケーションを保護するためのセキュリティの仕組みです。ショッピングサイトなど、個人情報を入力するページが多いWebサイトの保護に最適です。オプションで追加可能です。</p>
           </div>
           

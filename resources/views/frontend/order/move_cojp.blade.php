@@ -5,13 +5,13 @@
 
 <section class="order-child clear" id="contact">
   <div class="container">
-    <h1 class="title-content"><img src="{{ asset('') }}public/frontend/image/order/title-move-cojp.png" alt="" /></h1>
+    <h1 class="title-content">くるみサーバーお申込フォーム(属性jpドメイン移管</h1>
 
     <!-- form -->
     {!! Form::open(array('route' => 'frontend.order.move_cojp.index', 'enctype'=>'multipart/form-data')) !!}
     <div class="content">
       <ul class="breadcrum-step">
-        <li><a href="" title=""><img src="{{ asset('') }}public/frontend/image/order/text1-frame02.png" alt="" /></a></li>
+        <li class="active"><a href="" title=""><img src="{{ asset('') }}public/frontend/image/order/text1-frame02.png" alt="" /></a></li>
         <li><a href="" title=""><img src="{{ asset('') }}public/frontend/image/order/text2-normal-frame02.png" alt="" /></a></li>
         <li><a href="" title=""><img src="{{ asset('') }}public/frontend/image/order/text3-normal-frame02.png" alt="" /></a></li>
       </ul>
@@ -691,15 +691,15 @@
           <td>
              〒 
             @if ( isset($back['person_your_address_1']) )
-            <input type="text" name="person_your_address_1" value="{{ $back['person_your_address_1'] }}" class="input-xs" />
+            <input type="text" name="person_your_address_1" value="{{ $back['person_your_address_1'] }}" class="input-xs mr-bottom10" />
             @else
             <input type="text" name="person_your_address_1" value="{{ old('person_your_address_1') }}" class="input-xs" />
             @endif
              住所 
             @if ( isset($back['person_your_address_2']) )
-            <input type="text" name="person_your_address_2" value="{{ $back['person_your_address_2'] }}" style="width:400px!important;" />
+            <input type="text" name="person_your_address_2" value="{{ $back['person_your_address_2'] }}" />
             @else
-            <input type="text" name="person_your_address_2" value="{{ old('person_your_address_2') }}" style="width:400px!important;" />
+            <input type="text" name="person_your_address_2" value="{{ old('person_your_address_2') }}" />
             @endif
             @if ($errors->first('person_your_address_1'))<span class="error-input">{!! $errors->first('person_your_address_1') !!}</span>@endif
             @if ($errors->first('person_your_address_2'))<span class="error-input">{!! $errors->first('person_your_address_2') !!}</span>@endif

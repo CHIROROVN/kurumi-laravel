@@ -4,10 +4,10 @@
 <!--Content -->
 <section class="order-child clear" id="contact">
   <div class="container">
-    <h1 class="title-content"><img src="{{ asset('') }}public/frontend/image/order/title-new-com.png" alt="" /></h1>
+    <h1 class="title-content">くるみサーバーお申込フォーム(gTLDドメイン新規)</h1>
     <div class="content">
       <ul class="breadcrum-step">
-        <li><a href="" title=""><img src="{{ asset('') }}public/frontend/image/order/text1-frame02.png" alt="" /></a></li>
+        <li class="active"><a href="" title=""><img src="{{ asset('') }}public/frontend/image/order/text1-frame02.png" alt="" /></a></li>
         <li><a href="" title=""><img src="{{ asset('') }}public/frontend/image/order/text2-normal-frame02.png" alt="" /></a></li>
         <li><a href="" title=""><img src="{{ asset('') }}public/frontend/image/order/text3-normal-frame02.png" alt="" /></a></li>
       </ul>
@@ -398,8 +398,8 @@ postmaster@ドメイン名　→　SSL申請後に確認メールが届くので
         <tr>
           <td class="title"><span>※ </span>ご住所</td>
           <td>
-             〒 <input type="text" name="person_charge_zipcode" value="{{old('person_charge_zipcode')}}" class="input-xs person-status"/>
-             住所 <input name="person_charge_your_addrs" value="{{old('person_charge_your_addrs')}}" type="text" style="width:400px!important;" class="person-status">
+             〒 <input type="text" name="person_charge_zipcode" value="{{old('person_charge_zipcode')}}" class="input-xs person-status mr-bottom10"/>
+             住所 <input name="person_charge_your_addrs" value="{{old('person_charge_your_addrs')}}" type="text" class="person-status">
              @if ($errors->first('person_charge_zipcode'))<span class="error-input">{!! $errors->first('person_charge_zipcode') !!}</span>@endif
           </td>
         </tr>

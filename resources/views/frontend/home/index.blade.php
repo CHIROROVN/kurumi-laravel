@@ -8,7 +8,7 @@
   <div class="frame01">
     <div class="container">
       <h1><img src="{{ asset('') }}public/frontend/image/top/title-top-frame01.png" alt="" /></h1>
-      <div class="box">
+      <div class="box box01">
         <h2><img src="{{ asset('') }}public/frontend/image/top/title1-frame01.png" alt="" /></h2>
         <div class="info clear">
           <div class="fl-left">
@@ -23,7 +23,7 @@
           </div>
         </div>
       </div>
-      <div class="box">
+      <div class="box box02">
         <h2><img src="{{ asset('') }}public/frontend/image/top/title2-frame01.png" alt="" /></h2>
         <div class="info clear">
           <div class="fl-left">
@@ -51,7 +51,7 @@
         </div>
       </div>
       <div class="clear">
-        <div class="box box-half fl-left">
+        <div class="box box-half fl-left box03">
           <h2><img src="{{ asset('') }}public/frontend/image/top/title3-frame01.png" alt="" /></h2>
           <div class="info clear">
             <div class="fl-left">
@@ -63,7 +63,7 @@
             <p class="fl-left clear">24時間電話対応可能なので、お困りの際はお気軽に<br />お電話ください。</p>
           </div>
         </div>
-        <div class="box box-half fl-right">
+        <div class="box box-half fl-right box04">
           <h2><img src="{{ asset('') }}public/frontend/image/top/title4-frame01.png" alt="" /></h2>
           <div class="info clear">
             <div class="fl-left">

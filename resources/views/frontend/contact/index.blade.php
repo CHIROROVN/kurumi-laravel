@@ -7,12 +7,12 @@
   <!--Frame01 -->
     <div class="frame01">
       <div class="container">
-        <h1 class="title-content"><img src="{{ asset('') }}public/frontend/image/contact/title.png" alt="" /></h1>
+        <h1 class="title-content">お問い合わせ</h1>
         <div class="info">
           <div class="box-text1">
             <img src="{{ asset('') }}public/frontend/image/contact/text1-frame01.png" alt="" />
           </div>
-          <img src="{{ asset('') }}public/frontend/image/contact/text-frame01.png" alt="" />
+          <img class="text-phone" src="{{ asset('') }}public/frontend/image/contact/text-frame01.png" alt="" />
           <div class="box-text2">
             <img src="{{ asset('') }}public/frontend/image/contact/text2-frame01.png" alt="" />
           </div>
@@ -23,13 +23,13 @@
   <!--Frame02 -->
     <div class="frame02">
       <div class="container">
-        <h2 class="title"><img src="{{ asset('') }}public/frontend/image/contact/title1-h2.png" alt="" /></h2>
+        <h2 class="title">メールでのお問い合わせ</h2>
 
         <!-- form -->
         {!! Form::open(array('route' => 'frontend.contact.index', 'enctype'=>'multipart/form-data')) !!}
         <div class="content">
           <ul>
-            <li><a href="" title=""><img src="{{ asset('') }}public/frontend/image/contact/text1-frame02.png" alt="" /></a></li>
+            <li class="active"><a href="" title=""><img src="{{ asset('') }}public/frontend/image/contact/text1-frame02.png" alt="" /></a></li>
             <li><a href="" title=""><img src="{{ asset('') }}public/frontend/image/contact/text2-frame02.png" alt="" /></a></li>
             <li><a href="" title=""><img src="{{ asset('') }}public/frontend/image/contact/text3-frame02.png" alt="" /></a></li>
           </ul>
@@ -176,7 +176,7 @@
             <label>同意する</label>
           </div>
           <div class="">
-            @if ($errors->first('agree'))<span class="error-input">{!! $errors->first('agree') !!}</span>@endif
+            @if ($errors->first('agree'))<span class="error-input error-input-check">{!! $errors->first('agree') !!}</span>@endif
           </div>
           <div class="box-submit">
             <input type="submit" value="" name="save" class="btn-submit"/>
