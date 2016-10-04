@@ -231,8 +231,6 @@
           <td><input type="text" name="representative_title" value="{{old('representative_title')}}" />
           @if ($errors->first('representative_title'))<span class="error-input">{!! $errors->first('representative_title') !!}</span>@endif</td>
         </tr>
-
-
         <tr>
           <td class="title"><span>※ </span>ドメイン登録担当者</td>
           <td>

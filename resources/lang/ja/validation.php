@@ -34,6 +34,7 @@ return [
     'error_domain_person_regist_required'                       => 'ドメイン登録担当者を選択してください。',
     'error_domain_person_jp_required'                           => 'ドメイン登録担当者氏名（日本語）を入力してください。',
     'error_domain_person_en_required'                           => 'ドメイン登録担当者氏名（英語）を入力してください。',
+    'error_domain_person_en_alpha_num'                          => 'ドメイン登録担当者氏名はアルファベット文字でなければなりません。',
 
     'error_company_name_required'                               => '会社名・組織名を入力してください。',
     'error_your_address_required'                               => 'ご住所を入力してください。',

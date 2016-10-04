@@ -35,10 +35,10 @@
           <td class="title"><span>※ </span>サービス開始希望日</td>
           <td>
             <div>
-              <input type="radio" name="service" value="1" @if(old('service') == 1) checked="" @endif /> 希望なし（お申込みの翌営業日より2～3営業日目にサービス開始） 
+              <input type="radio" name="service" value="希望なし" @if(old('service') == '希望なし') checked="" @endif /> 希望なし（お申込みの翌営業日より2～3営業日目にサービス開始） 
             </div>
             <div>
-              <input type="radio" name="service" value="2" @if(old('service') == 2) checked="" @endif /> 希望あり
+              <input type="radio" name="service" value="希望あり" @if(old('service') == '希望あり') checked="" @endif /> 希望あり
             </div>
             @if ($errors->first('service'))<span class="error-input">{!! $errors->first('service') !!}</span>@endif
           </td>

@@ -1,6 +1,5 @@
 <?php namespace App\Http\Models;
 
-
 class OrderModel
 {
 

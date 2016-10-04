@@ -176,7 +176,7 @@ class OrderController extends FrontendController
         $data                   = array();
         $new_cojp               = Session::get('new_cojp');
 
-        Mail::send('frontend.order.email.new_cojp_mail_manage_side', ['new_cojp'=>$new_cojp], function($message) use ($new_cojp) {
+        Mail::send(['text'=>'frontend.order.email.new_cojp_mail_manage_side'], ['new_cojp'=>$new_cojp], function($message) use ($new_cojp) {
         $email_to       = MAIL_TO_ADDRESS_MANAGER;
         $email_from     = MAIL_FROM_ADDRESS;
         $email_subject  = SUBJECT_NEW_COM_MANAGER;
@@ -185,7 +185,7 @@ class OrderController extends FrontendController
         $message->from($email_from);
         });
 
-        Mail::send('frontend.order.email.new_cojp_mail_user_side', ['new_cojp'=>$new_cojp], function($message) use ($new_cojp) {
+        Mail::send(['text'=>'frontend.order.email.new_cojp_mail_user_side'], ['new_cojp'=>$new_cojp], function($message) use ($new_cojp) {
         $email_to       = $new_cojp['person_charge_email_addrs'];
         $email_from     = MAIL_FROM_ADDRESS;
         $email_subject  = SUBJECT_NEW_COM_USER;
@@ -323,7 +323,7 @@ class OrderController extends FrontendController
         $data                   = array();
         $new_jp                 = Session::get('new_jp');
 
-        Mail::send('frontend.order.email.new_jp_mail_manage_side', ['new_jp'=>$new_jp], function($message) use ($new_jp) {
+        Mail::send(['text'=>'frontend.order.email.new_jp_mail_manage_side'], ['new_jp'=>$new_jp], function($message) use ($new_jp) {
             $email_to   = MAIL_TO_ADDRESS_MANAGER;
             $email_from = MAIL_FROM_ADDRESS;
             $email_subject = SUBJECT_NEW_JP_MANAGER;
@@ -332,7 +332,7 @@ class OrderController extends FrontendController
             $message->from($email_from);
         });
 
-        Mail::send('frontend.order.email.new_jp_mail_user_side', ['new_jp'=>$new_jp], function($message) use ($new_jp) {
+        Mail::send(['text'=>'frontend.order.email.new_jp_mail_user_side'], ['new_jp'=>$new_jp], function($message) use ($new_jp) {
             $email_to   = $new_jp['person_charge_email_addrs'];
             $email_from = MAIL_FROM_ADDRESS;
             $email_subject = SUBJECT_NEW_JP_USER;
@@ -469,7 +469,7 @@ class OrderController extends FrontendController
         $data                   = array();
         $new_com                = Session::get('new_com');
 
-        Mail::send('frontend.order.email.new_com_mail_manage_side', ['new_com'=>$new_com], function($message) use ($new_com) {
+        Mail::send(['text'=>'frontend.order.email.new_com_mail_manage_side'], ['new_com'=>$new_com], function($message) use ($new_com) {
             $email_to       = MAIL_TO_ADDRESS_MANAGER;
             $email_from     = MAIL_FROM_ADDRESS;
             $email_subject  = SUBJECT_NEW_JP_MANAGER;
@@ -478,7 +478,7 @@ class OrderController extends FrontendController
             $message->from($email_from);
         });
 
-        Mail::send('frontend.order.email.new_com_mail_user_side', ['new_com'=>$new_com], function($message) use ($new_com) {
+        Mail::send(['text'=>'frontend.order.email.new_com_mail_user_side'], ['new_com'=>$new_com], function($message) use ($new_com) {
             $email_to       = $new_com['person_charge_email_addrs'];
             $email_from     = MAIL_FROM_ADDRESS;
             $email_subject  = SUBJECT_NEW_JP_USER;
@@ -539,12 +539,13 @@ class OrderController extends FrontendController
         $data = Session::get('confirmData');
 
         // for user
-        Mail::send('frontend.order.email.move_cojp_user', array('data' => $data), function($message) use ($data){
+        Mail::send(['text'=>'frontend.order.email.move_cojp_user'], array('data' => $data), function($message) use ($data){
             $message->from(MAIL_FROM_ADDRESS, MAIL_FROM_NAME);
             $message->to($data['person_email'])->subject(SUBJECT_MOVE_COJP_USER);
         });
+
         // for manager
-        Mail::send('frontend.order.email.move_cojp_manage', array('data' => $data), function($message) use ($data){
+        Mail::send(['text'=>'frontend.order.email.move_cojp_manage'], array('data' => $data), function($message) use ($data){
             $message->from(MAIL_FROM_ADDRESS, MAIL_FROM_NAME);
             $message->to(MAIL_TO_ADDRESS_MANAGER)->subject(SUBJECT_MOVE_COJP_MANAGER);
         });
@@ -609,12 +610,12 @@ class OrderController extends FrontendController
         $data = Session::get('confirmData');
 
         // for user
-        Mail::send('frontend.order.email.move_cojp_user', array('data' => $data), function($message) use ($data){
+        Mail::send(['text'=>'frontend.order.email.move_cojp_user'], array('data' => $data), function($message) use ($data){
             $message->from(MAIL_FROM_ADDRESS, MAIL_FROM_NAME);
             $message->to($data['person_email'])->subject(SUBJECT_MOVE_COM_USER);
         });
         // for manager
-        Mail::send('frontend.order.email.move_cojp_manage', array('data' => $data), function($message) use ($data){
+        Mail::send(['text'=>'frontend.order.email.move_cojp_manage'], array('data' => $data), function($message) use ($data){
             $message->from(MAIL_FROM_ADDRESS, MAIL_FROM_NAME);
             $message->to(MAIL_TO_ADDRESS_MANAGER)->subject(SUBJECT_MOVE_COM_MANAGER);
         });
@@ -681,12 +682,12 @@ class OrderController extends FrontendController
         $data = Session::get('confirmData');
 
         // for user
-        Mail::send('frontend.order.email.move_jp_user', array('data' => $data), function($message) use ($data){
+        Mail::send(['text'=>'frontend.order.email.move_jp_user'], array('data' => $data), function($message) use ($data){
             $message->from(MAIL_FROM_ADDRESS, MAIL_FROM_NAME);
             $message->to($data['person_email'])->subject(SUBJECT_MOVE_JP_USER);
         });
         // for manager
-        Mail::send('frontend.order.email.move_jp_manage', array('data' => $data), function($message) use ($data){
+        Mail::send(['text'=>'frontend.order.email.move_jp_manage'], array('data' => $data), function($message) use ($data){
             $message->from(MAIL_FROM_ADDRESS, MAIL_FROM_NAME);
             $message->to(MAIL_TO_ADDRESS_MANAGER)->subject(SUBJECT_MOVE_JP_MANAGER);
         });
